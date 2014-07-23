@@ -1,0 +1,11 @@
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\obj\Debug\DataAccessExample.csprojResolveAssemblyReference.cache
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\DataAccessExample.exe.config
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\DataAccessExample.exe
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\DataAccessExample.pdb
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\DataAccess.dll
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\EntityFramework.dll
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\DataAccess.pdb
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\EntityFramework.xml
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\obj\Debug\DataAccessExample.exe
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\obj\Debug\DataAccessExample.pdb

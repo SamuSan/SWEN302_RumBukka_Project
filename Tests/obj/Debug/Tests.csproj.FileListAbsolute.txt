@@ -1,0 +1,5 @@
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\bin\Debug\Tests.dll
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\bin\Debug\Tests.pdb
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\obj\Debug\Tests.dll
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\obj\Debug\Tests.pdb
