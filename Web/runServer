@@ -1,0 +1,4 @@
+#!/bin/sh
+# windows users might need to change this to something homospecific to make Bill happy
+python -m SimpleHTTPServer
+echo "Running Python Server"

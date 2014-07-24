@@ -1,0 +1,28 @@
+
+
+.kp {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 0;
+
+}
+.kp-mail-M:before {
+    content: url("images/kpsmail_small3.png");
+}
+
+.kp-home:before {
+    content: url("images/kpshome_Ssmall.png");
+}
+.kp-mail:before {
+    content: url("images/kpsmail_Ssmall2.png");
+}
+.kp-road:before {
+    content: url("images/kpsroad_Ssmall5.png");
+}
+.kp-road-Up:before {
+    content: url("images/kpsroad_Ssmall2.png");
+}
+.kp-price:before {
+    content: url("images/kpsprice_Ssmall.png");
+}
