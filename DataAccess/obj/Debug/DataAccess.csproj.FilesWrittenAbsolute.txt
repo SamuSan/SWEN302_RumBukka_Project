@@ -1,0 +1,9 @@
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/DataAccess.dll.mdb
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/DataAccess.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/obj/Debug/DataAccess.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/obj/Debug/DataAccess.dll.mdb
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/EntityFramework.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/EntityFramework.SqlServer.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/MySql.Data.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccess/bin/Debug/mysql.data.entity.EF6.dll

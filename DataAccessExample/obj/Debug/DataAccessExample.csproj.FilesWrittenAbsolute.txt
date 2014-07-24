@@ -1,0 +1,13 @@
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/DataAccessExample.exe.mdb
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/DataAccessExample.exe
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/obj/Debug/DataAccessExample.exe
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/obj/Debug/DataAccessExample.exe.mdb
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/EntityFramework.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/MySql.Data.Entity.EF6.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/DataAccess.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/DataAccess.dll.mdb
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/MySql.Data.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/DataAccessExample.exe.config
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/EntityFramework.SqlServer.dll
+/Users/samminns/Projects/SamuSan/SWEN302_RumBukka_Project.git/DataAccessExample/bin/Debug/System.Data.Entity.Repository.dll
