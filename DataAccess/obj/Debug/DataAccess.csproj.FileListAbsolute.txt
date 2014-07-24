@@ -10,3 +10,5 @@ C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\bin\
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\obj\Debug\DataAccess.Migrations.Initial.resources
+C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache

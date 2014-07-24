@@ -13,16 +13,19 @@ namespace DataAccess.Model
     {
         public Room()
         {
-            this.Students = new HashSet<Student>();
+            this.Bookings = new HashSet<Booking>();
             this.Phones = new HashSet<Phone>();
         }
+
         [Key]
         public int Room_Id { get; set; }
         public string RoomName { get; set; }
         public int BuildingId { get; set; }
         public int Level { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual Organisation Organisation { get; set; }
+
+        public virtual ICollection<Booking> Bookings { get; set; }
 
         public virtual ICollection<Phone> Phones { get; set; }
 
