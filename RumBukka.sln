@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{49F6800E-A06A-455E-A45A-7A53C16C48CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessExample", "DataAccessExample\DataAccessExample.csproj", "{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}"
@@ -13,19 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F6800E-A06A-455E-A45A-7A53C16C48CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F6800E-A06A-455E-A45A-7A53C16C48CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F6800E-A06A-455E-A45A-7A53C16C48CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F6800E-A06A-455E-A45A-7A53C16C48CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Tests\Tests.csproj
+		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Tests\Tests.csproj
 	EndGlobalSection
 EndGlobal

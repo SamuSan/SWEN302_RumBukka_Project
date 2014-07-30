@@ -9,3 +9,13 @@ C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExamp
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\bin\Debug\EntityFramework.xml
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\obj\Debug\DataAccessExample.exe
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\DataAccessExample\obj\Debug\DataAccessExample.pdb
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\DataAccessExample.exe.config
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\obj\Debug\DataAccessExample.exe
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\obj\Debug\DataAccessExample.pdb
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\DataAccessExample.exe
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\DataAccessExample.pdb
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\DataAccess.dll
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\EntityFramework.dll
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\DataAccess.pdb
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\bin\Debug\EntityFramework.xml
+C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccessExample\obj\Debug\DataAccessExample.csprojResolveAssemblyReference.cache
