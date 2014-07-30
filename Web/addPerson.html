@@ -20,15 +20,12 @@
 
 
 </head>
-<body ng-controller="addPersonController">
-
-<!-- HEADER AND NAVBAR -->
-<header>
-
-</header>
 
 <!-- MAIN CONTENT AND INJECTED VIEWS -->
-<form>
+<form name ='addPersonForm'>
+<body ng-controller="addPersonController">
+
+<h3>Add new room user</h3>
 <table>
     <tr>
         <td>
@@ -70,7 +67,7 @@
             <select id="departmentSelection"
                     ng-model="addPerson.department"
                     required="true" 
-                    ng-options="prior for prior in priors">
+                    ng-options="depart for depart in departs">
 
             </select>
             </div>
@@ -80,6 +77,6 @@
 
     </tr>
 </table>
-</form>
 </body>
+</form>
 </html>

@@ -9,6 +9,10 @@ rumBukkaApp.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'addBooking.html',
         });
+                .when('/addPerson', {
+            templateUrl: 'addPerson.html',
+            controller:'addPersonController'
+        });
 });
 
 
