@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="rumBukkaApp">
+<meta charset="utf-8">
+<head>
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" />
+
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="addPersonController.js"></script>
+
+
+
+</head>
+<body ng-controller="addPersonController">
+
+<!-- HEADER AND NAVBAR -->
+<header>
+
+</header>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<form>
+<table>
+    <tr>
+        <td>
+            <label>First Name</label>
+        </td>
+                <td>
+            <input name = "fName" ng-model="newUser.firstName" ng-trim="false" type="text" />
+        </td>
+        <td>
+            <label>Surname</label>
+        </td>
+                <td>
+            <input name = "sName" ng-model="newUser.lastName" ng-trim="false" type="text" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Student ID</label>
+        </td>
+        <td>
+            <input name = "SID" ng-model="newUser.SID" ng-trim="false" type="text" />
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <label>Start Date</label>
+        </td>
+        <td>
+            <label>End Date</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Department</label>
+        <td>
+            <div>
+            <select id="departmentSelection"
+                    ng-model="addPerson.department"
+                    required="true" 
+                    ng-options="prior for prior in priors">
+
+            </select>
+            </div>
+
+        </td>
+    </td>
+
+    </tr>
+</table>
+</form>
+</body>
+</html>
