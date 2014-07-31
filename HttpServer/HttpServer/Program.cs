@@ -26,7 +26,7 @@ namespace HttpServer
 
             SetupRoutes();
 
-            WebServer ws = new WebServer(SendResponse, "http://10.140.172.47:8080/");
+            WebServer ws = new WebServer(SendResponse, "http://localhost:8080/");
             ws.Run();
             Console.WriteLine("A simple webserver. Press a key to quit.");
             Console.ReadKey();
