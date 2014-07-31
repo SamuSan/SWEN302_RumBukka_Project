@@ -91,13 +91,18 @@
         <tr>
         <td>
             <label>Start Date</label>
-            <input pikaday="myPickerObject" />
+    <div>
+    <p>
+        <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
+</div>
         </td>
         <td>
             <label>End Date</label>
-            <input pikaday="myPickerObject" />
+            
         </td>
     </tr>
+
+
 </table>
 </body>
 </form>
