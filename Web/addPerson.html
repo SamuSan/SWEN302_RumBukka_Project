@@ -14,6 +14,8 @@
     <!-- load angular via CDN -->
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.js"></script>
+    <script src="Pikaday/pikaday.js"></script>
+    <script src="Pikaday/angular-pikaday.js"></script>
     <script src="script.js"></script>
     <script src="Controllers/addPersonController.js"></script>
 
@@ -51,14 +53,7 @@
         </td>
 
     </tr>
-    <tr>
-        <td>
-            <label>Start Date</label>
-        </td>
-        <td>
-            <label>End Date</label>
-        </td>
-    </tr>
+
     <tr>
         <td>
             <label>Organisation</label>
@@ -92,6 +87,16 @@
             <input name = "Phone" ng-model="newUser.Phone_Phone_Id" ng-trim="false" type="text" />
         </td>
 
+    </tr>
+        <tr>
+        <td>
+            <label>Start Date</label>
+            <input pikaday="myPickerObject" />
+        </td>
+        <td>
+            <label>End Date</label>
+            <input pikaday="myPickerObject" />
+        </td>
     </tr>
 </table>
 </body>
