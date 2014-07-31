@@ -1,9 +1,0 @@
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\TestServer.exe.config
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\TestServer.exe
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\TestServer.pdb
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\obj\Debug\TestServer.csprojResolveAssemblyReference.cache
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\obj\Debug\TestServer.exe
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\obj\Debug\TestServer.pdb
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\Newtonsoft.Json.dll
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\Newtonsoft.Json.pdb
-\\state-opera.ecs.vuw.ac.nz\rimmermich\visual studio 2012\Projects\TestServer\TestServer\bin\Debug\Newtonsoft.Json.xml

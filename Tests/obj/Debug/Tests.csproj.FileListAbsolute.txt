@@ -3,3 +3,13 @@ C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\bin\Debug
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\bin\Debug\Tests.pdb
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\obj\Debug\Tests.dll
 C:\Users\evdev01\documents\visual studio 2012\Projects\Nconnect2\Tests\obj\Debug\Tests.pdb
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\obj\Debug\Tests.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\Tests.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\Tests.pdb
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\DataAccess.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\EntityFramework.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\DataAccess.pdb
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\bin\Debug\EntityFramework.xml
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\Tests\obj\Debug\Tests.pdb

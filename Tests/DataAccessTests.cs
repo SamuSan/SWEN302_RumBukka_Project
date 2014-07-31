@@ -11,7 +11,6 @@ namespace Tests
         [TestMethod]
         public void TestConnection()
         {
-            BookingContext db = new BookingContext();
             
 
 

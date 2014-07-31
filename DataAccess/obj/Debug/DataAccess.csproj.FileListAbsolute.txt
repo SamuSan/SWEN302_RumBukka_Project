@@ -26,3 +26,17 @@ C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug
 C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
 C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\CrystalJ\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\MySql.Data.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.Migrations.Initial.resources
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\evdev01\Documents\GitHub\SWEN302_RumBukka_Project\DataAccess\obj\Debug\DataAccess.pdb
