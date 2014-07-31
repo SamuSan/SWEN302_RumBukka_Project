@@ -15,7 +15,7 @@
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.js"></script>
     <script src="script.js"></script>
-    <script src="addPersonController.js"></script>
+    <script src="Controllers/addPersonController.js"></script>
 
 
 
@@ -65,8 +65,8 @@
         <td>
             <div>
             <select id="departmentSelection"
-                    ng-model="newUser.Organistion_Organisation_Id"
-                    ng-options="depart for depart in departs">
+                    ng-model="defaultDep"
+                    ng-options="datum for datum in departs">
 
             </select>
             </div>
