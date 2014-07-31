@@ -8,8 +8,8 @@ rumBukkaApp.config(function ($routeProvider) {
         // route for the home page
         .when('/', {
             templateUrl: 'addBooking.html',
-        });
-                .when('/addPerson', {
+        })
+        .when('/addPerson', {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
         });
