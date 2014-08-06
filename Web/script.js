@@ -13,6 +13,10 @@ rumBukkaApp.config(function ($routeProvider) {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
         })
+                .when('/roomTimeline', {
+            templateUrl: 'roomTimeline.html',
+            controller:'roomTimelineController'
+        })
                 .when('/addBooking', {
             templateUrl: 'addBooking.html',
             controller:'addBookingController'
