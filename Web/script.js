@@ -12,7 +12,11 @@ rumBukkaApp.config(function ($routeProvider) {
         .when('/addPerson', {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
-        });
+        })
+                .when('/addBooking', {
+            templateUrl: 'addBooking.html',
+            controller:'addBookingController'
+        });;
 });
 
 

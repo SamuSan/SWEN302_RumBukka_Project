@@ -9,23 +9,66 @@
     <!-- SPELLS -->
     <!-- load angular via CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
     <script src="script.js"></script>
+     <script src="Controllers/addBookingController.js"></script>
+         <script src="Pikaday/pikaday.js"></script>
+    <script src="Pikaday/angular-pikaday.js"></script>
 </head>
 
 
 
-<body>
-	<table>
-<tr>
-<td class="rbs-td">
-	<h2>
-Room Booking
-</h2>
-</td>
+<body ng-controller="addBookingController">
 
-<td> ID: </td><td></td>
-</tr>
+
+	<table>
+
 	</table>
+
+        <table>
+            <tr>
+            <td class="rbs-td">
+            <h2>Room Booking</h2>
+            </td>
+            <tr><td> ID: </td></tr>
+
+            <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Search Profile ID </label></td>
+                <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
+            </tr>
+            <tr>
+                <td><label>Profile: </label></td>
+                <td>
+                    <select ng-model="myProfile" ng-options="entry.fname for entry in Profiles"></select></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Start Time </label></td>
+                <td><input  ng-model="input2" ng-trim="false" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>End Time </label></td>
+                <td><input ng-model="input3" ng-trim="false"/></td>
+            </tr>
+            <tr>
+                <td><label>Room: </label></td>
+                <td>
+                    <select ng-model="myRoom" ng-options="entry for entry in Rooms"></select></td>
+            </tr>
+            <tr>
+            <tr>
+          <td>  <button type="submit" class="btn"
+                    ng-click="submit()"
+                    >Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+            </tr>
+        </table>  
 
 </body>
 </html>
