@@ -20,7 +20,7 @@ rumBukkaApp.config(function ($routeProvider) {
                 .when('/addBooking', {
             templateUrl: 'addBooking.html',
             controller:'addBookingController'
-        });;
+        });
 });
 
 

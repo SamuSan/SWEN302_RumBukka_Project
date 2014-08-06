@@ -23,12 +23,39 @@
 
 <!-- MAIN CONTENT AND INJECTED VIEWS -->
 <form name ='roomtimeline'>
-<body ng-controller="roomTimelineController">
+<body >
 
 <h3>Room Timeline Visualisation</h3>
 <table>
 
 <tr><td> <label>PlaceHolder</label></td></tr>
+
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+       'version':'1','packages':['timeline']}]}"></script>
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var container = document.getElementById('example1');
+
+  var chart = new google.visualization.Timeline(container);
+
+  var dataTable = new google.visualization.DataTable();
+
+  dataTable.addColumn({ type: 'string', id: 'President' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+
+  dataTable.addRows([
+    [ 'Washington', new Date(1789, 3, 29), new Date(1797, 2, 3) ],
+    [ 'Adams',      new Date(1797, 2, 3),  new Date(1801, 2, 3) ],
+    [ 'Jefferson',  new Date(1801, 2, 3),  new Date(1809, 2, 3) ]]);
+
+  chart.draw(dataTable);
+}
+</script>
+<div id="example1" style="width: 900px; height: 180px;"></div>
+
 
 </table>
 </body>
