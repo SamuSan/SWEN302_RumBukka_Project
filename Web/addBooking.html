@@ -5,21 +5,23 @@
 <head>
 	    <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>	
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" />
     <!-- SPELLS -->
     <!-- load angular via CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.js"></script>
     <script src="script.js"></script>
-     <script src="Controllers/addBookingController.js"></script>
-         <script src="Pikaday/pikaday.js"></script>
+    <script src="Controllers/addBookingController.js"></script>
+    <script src="Pikaday/pikaday.js"></script>
     <script src="Pikaday/angular-pikaday.js"></script>
 </head>
 
 
-
-<body ng-controller="addBookingController">
+<form name ='addPersonForm'>
+<div ng-controller="addBookingController">
 
 
 	<table>
@@ -43,12 +45,18 @@
             <tr>
                 <td><label>Profile: </label></td>
                 <td>
-                    <select ng-model="myProfile" ng-options="entry.fname for entry in Profiles"></select></td>
+                    <select ng-model="currentProfile" ng-options="entry.fname for entry in Profiles" ng-click="select()"></select></td>
             </tr>
             <tr>
                 <td>
                     <label>Start Time </label></td>
-                <td><input  ng-model="input2" ng-trim="false" /></td>
+                <td>
+                    <!--input  ng-model="input2" ng-trim="false" /-->
+            <div>
+            <p>
+             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
+            </div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -61,7 +69,6 @@
                     <select ng-model="myRoom" ng-options="entry for entry in Rooms"></select></td>
             </tr>
             <tr>
-            <tr>
           <td>  <button type="submit" class="btn"
                     ng-click="submit()"
                     >Submit
@@ -70,5 +77,5 @@
             </tr>
         </table>  
 
-</body>
+</div></form>
 </html>
