@@ -11,6 +11,8 @@ using System.Net;
 using System.Web;
 using Newtonsoft.Json;
 using System.IO;
+using Server.Interfaces;
+using Server.Handlers;
 
 namespace Server
 {
@@ -23,6 +25,8 @@ namespace Server
 
             handlers = new List<HttpHandler>();
             handlers.Add(new RoomsHandler());
+            handlers.Add(new BookingsHandler());
+            handlers.Add(new UsersHandler());
 
             SyncServer();
         }
@@ -73,7 +77,7 @@ namespace Server
                             else
                                 response = handler.getList();
                         }
-                        catch (Exception ex) { response = ex.Message; }
+                        catch (Exception ex) { response = ex.Message + "<br />" + ex.StackTrace; }
 
                     }
 

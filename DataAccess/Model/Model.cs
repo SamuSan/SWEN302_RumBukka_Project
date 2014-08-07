@@ -1,4 +1,4 @@
-﻿using DataAccess.Model;
+using DataAccess.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -32,7 +32,6 @@ namespace DataAccess.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
 
             modelBuilder.Entity<Phone>()
                 .HasMany(x => x.Rooms)

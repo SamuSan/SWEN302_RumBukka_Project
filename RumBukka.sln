@@ -1,8 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{49F6800E-A06A-455E-A45A-7A53C16C48CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessExample", "DataAccessExample\DataAccessExample.csproj", "{D2BA1B39-BCF7-43A0-999D-190D7B33F7E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{2DD3EC21-3D9B-40C0-87C3-02B8AD8D083A}"

@@ -5,9 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace DataAccess.Model
 {
+    [JsonObject(MemberSerialization.OptOut)]
     [Table("booking")]
     public class Booking
     {
