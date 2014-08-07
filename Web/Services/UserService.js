@@ -1,5 +1,5 @@
 rumBukkaApp.factory('userData', function($resource, $q){
-	var connection = $resource('/Users', {}, {
+	var connection = $resource('http://localhost:8081/api/users', {}, {
 		get: {
 			method: 'GET',
 			isArray: true
@@ -9,7 +9,7 @@ rumBukkaApp.factory('userData', function($resource, $q){
 	});
 	return {
 		getUsers: function(){
-			return connection.get();
+		      return connection.get();
 		}
 
 	}

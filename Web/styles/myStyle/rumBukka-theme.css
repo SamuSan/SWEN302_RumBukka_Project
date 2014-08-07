@@ -1,0 +1,356 @@
+
+body {
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #777777;
+    background-color: #ffffff;
+}
+
+/* Header */
+
+.rb-nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.rb-nav > li {
+    position: relative;
+    display: block;
+}
+.rb-nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.rb-nav > li > a:hover,
+.rb-nav > li > a:focus {
+    text-decoration: none;
+    background-color: #eee;
+}
+.rb-nav > li.disabled > a {
+    color: #999;
+}
+.rb-nav > li.disabled > a:hover,
+.rb-nav > li.disabled > a:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+.rb-nav .open > a,
+.rb-nav .open > a:hover,
+.rb-nav .open > a:focus {
+    background-color: #eee;
+border-color: #269832;
+}
+@media (min-width: 768px) {
+    .rb-navbar-right .dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+    .rb-navbar-right .dropdown-menu-left {
+        right: auto;
+        left: 0;
+    }
+}
+.rb-navbar-nav.rb-navbar-right:last-child {
+    margin-right: -10px;
+}
+@media (min-width: 768px) {
+    .rb-navbar-left {
+        float: left !important;
+    }
+    .rb-navbar-right {
+        float: right !important;
+    }
+}
+
+.rb-navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    color: #ffffff;
+}
+@media (min-width: 768px) {
+    .rb-navbar {
+        border-radius: 4px;
+    }
+}
+@media (min-width: 768px) {
+    .rb-navbar-header {
+        float: left;
+    }
+}
+
+
+
+    .rb-navbar-nav {
+        float: left;
+        margin: 0;
+    }
+    .rb-navbar-nav > li {
+        float: left;
+    }
+    .rb-navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .rb-navbar-default .rb-navbar-nav > li > a:hover,
+    .rb-navbar-default .rb-navbar-nav > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .rb-navbar-default .rb-navbar-nav > .active > a,
+    .rb-navbar-default .rb-navbar-nav > .active > a:hover,
+    .rb-navbar-default .rb-navbar-nav > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .rb-navbar-default .rb-navbar-nav > .disabled > a,
+    .rb-navbar-default .rb-navbar-nav > .disabled > a:hover,
+    .rb-navbar-default .rb-navbar-nav > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+
+    .rb-navbar-default {
+        background-color: rgba(153, 204, 255, 0.69);
+        border-color: #e7e7e7;
+    }
+    .rb-navbar-default .rb-navbar-brand {
+        color: #ffffff;
+    }
+
+
+    .rb-navbar-default .rb-navbar-brand:hover,
+    .rb-navbar-default .rb-navbar-brand:focus {
+        color: #5e5e5e;
+        background-color: transparent;
+    }
+    .rb-navbar-default .rb-navbar-text {
+        color: #777;
+    }
+    .rb-navbar-default .rb-navbar-nav > li > a {
+        color: #ffffff;
+    }
+    .rb-navbar-default .rb-navbar-nav > li > a:hover,
+    .rb-navbar-default .rb-navbar-nav > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .rb-navbar-default .rb-navbar-nav > .active > a,
+    .rb-navbar-default .rb-navbar-nav > .active > a:hover,
+    .rb-navbar-default .rb-navbar-nav > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .rb-navbar-default .rb-navbar-nav > .disabled > a,
+    .rb-navbar-default .rb-navbar-nav > .disabled > a:hover,
+    .rb-navbar-default .rb-navbar-nav > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+    .rb-navbar-default .rb-navbar-toggle {
+        border-color: #ddd;
+    }
+    .rb-navbar-default .rb-navbar-toggle:hover,
+    .rb-navbar-default .rb-navbar-toggle:focus {
+        background-color: #ddd;
+    }
+    .rb-navbar-default .rb-navbar-toggle .icon-bar {
+        background-color: #888;
+    }
+    .rb-navbar-default .rb-navbar-collapse,
+    .rb-navbar-default .rb-navbar-form {
+        border-color: #e7e7e7;
+    }
+    .rb-navbar-default .rb-navbar-nav > .open > a,
+    .rb-navbar-default .rb-navbar-nav > .open > a:hover,
+    .rb-navbar-default .rb-navbar-nav > .open > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    @media (max-width: 767px) {
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > li > a {
+            color: #777;
+        }
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > li > a:hover,
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #333;
+            background-color: transparent;
+        }
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .active > a,
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .active > a:hover,
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #555;
+            background-color: #e7e7e7;
+        }
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .disabled > a,
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .disabled > a:hover,
+        .rb-navbar-default .rb-navbar-nav .open .dropdown-menu > .disabled > a:focus {
+            color: #ccc;
+            background-color: transparent;
+        }
+    }
+    .rb-navbar-default .navbar-link {
+        color: #777;
+    }
+    .rb-navbar-default .navbar-link:hover {
+        color: #333;
+    }
+
+
+    .rb_container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (min-width: 768px) {
+        .rb-navbar-header {
+            float: left;
+        }
+    }
+    .rb-navbar-brand {
+        float: left;
+        height: 50px;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .rb-navbar-brand:hover,
+    .rb-navbar-brand:focus {
+        text-decoration: none;
+    }
+    .rb-navbar-default .rb-navbar-brand {
+        color: #ffffff;
+    }
+    .rb-navbar-default .rb-navbar-brand:hover,
+    .rb-navbar-default .rb-navbar-brand:focus {
+        color: #5e5e5e;
+        background-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+        .rb-navbar > .rb-container .navbar-brand,
+        .rb-navbar > .rb-container-fluid .navbar-brand {
+            margin-left: -15px;
+        }
+    }
+
+/* Sidebar */
+.rbContainer{
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.rbNavContainer{
+    margin-right: auto;
+    margin-left: auto;
+    width : 180px;
+    float: left;
+
+}
+
+.rbbar-default{
+    border-radius: 10px;
+    text-align: left;
+    width: auto;
+    height: auto;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #f1f1f1;
+    border-color: #e7e7e7;
+    margin-left: 5%;
+    padding-top: 20px;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+
+}
+
+.rbNav{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.rbbar-nav > li > a {
+    color: #333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: 30px;
+}
+.rbbar-default .rbbar-nav > li > a:hover,
+.rbbar-default .rbbar-nav > li > a:focus {
+    text-decoration: none;
+    color: #269832;
+    background-color: transparent;
+}
+
+.rbContainerWindow{
+    border-radius: 10px;
+    float: left;
+    width: 82%;
+    height: auto;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color:  #f1f1f1;
+    border-color: #e7e7e7;
+    margin-left: 1%;
+    padding-top: 20px;
+
+    padding-left: 20px;
+    padding-right: 0px;
+    line-height: 30px;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+
+}
+/* Footer*/
+.rbfooter{
+    border-radius: 10px;
+    float: left;
+    width: auto;
+    height: auto;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.42857143;
+    color: #333;
+    /*(background-color: rgba(38, 129, 45, 0.69);*/
+    border-color: #e7e7e7;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right:10px;
+
+}
+.rb-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 5;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: rgba(38, 129, 45, 0.69);
+    border-radius: 5px;
+}
+
+

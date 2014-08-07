@@ -1,20 +1,18 @@
 
 
-rumBukkaApp.controller('addBookingController', function ($scope, $route, $location, $window, $rootScope) {
+rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData) {
 
-
-        $scope.Profiles = [{},
-      {fname:'Jimmy',lname:'Smitts',sid:'001',stype: "001",Org: "001",ph:"111"},
-      {fname:'Sam', lname:'Wise',sid:'004',stype: "001",Org: "001",ph:"111"},
-      {fname:'Ben', lname:'Chang',sid:'002',stype: "001",Org: "001",ph:"111"},
-      {fname:'Crystal',lname:'Meth', sid:'003',stype: "001",Org: "001",ph:"111"},
-      {fname:'Daygen',lname:'NiteStart', sid:'005',stype: "001",Org: "001",ph:"111"},
-      {fname:'Mike',lname:'OnYourBike', sid:'006',stype: "001",Org: "001",ph:"111"}
-    ];
+    userData.getUsers().$promise.then(function(users){
+      $scope.Profiles = users;
+      
+      $scope.currentProfile = users[0];
+      
+      alert(users.length);
+      
+    });
 
     $scope.Rooms = ["A","B","C","D"];
 
-    $scope.currentProfile = $scope.Profiles[0];
         $scope.addBook = {
         "FirstName": "",
         "LastName": "",

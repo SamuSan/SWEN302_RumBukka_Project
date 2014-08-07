@@ -37,7 +37,6 @@ namespace Server
             var listener = new HttpListener();
 
             listener.Prefixes.Add("http://localhost:8081/");
-            listener.Prefixes.Add("http://130.195.6.107:8081/");
 
             listener.Start();
 
