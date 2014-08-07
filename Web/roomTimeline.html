@@ -16,6 +16,8 @@
     <script src="angular/angular-route.js"></script>
     <script src="script.js"></script>
     <script src="Controllers/roomTimelineController.js"></script>
+    <script src="googleChart/ng-google-chart.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 
 
@@ -23,41 +25,26 @@
 
 <!-- MAIN CONTENT AND INJECTED VIEWS -->
 <form name ='roomtimeline'>
-<body >
+<body ng-controller ="roomTimelineController">
 
 <h3>Room Timeline Visualisation</h3>
-<table>
+  <div google-chart chart="chart"
+   style="border:1px inset black;padding:0;width:400px">
+  </div>
 
-<tr><td> <label>PlaceHolder</label></td></tr>
+  <p>
+    Software: <input type=range min=10000 max=100000 value={{aa}} ng-model="aa" ng-change="chart.data[1][1]=1*aa"> {{aa}}
+  </p>
+  <p>
+    Hardware: <input type=range min=10000 max=100000 value={{bb}} ng-model="bb" ng-change="chart.data[2][1]=1*bb">{{bb}}
+  </p>
+  <p>
+    Services: <input type=range min=10000 max=100000 value={{cc}} ng-model="cc" ng-change="chart.data[3][1]=1*cc">{{cc}}
+  </p>
 
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
-       'version':'1','packages':['timeline']}]}"></script>
-<script type="text/javascript">
-google.setOnLoadCallback(drawChart);
+  <h2>Chart data as JSON:</h2>
 
-function drawChart() {
-  var container = document.getElementById('example1');
-
-  var chart = new google.visualization.Timeline(container);
-
-  var dataTable = new google.visualization.DataTable();
-
-  dataTable.addColumn({ type: 'string', id: 'President' });
-  dataTable.addColumn({ type: 'date', id: 'Start' });
-  dataTable.addColumn({ type: 'date', id: 'End' });
-
-  dataTable.addRows([
-    [ 'Washington', new Date(1789, 3, 29), new Date(1797, 2, 3) ],
-    [ 'Adams',      new Date(1797, 2, 3),  new Date(1801, 2, 3) ],
-    [ 'Jefferson',  new Date(1801, 2, 3),  new Date(1809, 2, 3) ]]);
-
-  chart.draw(dataTable);
-}
-</script>
-<div id="example1" style="width: 900px; height: 180px;"></div>
-
-
-</table>
+  <pre style='clear:both; background-color: lightgray;'>{{chart|json}}</pre>
 </body>
 </form>
 </html>
