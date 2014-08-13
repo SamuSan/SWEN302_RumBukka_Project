@@ -1,4 +1,4 @@
-mBukkaApp.controller('modifyBookingController', function ($scope, $route, $location, $window, $rootScope) {
+rumBukkaApp.controller('modifyBookingController', function ($scope, $route, $location, $window, $rootScope) {
 
 
         $scope.Profiles = [{},
