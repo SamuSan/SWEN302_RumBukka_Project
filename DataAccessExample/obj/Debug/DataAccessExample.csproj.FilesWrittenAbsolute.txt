@@ -56,3 +56,14 @@
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/DataAccess.dll.mdb
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/MySql.Data.dll
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/MySql.Data.Entity.EF6.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/DataAccessExample.exe.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/DataAccessExample.exe
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/obj/Debug/DataAccessExample.exe
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/obj/Debug/DataAccessExample.exe.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/EntityFramework.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/MySql.Data.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/MySql.Data.Entity.EF6.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/Newtonsoft.Json.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/DataAccess.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/DataAccessExample/bin/Debug/DataAccess.dll.mdb

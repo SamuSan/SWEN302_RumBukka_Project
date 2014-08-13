@@ -20,3 +20,14 @@
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/MySql.Data.dll
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/DataAccess.dll
 /am/state-opera/home1/rimmermich/Desktop/GitHub/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/DataAccess.dll.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/HttpServer.exe.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/HttpServer.exe
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/obj/Debug/HttpServer.exe
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/obj/Debug/HttpServer.exe.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/EntityFramework.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/EntityFramework.SqlServer.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/MySql.Data.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/DataAccess.dll
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/DataAccess.dll.mdb
+/am/rialto/home1/byforddayg/Clone/SWEN302_RumBukka_Project/HttpServer/HttpServer/bin/Debug/MySql.Data.Entity.EF6.dll
