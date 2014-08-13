@@ -55,10 +55,11 @@ namespace Server
                     Object response = null;
 
 
-
+ string json  = string.Empty;
                     if (path.Count == 0)
                     {
-                        response = File.OpenText("index.html").ReadToEnd();
+                        json = File.OpenText("../../../Web/index.html").ReadToEnd();
+                        context.Response.Headers.Add("content-type", "text/html");
                     }
                     else if (path.Count > 0 && path[0].Equals("api"))
                     {
@@ -78,12 +79,28 @@ namespace Server
                         }
                         catch (Exception ex) { response = ex.Message + "<br />" + ex.StackTrace; }
 
-                    }
+                    
 
-                    string json = JsonConvert.SerializeObject(response);
-
+			json = JsonConvert.SerializeObject(response);
+		    }
+		    else
+		    {
+		      json = File.OpenText("../../../Web/" + url).ReadToEnd();
+		      switch(url.Substring(url.LastIndexOf('.'))) 
+		      {
+			case "css":
+			  context.Response.Headers.Add("content-type", "text/css");
+			  break;
+			case "js":
+			  context.Response.Headers.Add("content-type", "text/javascript");
+			  break;
+			
+		      
+		      }
+		    }
 
                     var bytes = Encoding.UTF8.GetBytes(json);
+                    
                     context.Response.OutputStream.Write(bytes, 0, bytes.Length);
 
                     context.Response.Close();
