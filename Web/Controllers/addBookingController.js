@@ -1,5 +1,3 @@
-
-
 rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData) {
 
     userData.getUsers().$promise.then(function(users){
@@ -103,7 +101,4 @@ angular.module('rumBukkaApp')
         }
     };
 });
-
-
-
 
