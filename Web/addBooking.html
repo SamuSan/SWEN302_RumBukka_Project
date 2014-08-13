@@ -1,3 +1,86 @@
+<<<<<<< HEAD
+<!-- addBooking.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Pikaday/css/pikaday.css"/>
+       <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="Controllers/addBookingController.js"></script>
+    <script src="Pikaday/pikaday.js"></script>
+    <script src="Pikaday/angular-pikaday.js"></script>
+    <script src="Services/UserData.js"></script>
+    <script src="angular/angular-resource.min.js"></script>
+</head>
+
+
+<form name ='addPersonForm'>
+<div ng-controller="addBookingController">
+
+
+	<table>
+
+	</table>
+
+        <table>
+            <tr>
+            <td class="rbs-td">
+            <h2>Room Booking</h2>
+            </td>
+            <tr><td> ID: </td></tr>
+
+            <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Search Profile ID </label></td>
+                <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
+            </tr>
+            <tr>
+                <td><label>Profile: </label></td>
+                <td>
+                    <select ng-model="currentProfile" ng-options="entry.fname for entry in Profiles" ng-click="select()"></select></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Start Time </label></td>
+                <td>
+                    <!--input  ng-model="input2" ng-trim="false" /-->
+            <div>
+            <p>
+             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
+            </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>End Time </label></td>
+                <td><input ng-model="input3" ng-trim="false"/></td>
+            </tr>
+            <tr>
+                <td><label>Room: </label></td>
+                <td>
+                    <select ng-model="myRoom" ng-options="entry for entry in Rooms"></select></td>
+            </tr>
+            <tr>
+          <td>  <button type="submit" class="btn"
+                    ng-click="submit()"
+                    >Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+            </tr>
+        </table>  
+
+</div></form>
+=======
 <!-- addBooking.html -->
 <!DOCTYPE html>
 <html>
@@ -91,4 +174,5 @@
         </table>  
 
 </div></form>
+>>>>>>> a04dd9017c5e4c3a4ba5e0b8ff3308f77fe951bc
 </html>

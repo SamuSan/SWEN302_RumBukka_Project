@@ -1,5 +1,3 @@
-
-
 rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData) {
 
     userData.getUsers().$promise.then(function(users){
@@ -56,7 +54,51 @@ $scope.select = function(){
 
 
 });
+angular.module('rumBukkaApp')
+    .directive('myDateinput', function () {
+    var time_formatters = ['h', 'H', 'hh', 'HH', 'm', 'mm', 's', 'ss'];
+    return {
+        require: 'ngModel',
 
+        link: function (scope, element, attrs, ctrl) {
+            var input_element = element[0];
+            var date_options = {
+                field: input_element,
+                format: attrs.myDateinput ? attrs.myDateinput : 'MMM D YYYY'
+            };
 
+            // Use the format to determine if we want time
+            for (var i in time_formatters) {
+                if (date_options.format.indexOf(time_formatters[i]) !== -1) {
+                    date_options.showTime = true;
+                    if (date_options.format.indexOf('s') !== -1 || date_options.format.indexOf('ss') !== -1) {
+                        date_options.showSeconds = true;
+                    }
+                    break;
+                }
+            }
 
+            // Wire up controller
+            date_options.onSelect = function (selected_date) {
+                scope.$apply(function () {
+                    ctrl.$setViewValue(selected_date);
+                });
+            };
+            scope.picker = new Pikaday(date_options);
+
+            // Add some validation
+            ctrl.$parsers.unshift(function (viewValue) {
+                // Blank or an actual Date (from Pikaday) is valid
+                if (viewValue === '' || viewValue === undefined || viewValue instanceof Date) {
+                    ctrl.$setValidity('date', true);
+                    return viewValue;
+                } else {
+                    ctrl.$setValidity('date', false);
+                    return undefined;
+                }
+            });
+
+        }
+    };
+});
 

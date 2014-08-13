@@ -7,8 +7,9 @@
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
-    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" />
+    <!--link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" /-->
+    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
 
     <!-- SPELLS -->
     <!-- load angular via CDN -->
@@ -17,6 +18,8 @@
     <script src="angular/angular-resource.min.js"></script>
     <script src="script.js"></script>
     <script src="Controllers/addPersonController.js"></script>
+    <script src="Pikaday/pikaday.js"></script>
+    <script src="Pikaday/angular-pikaday.js"></script>
     <script src="Controllers/addBookingController.js"></script>
     <script src="Controllers/roomTimelineController.js"></script>
     <script src="Controllers/modifyBookingController.js"></script>
@@ -31,23 +34,24 @@
 
 <!-- HEADER AND NAVBAR -->
 <header>
+<nav class="rb-navbar rb-navbar-default">
+<div class = "rb-hLinking-container">
+<div class = "rb-hLink-container"> <a class= "rb-header-link" href = "#addPerson">Person</a> </div>
+<div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addBooking">Booking</a> </div>
+<div class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>
+<div class = "rb-hLink-container"><a class= "rb-header-link" href = "#modifyBooking">Modifybooking</a></div>
+</div>
 
+</nav>
 </header>
 
 <!-- MAIN CONTENT AND INJECTED VIEWS -->
 
-<div><a href = "#addPerson">person</a> </div>
-<div><a href = "#addBooking">booking</a> </div>
-<div><a href = "#roomTimeline">roomTimeline</a> </div>
-<div><a href = "#modifyBooking">modifybooking</a> </div>
         <!--{{message}} -->
         <!-- angular templating -->
         <!-- this is where content will be injected -->
         <div ng-view=""></div> 
 
-
-    
-
-
 </body>
 </html>
+
