@@ -9,15 +9,14 @@
 
     <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
     <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" />
-    <link rel="stylesheet" type="text/css" href="Pikaday/css/pikaday.css">
+<!--     <link rel="stylesheet" type="text/css" href="Pikaday/css/pikaday.css"> -->
     <!-- SPELLS -->
     <!-- load angular via CDN -->
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.js"></script>
+    <script src="angular/ui-bootstrap-tpls-0.11.0.js"></script>    
     <script src="script.js"></script>
     <script src="Controllers/addBookingController.js"></script>
-  <!--    <script src="Pikaday/pikaday.js"></script>
-  <script src="Pikaday/angular-pikaday.js"></script> -->
     <script src="Services/UserData.js"></script>
     <script src="angular/angular-resource.min.js"></script>
 </head>
@@ -54,7 +53,16 @@
                 <td>
                     <label>Start Date </label></td>
                 <td>
-                    <!--input  ng-model="input2" ng-trim="false" /-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="input-group">
+                              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
+                            </p>
+                        </div>
+                    </div>
             <div>
             <p>
            <!--  <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>-->
