@@ -61,7 +61,7 @@ $scope.select = function(){
 });
 
 angular.module('calendar', ['ui.bootstrap']);
-var DatepickerDemoCtrl = function ($scope) {
+var addBookingController = function ($scope) {
   $scope.today = function() {
     $scope.dt = new Date();
   };
