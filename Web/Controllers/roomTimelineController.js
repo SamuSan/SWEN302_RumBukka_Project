@@ -1,33 +1,47 @@
+
+
 rumBukkaApp.controller('roomTimelineController', function ($scope, $route, $location, $window, $rootScope) {
+  google.load('visualization', '1', {packages:['timeline']});
+  google.setOnLoadCallback(function () {
+      angular.bootstrap(document.body, ['rumBukkaApp']);
+      $scope.loadChart();
+  });
 
- var chart1 = {};
-    chart1.type = "PieChart";
-    chart1.data = [
-       ['Component', 'cost'],
-       ['Software', 50000],
-       ['Hardware', 80000]
-      ];
-    chart1.data.push(['Services',20000]);
-    chart1.options = {
-        displayExactValues: true,
-        width: 400,
-        height: 200,
-        is3D: true,
-        chartArea: {left:10,top:10,bottom:0,height:"100%"}
+$scope.loadChart = function(){
+  var datab = new google.visualization.DataTable();
+
+  datab.addColumn({ type: 'string', id: 'President' });
+  datab.addColumn({ type: 'date', id: 'Start' });
+  datab.addColumn({ type: 'date', id: 'End' });
+
+  datab.addRows([
+    [ 'Sam Minns', new Date(2014, 3, 29), new Date(2016, 3, 29) ],
+    [ 'James Watkins', new Date(2014, 1, 30),  new Date(2016, 2, 3) ],
+    [ 'Box Widehole',  new Date(2014, 5, 13),  new Date(2016, 2, 3) ],
+    [ 'Michael Rimmer',new Date(2014, 2, 3),  new Date(2016, 6, 3) ]]
+    );
+
+ var options = {
+          title: 'Company Performance'
+        };
+
+        var chart = {};
+        chart.data = data;
+        chart.options = options;
+
+        $scope.chartTypes = [
+                    { typeName: 'TimeLine', typeValue: '1' }
+        ];
+
+          $scope.selectType = function (type) {
+                  $scope.chart.type = type.typeValue;
+              $scope.chart.typeName = type.typeName;
+          }
+
+        chart.type = $scope.chartTypes[0].typeValue;
+        chart.typeName = $scope.chartTypes[0].typeName;
+        $scope.chartType = $scope.chartTypes[0];
+  
+        $scope.chart = chart;
     };
-
-    chart1.formatters = {
-      number : [{
-        columnNum: 1,
-        pattern: "$ #,##0.00"
-      }]
-    };
-
-    $scope.chart = chart1;
-
-    $scope.aa=1*$scope.chart.data[1][1];
-    $scope.bb=1*$scope.chart.data[2][1];
-    $scope.cc=1*$scope.chart.data[3][1];
-
- 
-});
+  });
