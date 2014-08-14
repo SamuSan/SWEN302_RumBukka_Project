@@ -1,0 +1,50 @@
+<!-- addBooking.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-theme.css" />
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/RBS-icons.css" />
+    <link rel="stylesheet" type="text/css" href="Pikaday/css/pikaday.css">
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="Controllers/addBookingController.js"></script>
+    <script src="Pikaday/pikaday.js"></script>
+    <script src="Pikaday/angular-pikaday.js"></script>
+    <script src="Services/UserData.js"></script>
+    <script src="angular/angular-resource.min.js"></script>
+</head>
+
+
+<div ng-controller="addRoomController">
+
+
+	<table>
+
+	</table>
+
+        <table>
+            <tr>
+            <td class="rbs-td">
+            <h2>Add Room</h2>
+            </td>
+            <tr><td> ID: </td></tr>
+            <tr><td>Name</td><td><input type="text" ng-model="room.RoomName" value="{{room.RoomName}}" /></td></tr>
+            <tr><td>Organisation</td><td><select type="text" ng-model="room.Organisation" ng-options="entry.OrganisationName for entry in orgs"> </select></td></tr>
+            <tr><td>Capacity</td><td><input type="text" ng-model="room.Capacity" value="{{room.Capacity}}" /></td></tr>
+            <tr>
+          <td>  <button type="submit" class="btn" ng-click="submit()">Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+            </tr>
+        </table>  
+
+</div></form>
+</html>
