@@ -61,7 +61,7 @@ $scope.select = function(){
   };
   $scope.today();
   $scope.lastDay = function() {
-    $scope.ld = new Date();
+        $scope.ld = new Date();
   };
   $scope.lastDay();
   $scope.clear = function () {
@@ -74,7 +74,7 @@ $scope.select = function(){
   };
 
   $scope.toggleMin = function() {
-    $scope.minDate = $scope.minDate ? null : new Date();
+    $scope.minDate = $scope.minDate ? $scope.dt : new Date();
   };
   $scope.toggleMin();
 
