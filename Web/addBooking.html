@@ -32,19 +32,16 @@
             <td class="rbs-td">
             <h2>Room Booking</h2>
             </td>
-            <tr><td> ID: </td></tr>
-
-            <td></td>
-            </tr>
+           
             <tr>
                 <td>
                     <label>Search Profile ID </label></td>
                 <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
             </tr>
             <tr>
-                <td><label>Profile: </label></td>
+                <td><label>Student ID: </label></td>
                 <td>
-                    <select ng-model="currentProfile" ng-options="entry.FirstName for entry in Profiles" ng-click="select()"></select></td>
+                    <select ng-model="currentProfile" ng-options="entry.VUWStudentId for entry in Profiles" ng-click="select()"></select></td>
             </tr>
             <tr>
                 <td>
