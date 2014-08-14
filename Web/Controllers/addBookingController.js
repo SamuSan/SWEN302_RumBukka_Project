@@ -59,7 +59,27 @@ this.setDate(this.getDate() + days);
 return this;
 
 }
-
+$scope.dateChanged=false;
+$scope.$watch('ld',function(oldVal,newVal){ 
+    //Check for future booking
+    if(newVal < $scope.dt){
+        $scope.ld.setDate($scope.dt.getDate());
+    }
+    if(oldVal !=newVal){
+                $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
+            $scope.dateChanged=true;
+    }        
+});
+$scope.$watch('dt',function(oldVal,newVal){ 
+    //Check for future booking
+        if(newVal > $scope.ld){
+        console.log("Reutrn to the futrue")
+    }
+    if(oldVal !=newVal){
+                $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
+            $scope.dateChanged=true;
+    }        
+});
 //Set the start date
   $scope.today = function() {
     $scope.dt = new Date();
