@@ -57,7 +57,7 @@ namespace Server
 
                     Object response = null;
 
-
+		    
 		    string json  = string.Empty;
 		    
                     if (path.Count == 0)
@@ -77,13 +77,23 @@ namespace Server
                         {
                             if (path.Count > 2)
                             {
-				if(method.Equals("GET"))
+				
 				  response = handler.getSingle(int.Parse(path[2]));
+				
 			      }
                             else
                             {
-                                response = handler.getList();
-                                }
+				if(method.Equals("GET"))
+				  response = handler.getList();
+                                else 
+				{
+				
+				  //response = handler.postNew(context);
+				  StreamReader reader = new StreamReader(context.Request.InputStream);
+				  response = handler.postNew(reader.ReadToEnd());
+				  
+				}
+			      }
                         }
                         catch (Exception ex) { response = ex.Message + "<br />" + ex.StackTrace; }
 
@@ -108,7 +118,7 @@ namespace Server
 		    }
 		    
 		   
-
+		   
                     var bytes = Encoding.UTF8.GetBytes(json);
                     
                     context.Response.OutputStream.Write(bytes, 0, bytes.Length);
