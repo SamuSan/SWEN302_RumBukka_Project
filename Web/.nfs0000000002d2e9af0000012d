@@ -1,0 +1,69 @@
+<!-- addBooking.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="Controllers/modifyBookingController.js"></script>
+</head>
+
+<div ng-controller="modifyBookingController">
+        <table>
+            <tr>
+            <td class="rbs-td">
+            <h2>Modify Booking</h2>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Search Profile ID </label></td>
+                <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
+            </tr>
+            <tr>
+                <td><label>Profile: </label></td>
+                <td>
+                    <select ng-model="currentProfile" ng-options="entry.fname for entry in Profiles" ng-click="select()"></select></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Bookings for {{currentProfile.fname}}: </label>
+                <td>
+                    <select ng-model="currentBooking" ng-options="entry.Booking_Id for entry in booking" ng-click="selectBking()"></select></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Start Time </label></td>
+                <td>
+            <div>
+            <p>
+             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
+            </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>End Time </label></td>
+                <td><div>
+            <p>
+             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
+            </div></td>
+            </tr>
+          <td>  <button type="submit" class="btn"
+                    ng-click="submit()"
+                    >Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+            </tr>
+        </table>  
+
+</div>
+</html>
