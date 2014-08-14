@@ -29,6 +29,10 @@ rumBukkaApp.config(function ($routeProvider) {
                 .when('/addRoom', {
             templateUrl: 'addRoom.html',
             controller:'addRoomController'
+        })
+		.when('/modifyPerson', {
+            templateUrl: 'modifyPerson.html',
+            controller:'modifyPersonController'
         });
 
 });
