@@ -50,22 +50,7 @@
 
     </tr>
 
-    <tr>
-        <td>
-            <label>Organisation</label>
-        <td>
-            <div>
-            <select id="departmentSelection"
-                    ng-model="defaultDep"
-                    ng-options="datum for datum in departs">
-
-            </select>
-            </div>
-
-        </td>
-    </td>
-
-    </tr>
+ <tr><td><label>Organisation</label></td><td><select type="text" ng-model="room.Organisation" ng-options="entry.OrganisationName for entry in orgs"> </select></td></tr>
     <tr>
         <td>
             <label>Type</label>

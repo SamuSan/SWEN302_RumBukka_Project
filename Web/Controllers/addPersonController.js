@@ -1,9 +1,14 @@
 //rumBukkaApp = angular.module('rumBukkaApp',['ngRoute'],["ngQuickDate"]);
 
-rumBukkaApp.controller('addPersonController', function ($scope, $route, $location, $window, $rootScope) {
+rumBukkaApp.controller('addPersonController', function ($scope, $route, $location, $window, $rootScope,organisationData) {
 
-     $scope.departs = ["Engineering and Computer Science", "Science", "Maths", "Bachelor of arts/working at mcdonalds"];
-     $scope.defaultDep = $scope.departs[0];
+
+ organisationData.getOrganisations().$promise.then(function(orgs){
+    $scope.orgs = orgs;
+    
+  });
+
+
      $scope.newUser = {
         "FirstName": "",
         "LastName": "",
