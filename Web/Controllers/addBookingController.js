@@ -56,12 +56,6 @@ $scope.select = function(){
 }
 
 
-
-
-});
-
-angular.module('calendar', ['ui.bootstrap']);
-var addBookingController = function ($scope) {
   $scope.today = function() {
     $scope.dt = new Date();
   };
@@ -81,8 +75,16 @@ var addBookingController = function ($scope) {
   };
   $scope.toggleMin();
 
-  $scope.open = function($event) {
-    console.log("I AM OPENING STUFF")
+  $scope.openStart = function($event) {
+    console.log("I AM OPENING START")
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
+  
+  $scope.openEnd = function($event) {
+    console.log("I AM OPENING END")
     $event.preventDefault();
     $event.stopPropagation();
 
@@ -97,7 +99,12 @@ var addBookingController = function ($scope) {
   $scope.initDate = new Date('2016-15-20');
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
-};
+
+
+});
+
+
+
 
     
 
