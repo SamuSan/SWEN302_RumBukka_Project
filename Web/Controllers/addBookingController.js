@@ -60,7 +60,10 @@ $scope.select = function(){
     $scope.dt = new Date();
   };
   $scope.today();
-
+  $scope.lastDay = function() {
+    $scope.ld = new Date();
+  };
+  $scope.lastDay();
   $scope.clear = function () {
     $scope.dt = null;
   };
@@ -82,7 +85,7 @@ $scope.select = function(){
 
     $scope.opened = true;
   };
-  
+
   $scope.openEnd = function($event) {
     console.log("I AM OPENING END")
     $event.preventDefault();
