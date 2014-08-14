@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,7 +22,6 @@ namespace DataAccess.Model
         public Nullable<int> Type { get; set; }
         public Nullable<int> Role { get; set; }
 
-    [JsonIgnore]
         public virtual Organisation Organisation { get; set; }
 
         public virtual Phone Phone { get; set; }
