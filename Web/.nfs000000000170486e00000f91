@@ -19,15 +19,13 @@
     <script src="Controllers/addRoomController.js"></script>
     <script src="Controllers/roomTimelineController.js"></script>
     <script src="Controllers/modifyBookingController.js"></script>
-    <script src="Controllers/modifyPersonController.js"></script>
+            <script src="googleChart/ng-google-chart.js"></script>
     <script src="https://www.google.com/jsapi"></script>
     <script src="angular/ui-bootstrap-tpls-0.11.0.js"></script>
 
     <script src="Services/UserService.js"></script>
     <script src="Services/RoomService.js"></script>
     <script src="Services/OrganisationService.js"></script>
-     <script src="Services/BookingService.js"></script>
-     <script src="Directives/chart.js"></script>
 
 
 </head>
@@ -41,7 +39,6 @@
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addBooking">Booking</a> </div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#modifyBooking">Modifybooking</a></div>
-<div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addRoom">addRoom</a></div>
 </div>
 
 </nav>
