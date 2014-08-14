@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using DataAccess.Model;
 using Server.Interfaces;
+using Newtonsoft.Json;
 
 namespace Server.Handlers
 {
@@ -25,6 +26,17 @@ namespace Server.Handlers
             return db.Rooms.ToList();
         }
 
+        public object postNew(string json)
+        {
+	  
+	  Room room = JsonConvert.DeserializeObject<Room>(json);
+	  
+	  db.Rooms.Add(room);
+	  
+	  db.SaveChanges();
+	  
+	  return room;
+        }
 
     }
 }

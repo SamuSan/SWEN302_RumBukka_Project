@@ -27,6 +27,7 @@ namespace Server
             handlers.Add(new RoomsHandler());
             handlers.Add(new BookingsHandler());
             handlers.Add(new UsersHandler());
+            handlers.Add(new OrganisationsHandler());
 
             SyncServer();
         }
@@ -45,6 +46,8 @@ namespace Server
                 try
                 {
                     var context = listener.GetContext(); //Block until a connection comes in
+                    string method = context.Request.HttpMethod;
+                    
                     context.Response.StatusCode = 200;
                     context.Response.SendChunked = true;
 
@@ -55,7 +58,8 @@ namespace Server
                     Object response = null;
 
 
- string json  = string.Empty;
+		    string json  = string.Empty;
+		    
                     if (path.Count == 0)
                     {
                         json = File.OpenText("../../../Web/index.html").ReadToEnd();
@@ -63,19 +67,23 @@ namespace Server
                     }
                     else if (path.Count > 0 && path[0].Equals("api"))
                     {
-
                         HttpHandler handler = handlers.Where(i => i.GetType().Name.ToLower().Contains(path[1])).FirstOrDefault();
-
+                        
                         if (handler == null)
-                            response = "WOAH NO SUCH HANDLER FOOL";
+                            response = "No such handler";
 
 
                         try
                         {
                             if (path.Count > 2)
-                                response = handler.getSingle(int.Parse(path[2]));
+                            {
+				if(method.Equals("GET"))
+				  response = handler.getSingle(int.Parse(path[2]));
+			      }
                             else
+                            {
                                 response = handler.getList();
+                                }
                         }
                         catch (Exception ex) { response = ex.Message + "<br />" + ex.StackTrace; }
 
@@ -98,6 +106,8 @@ namespace Server
 		      
 		      }
 		    }
+		    
+		   
 
                     var bytes = Encoding.UTF8.GetBytes(json);
                     

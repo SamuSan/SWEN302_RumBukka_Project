@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,8 @@ namespace Server.Interfaces
         Object getSingle(int id);
 
         Object getList();
+        
+        Object postNew(string json);
 
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace Server.Handlers
 
         public object getSingle(int id)
         {
-            return db.Users.FirstOrDefault().FirstName;
+            return db.Users.FirstOrDefault();
         }
 
         public object getList()
@@ -23,5 +23,9 @@ namespace Server.Handlers
             return db.Users.ToList();
         }
 
+	public object postNew(string json)
+        {
+        return null;
+        }
     }
 }

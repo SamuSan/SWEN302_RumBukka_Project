@@ -1,16 +1,19 @@
-rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData) {
+
+
+rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData, roomData) {
 
     userData.getUsers().$promise.then(function(users){
       $scope.Profiles = users;
       
       $scope.currentProfile = users[0];
       
-      alert(users.length);
-      
     });
 
-    $scope.Rooms = ["A","B","C","D"];
-
+    roomData.getRooms().$promise.then(function(rooms){
+	
+      $scope.Rooms = rooms;
+      });
+    
         $scope.addBook = {
         "FirstName": "",
         "LastName": "",
@@ -21,6 +24,8 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
 
         };
 
+	
+	
     $scope.input1;    
  $scope.idSearch = function(){
 //search by id
@@ -30,7 +35,7 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
 
 $scope.submit = function(){
 //push adduser
-console.log("pro "+$scope.addBook.FirstName);
+//console.log("pro "+$scope.addBook.FirstName);
 
 }
 $scope.select = function(){
@@ -55,41 +60,56 @@ $scope.select = function(){
 
 });
 
+/*
+angular.module('rumBukkaApp')
+    .directive('myDateinput', function () {
+    var time_formatters = ['h', 'H', 'hh', 'HH', 'm', 'mm', 's', 'ss'];
+    return {
+        require: 'ngModel',
 
-angular.module('rumBukkaApp', ['ui.bootstrap']);
-var DatepickerDemoCtrl = function ($scope) {
-  $scope.today = function() {
-    $scope.dt = new Date();
-  };
-  $scope.today();
+        link: function (scope, element, attrs, ctrl) {
+            var input_element = element[0];
+            var date_options = {
+                field: input_element,
+                format: attrs.myDateinput ? attrs.myDateinput : 'MMM D YYYY'
+            };
 
-  $scope.clear = function () {
-    $scope.dt = null;
-  };
+            // Use the format to determine if we want time
+            for (var i in time_formatters) {
+                if (date_options.format.indexOf(time_formatters[i]) !== -1) {
+                    date_options.showTime = true;
+                    if (date_options.format.indexOf('s') !== -1 || date_options.format.indexOf('ss') !== -1) {
+                        date_options.showSeconds = true;
+                    }
+                    break;
+                }
+            }
 
-  // Disable weekend selection
-  $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-  };
+            // Wire up controller
+            date_options.onSelect = function (selected_date) {
+                scope.$apply(function () {
+                    ctrl.$setViewValue(selected_date);
+                });
+            };
+            scope.picker = new Pikaday(date_options);
 
-  $scope.toggleMin = function() {
-    $scope.minDate = $scope.minDate ? null : new Date();
-  };
-  $scope.toggleMin();
+            // Add some validation
+            ctrl.$parsers.unshift(function (viewValue) {
+                // Blank or an actual Date (from Pikaday) is valid
+                if (viewValue === '' || viewValue === undefined || viewValue instanceof Date) {
+                    ctrl.$setValidity('date', true);
+                    return viewValue;
+                } else {
+                    ctrl.$setValidity('date', false);
+                    return undefined;
+                }
+            });
 
-  $scope.open = function($event) {
-    $event.preventDefault();
-    $event.stopPropagation();
+        }
+    };
 
-    $scope.opened = true;
-  };
+});
 
-  $scope.dateOptions = {
-    formatYear: 'yy',
-    startingDay: 1
-  };
+    */
 
-  $scope.initDate = new Date('2016-15-20');
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  $scope.format = $scope.formats[0];
-};
+
