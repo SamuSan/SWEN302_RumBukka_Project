@@ -1,6 +1,6 @@
 
 // script.js
-var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','googlechart','ui.bootstrap']);
+var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap']);
 
 
 rumBukkaApp.config(function ($routeProvider) {
