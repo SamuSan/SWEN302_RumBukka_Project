@@ -83,6 +83,7 @@ $scope.select = function(){
     $event.preventDefault();
     $event.stopPropagation();
 
+    $scope.enOpened = false;
     $scope.opened = true;
   };
 
@@ -91,7 +92,8 @@ $scope.select = function(){
     $event.preventDefault();
     $event.stopPropagation();
 
-    $scope.opened = true;
+    $scope.opened =false;
+    $scope.enOpened = true;
   };
 
   $scope.dateOptions = {
