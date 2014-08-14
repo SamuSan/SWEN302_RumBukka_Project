@@ -16,7 +16,7 @@ rumBukkaApp.factory('roomData', function($resource, $q){
 		      return connection.get();
 		},
 		addRoom: function(room){
-		  connection.post({room: room});
+		  connection.post(room);
 		  
 		}
 
