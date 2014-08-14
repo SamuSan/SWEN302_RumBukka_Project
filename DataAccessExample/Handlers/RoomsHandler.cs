@@ -30,17 +30,14 @@ namespace Server.Handlers
         {
 	  
 	  Room room = JsonConvert.DeserializeObject<Room>(json);
-	  
-	  //return room;
-	  
-	  //room.Organisation = db.Organisations.Where(i=>i.Organisation_Id == room.Organisation.Organisation_Id).FirstOrDefault();
-	  
+	
 	  db.Rooms.Add(room);
 	  
 	  db.SaveChanges();
 	  
 	  return room;
         }
+
 
     }
 }

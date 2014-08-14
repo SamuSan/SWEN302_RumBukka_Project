@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Model;
 using Server.Interfaces;
+using Newtonsoft.Json;
 
 namespace Server.Handlers
 {
@@ -25,7 +26,14 @@ namespace Server.Handlers
 
 	public object postNew(string json)
         {
-        return null;
+	  
+	  User user = JsonConvert.DeserializeObject<User>(json);
+	
+	  db.Users.Add(user);
+	  
+	  db.SaveChanges();
+	  
+	  return user;
         }
     }
 }
