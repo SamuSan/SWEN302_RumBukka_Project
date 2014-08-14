@@ -44,7 +44,7 @@
             <tr>
                 <td><label>Profile: </label></td>
                 <td>
-                    <select ng-model="currentProfile" ng-options="entry.fname for entry in Profiles" ng-click="select()"></select></td>
+                    <select ng-model="currentProfile" ng-options="entry.FirstName for entry in Profiles" ng-click="select()"></select></td>
             </tr>
             <tr>
                 <td>
@@ -86,7 +86,7 @@
             <tr>
                 <td><label>Room: </label></td>
                 <td>
-                    <select ng-model="myRoom" ng-options="entry for entry in Rooms"></select></td>
+                    <select ng-model="myRoom" ng-options="entry.RoomName for entry in Rooms"></select></td>
             </tr>
             <tr>
           <td>  <button type="submit" class="btn"
