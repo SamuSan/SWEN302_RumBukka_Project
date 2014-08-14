@@ -60,7 +60,7 @@ $scope.select = function(){
 
 });
 
-/*
+
 angular.module('rumBukkaApp')
     .directive('myDateinput', function () {
     var time_formatters = ['h', 'H', 'hh', 'HH', 'm', 'mm', 's', 'ss'];
@@ -110,6 +110,6 @@ angular.module('rumBukkaApp')
 
 });
 
-    */
+    
 
 
