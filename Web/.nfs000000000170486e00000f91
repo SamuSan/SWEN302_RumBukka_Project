@@ -26,7 +26,6 @@
     <script src="Services/UserService.js"></script>
     <script src="Services/RoomService.js"></script>
     <script src="Services/OrganisationService.js"></script>
-     <script src="Services/BookingService.js"></script>
 
 
 </head>
@@ -40,7 +39,6 @@
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addBooking">Booking</a> </div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#modifyBooking">Modifybooking</a></div>
-<div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addRoom">addRoom</a></div>
 </div>
 
 </nav>

@@ -13,7 +13,6 @@
     <script src="angular/angular.js"></script>
     <script src="angular/angular-route.js"></script>
     <script src="script.js"></script>
-    <script src="Services/UserData.js"></script>
     <script src="Controllers/modifyBookingController.js"></script>
 </head>
 
@@ -32,14 +31,13 @@
             <tr>
                 <td><label>Profile: </label></td>
                 <td>
-                    <select ng-model="currentProfile" ng-options="entry.FirstName for entry in Profiles" ></select></td>
+                    <select ng-model="currentProfile" ng-options="entry.fname for entry in Profiles" ng-click="select()"></select></td>
             </tr>
             <tr>
                 <td>
-                    <label>Bookings for {{currentProfile.FirstName}}: </label></td>
+                    <label>Bookings for {{currentProfile.fname}}: </label>
                 <td>
-                    <select ng-model="currentBooking" ng-options="entry.Room.RoomName for entry in Bookings" ></select>
-                </td>
+                    <select ng-model="currentBooking" ng-options="entry.Booking_Id for entry in booking" ng-click="selectBking()"></select></td>
             </tr>
             <tr>
                 <td>
@@ -59,7 +57,6 @@
              <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
             </div></td>
             </tr>
-            <tr>
           <td>  <button type="submit" class="btn"
                     ng-click="submit()"
                     >Submit

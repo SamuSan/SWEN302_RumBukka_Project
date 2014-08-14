@@ -29,16 +29,13 @@
 
         <table>
             <tr>
-            <!-- <td class="rbs-td"> -->
-            <h1>Room Booking</h1>
-            <!-- </td> -->
-            <!-- <tr><td> ID: </td></tr> -->
-
-            <td></td>
-            </tr>
+            <td class="rbs-td">
+            <h2>Room Booking</h2>
+            </td>
+           
             <tr>
                 <td>
-                    <label>Search Profile ID: </label></td>
+                    <label>Search Profile ID </label></td>
                 <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
             </tr>
             <tr>
@@ -55,7 +52,7 @@
             <p>
                 <div class="col-md-6">
                     <p class="input-group">
-                      <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
+                      <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                       <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                       </span>
@@ -72,7 +69,7 @@
                     <p>
                         <div class="col-md-6">
                             <p class="input-group">
-                              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="ld" is-open="enOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="ld" is-open="enOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                               <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                               </span>
@@ -82,10 +79,6 @@
 
 
                 </td>
-            </tr>
-
-            <tr>
-               <td><label ng-model="duration" placeholder=""> Booking Period :  {{duration}}</label></td> 
             </tr>
             <tr>
                 <td><label>Room: </label></td>
