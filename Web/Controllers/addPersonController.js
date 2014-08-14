@@ -1,6 +1,6 @@
 //rumBukkaApp = angular.module('rumBukkaApp',['ngRoute'],["ngQuickDate"]);
 
-rumBukkaApp.controller('addPersonController', function ($scope, $route, $location, $window, $rootScope,organisationData) {
+rumBukkaApp.controller('addPersonController', function ($scope, $route, $location, userData, $window, $rootScope,organisationData) {
 
 
  organisationData.getOrganisations().$promise.then(function(orgs){
@@ -22,6 +22,8 @@ rumBukkaApp.controller('addPersonController', function ($scope, $route, $locatio
 
         //submit function
     $scope.submit = function(){
+      userData.addUser($scope.user);
+      /*
         var newUser = $scope.newUser;
         $scope.addUser = {
         "FirstName": "",
@@ -42,6 +44,7 @@ rumBukkaApp.controller('addPersonController', function ($scope, $route, $locatio
         addUser.Organisation_Organisation_Id = newUser.Organisation_Organisation_Id;
         addUser.startDate = newUser.startDate;
         addUser.endDate = newUser.endDate;
+	*/
     }
 
  

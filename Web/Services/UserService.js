@@ -5,6 +5,10 @@ rumBukkaApp.factory('userData', function($resource, $q){
 			method: 'GET',
 			isArray: true
 
+		},
+		post: {
+		  method: 'POST'
+		  
 		}
 
 	});
@@ -12,6 +16,10 @@ rumBukkaApp.factory('userData', function($resource, $q){
 	return {
 		getUsers: function(){
 		      return connection.get();
+		},
+		addUser: function(user){
+		  connection.post(user);
+		  
 		}
 
 	};

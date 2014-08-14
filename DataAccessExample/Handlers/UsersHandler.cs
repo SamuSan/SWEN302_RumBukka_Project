@@ -29,6 +29,8 @@ namespace Server.Handlers
 	  
 	  User user = JsonConvert.DeserializeObject<User>(json);
 	
+	  user.Organisation = db.Organisations.Where(i=>i.Organisation_Id == user.Organisation.Organisation_Id).FirstOrDefault();
+	
 	  db.Users.Add(user);
 	  
 	  db.SaveChanges();
