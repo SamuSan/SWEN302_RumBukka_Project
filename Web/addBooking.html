@@ -29,16 +29,16 @@
 
         <table>
             <tr>
-            <td class="rbs-td">
-            <h2>Room Booking</h2>
-            </td>
-            <tr><td> ID: </td></tr>
+            <!-- <td class="rbs-td"> -->
+            <h1>Room Booking</h1>
+            <!-- </td> -->
+            <!-- <tr><td> ID: </td></tr> -->
 
             <td></td>
             </tr>
             <tr>
                 <td>
-                    <label>Search Profile ID </label></td>
+                    <label>Search Profile ID: </label></td>
                 <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
             </tr>
             <tr>
@@ -82,6 +82,10 @@
 
 
                 </td>
+            </tr>
+
+            <tr>
+               <td><label ng-model="duration" placeholder=""> Booking Period :  {{duration}}</label></td> 
             </tr>
             <tr>
                 <td><label>Room: </label></td>

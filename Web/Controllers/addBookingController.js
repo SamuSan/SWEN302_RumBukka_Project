@@ -54,16 +54,25 @@ $scope.select = function(){
 
 
 }
+Date.prototype.addDays = function(days){
+this.setDate(this.getDate() + days);
+return this;
 
+}
 
+//Set the start date
   $scope.today = function() {
     $scope.dt = new Date();
   };
   $scope.today();
+  //Auto sets the end date to minimum one day after start date
   $scope.lastDay = function() {
         $scope.ld = new Date();
+        $scope.ld.addDays(1);
+        $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
   };
   $scope.lastDay();
+
   $scope.clear = function () {
     $scope.dt = null;
   };
