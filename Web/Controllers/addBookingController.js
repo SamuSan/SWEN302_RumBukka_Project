@@ -82,6 +82,7 @@ var DatepickerDemoCtrl = function ($scope) {
   $scope.toggleMin();
 
   $scope.open = function($event) {
+    console.log("I AM OPENING STUFF")
     $event.preventDefault();
     $event.stopPropagation();
 
