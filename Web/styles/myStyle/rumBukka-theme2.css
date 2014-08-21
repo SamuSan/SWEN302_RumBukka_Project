@@ -243,3 +243,35 @@ td{
 text-align: left;
 
 }
+
+/* Styles go here */
+
+ul {
+  /*cursor: pointer;*/
+  clear: both;
+  list-style-type: none;
+  width: 350px;
+  height: 20px;
+}
+
+li {
+  list-style:none;
+  float: left;
+}
+
+li.created {
+  width: 100px;
+  }
+
+li.ip {
+  width: 100px;
+}
+
+li.status {
+  width: 100px;
+  padding-left: 10px;
+}
+
+.selected {
+  background-color: red;
+}

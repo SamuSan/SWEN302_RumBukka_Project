@@ -1,29 +1,22 @@
-rumBukkaApp.controller('roomListController', function ($scope, $filter, ngTableParams) {
-
-    var data =    $scope.colors = [
-      {name:'black', shade:'dark'},
-      {name:'white', shade:'light'},
-      {name:'red', shade:'dark'},
-      {name:'blue', shade:'dark'},
-      {name:'yellow', shade:'light'}
-    ];
-    $scope.route = data;
-
-    $scope.tableParamsRoute = new ngTableParams({
-        page: 1,            // show first page
-        count: 10,          // count per page
-        sorting: {
-            company: 'asc'     // initial sorting
-        }
-    }, {
-        total: route.length, // length of route
-        getData: function ($defer, params) {
-            // use build-in angular filter
-            var orderedData = params.sorting() ?
-                $filter('orderBy')(route, params.orderBy()) :
-                route;
-
-            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-        }
-    });
+rumBukkaApp.controller ('roomListController', function ($scope, $resource, $route, $location, $window, $rootScope, roomData) {
+  roomData.getRooms().$promise.then(function(rooms){
+	
+      $scope.Rooms = rooms;
+      });
+    
+         //submit function
+    $scope.submit = function(){
+      
+if ($scope.selectedRoom != null) {
+  $location.url('/roomTimeline');
+}
+};      
+    
+    
+    $scope.selectedRoom = null;
+    $scope.setSelected = function(selectedRoom) {
+       $scope.selectedRoom = selectedRoom;
+       console.log(selectedRoom);
+       /*< class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>*/
+    }
 });

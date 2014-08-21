@@ -19,12 +19,37 @@
 </head>
 <body ng-controller="roomListController">
 		<h2>Room Summary</h2>
-		<!--table ng-table="tableParamsRoute" class="table"-->
-		
-	        <tr ng-repeat="name in route"> 
-	            
-	        </tr>
-	    </table>
-	</div>
+		<div>
+    <ul>
+        <li class="created" >
+            <a>Room</a>
+        </li>
+        <li class="ip">
+            <b>Organisation</b>
+        </li>
+        <li class="status">
+            <b>Capacity</b>
+        </li>
+    </u> 
+    <ul ng-repeat="entry in Rooms" ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
+        <li  class="created">
+          {{entry.RoomName}}
+        </li>
+        <li class="ip">
+            {{entry.Organisation.OrganisationName}}
+        </li>
+        <li class="status">
+            {{entry.Capacity}}
+        </li>
+    </ul>
+   </div>
+   
+   <td>  <button type="submit" class="btn"
+                    ng-click="submit()"
+                    >Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+	
+	
 </body>
 </html>
