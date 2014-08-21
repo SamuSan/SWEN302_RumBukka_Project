@@ -1,8 +1,89 @@
+<!-- addBooking.html -->
+<!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <meta content="">
-    <style></style>
-  </head>
-  <body></body>
+
+<head>
+	    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="Controllers/floorPlanController.js"></script>
+</head>
+
+<div ng-controller="floorPlanController">
+        <table>
+            <tr>
+            <td class="rbs-td">
+            <h2>Modify Person</h2>
+            </td>
+            <tr>
+                <td><label>Profile: </label></td>
+                <td>
+                    <select ng-model="user" ng-options="entry.FirstName for entry in Profiles" ></select></td>
+            </tr>
+            </tr>
+            
+             <tr>
+        <td>
+            <label>First Name</label>
+        </td>
+                <td>
+            <input name = "fName" ng-model="user.FirstName" ng-trim="false" type="text" />
+        </td>
+        <td>
+            <label>Surname</label>
+        </td>
+                <td>
+            <input name = "sName" ng-model="user.LastName" ng-trim="false" type="text" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Student ID</label>
+        </td>
+        <td>
+             <label>{{user.VUWStudentId}}</label>
+        </td>
+
+    </tr>
+
+    <tr><td><label>Organisation</label></td><td><select type="text" ng-model="user.Organisation" ng-options="entry.OrganisationName for entry in orgs"> </select></td></tr>
+    
+   
+
+    </tr>
+    <tr>
+        <td>
+            <label>Type</label>
+        </td>
+        <td>
+            <input name = "Type" ng-model="user.Type" ng-trim="false" type="text" />
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <label>Phone</label>
+        </td>
+        <td>
+            <input name = "Phone" ng-model="user.Phone_Phone_Id" ng-trim="false" type="text" />
+        </td>
+
+    </tr>
+          <td>  <button type="submit" class="btn"
+                    ng-click="submit()"
+                    >Submit
+            </button>
+            <button type="submit" class="btn">Cancel</button></td>
+            </tr>
+        </table>  
+
+</div>
 </html>
