@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="rumBukkaApp">
+<meta charset="utf-8">
+<head>
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>'
+    <script src="angular/ng-table.js"></script>'
+    <script src="script.js"></script>
+    
+    <script src="Controllers/personController.js"></script>
+    <script src="angular/angular-resource.min.js"></script>
+
+
+
+
+
+</head>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<form name ='PersonForm'>
+<div ng-controller="personController">
+
+<h3>Person</h3>
+
+<table>
+    <tr>
+        <td><label>Student ID: </label></td>
+        <td>
+            <select ng-model="currentProfile" ng-options="entry.VUWStudentId for entry in Profiles" ng-click="select()"></select>
+        </td>
+    </tr>
+
+
+
+
+</table>
+    <table ng-table class="table">
+    <tr ng-repeat="user in users">
+        <td data-title="'Name'">{{user.name}}</td>
+        <td data-title="'Age'">{{user.age}}</td>
+    </tr>
+    </table>
+
+
+</div>
+</form>
+</html>

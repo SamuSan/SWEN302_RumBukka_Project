@@ -1,3 +1,4 @@
+
 <!-- index.html -->
 <!DOCTYPE html>
 <html ng-app="rumBukkaApp">
@@ -17,14 +18,15 @@
     <script src="angular/angular-route.js"></script>
     <script src="angular/angular-resource.min.js"></script>
     <script src="script.js"></script>
+    <script src="Controllers/personController.js"></script>
     <script src="Controllers/addPersonController.js"></script>
     <script src="Controllers/addBookingController.js"></script>
     <script src="Controllers/addRoomController.js"></script>
     <script src="Controllers/roomTimelineController.js"></script>
     <script src="Controllers/modifyBookingController.js"></script>
     <script src="Controllers/modifyPersonController.js"></script>
-    <script src="Controllers/roomListController.js"></script>
     <script src="angular/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="angular/ng-table.js"></script>
 
     <script src="Services/UserService.js"></script>
     <script src="Services/RoomService.js"></script>
@@ -40,7 +42,7 @@
 <header>
 <nav class="rb-navbar rb-navbar-default">
 <div class = "rb-hLinking-container">
-<div class = "rb-hLink-container"> <a class= "rb-header-link" href = "#addPerson">Person</a> </div>
+<div class = "rb-hLink-container"> <a class= "rb-header-link" href = "#person">Person</a> </div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addBooking">Booking</a> </div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#modifyBooking">Modifybooking</a></div>
 <div class = "rb-hLink-container"><a class= "rb-header-link" href = "#addRoom">addRoom</a></div>
@@ -59,4 +61,3 @@
 
 </body>
 </html>
-
