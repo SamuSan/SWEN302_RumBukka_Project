@@ -27,7 +27,7 @@
             <tr>
                 <td>
                     <label>Search Profile ID </label></td>
-                <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
+                <td><input ng-model="srcPID" ng-trim="true" type = "text"/></td>
             </tr>
             <tr>
                 <td><label>Profile: </label></td>
@@ -44,20 +44,11 @@
             <tr>
                 <td>
                     <label>Start Time </label></td>
-                <td>
-            <div>
-            <p>
-             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
-            </div>
-                </td>
+                
             </tr>
             <tr>
                 <td>
                     <label>End Time </label></td>
-                <td><div>
-            <p>
-             <input type="text" placeholder="A Date" ng-model="model.a_date" my-dateinput="MMM D YYYY" />{{ model.a_date }}</p>
-            </div></td>
             </tr>
             <tr>
           <td>  <button type="submit" class="btn"

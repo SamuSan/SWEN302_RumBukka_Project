@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"> 
+<!DOCTYPE html>
+<html>
+
+<head>
+	    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <!-- SPELLS -->
+    <!-- load angular via CDN -->
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="script.js"></script>
+    <script src="Controllers/roomListController.js"></script>
+</head>
+<body ng-controller="roomListController">
+		<h2>Room Summary</h2>
+		<table ng-table="tableParamsRoute" class="table">
+	        <tr ng-repeat="name in route"> 
+	            
+	        </tr>
+	    </table>
+	</div>
+</body>
+</html>

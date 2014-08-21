@@ -26,7 +26,7 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
 
 	
 	
-    $scope.input1;    
+    $scope.srcPID;    
  $scope.idSearch = function(){
 //search by id
 
@@ -60,41 +60,41 @@ return this;
 
 }
 $scope.dateChanged=false;
-$scope.$watch('ld',function(oldVal,newVal){ 
+$scope.$watch('endDate',function(oldVal,newVal){ 
     //Check for future booking
-    if(newVal < $scope.dt){
-        $scope.ld.setDate($scope.dt.getDate());
+    if(newVal < $scope.startDate){
+        $scope.endDate.setDate($scope.startDate.getDate());
     }
     if(oldVal !=newVal){
-                $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
+                $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
             $scope.dateChanged=true;
     }        
 });
-$scope.$watch('dt',function(oldVal,newVal){ 
+$scope.$watch('startDate',function(oldVal,newVal){ 
     //Check for future booking
-        if(newVal > $scope.ld){
+        if(newVal > $scope.endDate){
         console.log("Reutrn to the futrue")
     }
     if(oldVal !=newVal){
-                $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
+                $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
             $scope.dateChanged=true;
     }        
 });
 //Set the start date
   $scope.today = function() {
-    $scope.dt = new Date();
+    $scope.startDate = new Date();
   };
   $scope.today();
   //Auto sets the end date to minimum one day after start date
   $scope.lastDay = function() {
-        $scope.ld = new Date();
-        $scope.ld.addDays(1);
-        $scope.duration = ($scope.ld.getDate() - $scope.dt.getDate())
+        $scope.endDate = new Date();
+        $scope.endDate.addDays(1);
+        $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
   };
   $scope.lastDay();
 
   $scope.clear = function () {
-    $scope.dt = null;
+    $scope.startDate = null;
   };
 
   // Disable weekend selection
@@ -103,7 +103,7 @@ $scope.$watch('dt',function(oldVal,newVal){
   };
 
   $scope.toggleMin = function() {
-    $scope.minDate = $scope.minDate ? $scope.dt : new Date();
+    $scope.minDate = $scope.minDate ? $scope.startDate : new Date();
   };
   $scope.toggleMin();
 

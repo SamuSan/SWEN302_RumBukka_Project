@@ -6,7 +6,7 @@
 	    <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
-       <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
     <!-- SPELLS -->
     <!-- load angular via CDN -->
     <script src="angular/angular.js"></script>
@@ -29,17 +29,14 @@
 
         <table>
             <tr>
-            <!-- <td class="rbs-td"> -->
             <h1>Room Booking</h1>
-            <!-- </td> -->
-            <!-- <tr><td> ID: </td></tr> -->
 
             <td></td>
             </tr>
             <tr>
                 <td>
                     <label>Search Profile ID: </label></td>
-                <td><input ng-model="input1" ng-trim="true" type = "text"/></td>
+                <td><input ng-model="srcPID" ng-trim="true" type = "text"/></td>
             </tr>
             <tr>
                 <td><label>Student ID: </label></td>
@@ -50,12 +47,11 @@
                 <td>
                     <label>Start Time </label></td>
                 <td>
-                    <!--input  ng-model="input2" ng-trim="false" /-->
             <div>
             <p>
                 <div class="col-md-6">
                     <p class="input-group">
-                      <input type="text" id="DP" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
+                      <input type="text" id="DP" class="form-control" datepicker-popup="{{format}}" ng-model="startDate" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
                       <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                       </span>
@@ -72,7 +68,7 @@
                     <p>
                         <div class="col-md-6">
                             <p class="input-group">
-                              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="ld" is-open="enOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="endDate" is-open="enOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
                               <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                               </span>

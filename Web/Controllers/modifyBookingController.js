@@ -33,7 +33,7 @@ rumBukkaApp.controller('modifyBookingController', function ($scope, $route, $loc
         "Room_Room_Id": "",
         };
 
-    $scope.input1;    
+    $scope.srcPID;    
  $scope.idSearch = function(){
 //search by id
 

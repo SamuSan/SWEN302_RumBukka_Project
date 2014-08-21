@@ -1,5 +1,3 @@
-//rumBukkaApp = angular.module('rumBukkaApp',['ngRoute'],["ngQuickDate"]);
-
 rumBukkaApp.controller('addPersonController', function ($scope, $route, $location, userData, $window, $rootScope,organisationData) {
 
 
