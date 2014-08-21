@@ -1,6 +1,6 @@
 
 // script.js
-var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap']);
+var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap','ngTable']);
 
 
 rumBukkaApp.config(function ($routeProvider) {
@@ -33,6 +33,10 @@ rumBukkaApp.config(function ($routeProvider) {
 		.when('/roomSummary', {
             templateUrl: 'roomSummary.html',
             controller:'roomListController'
+        })
+        .when('/person', {
+            templateUrl: 'person.html',
+            controller:'personController'
         })
 		.when('/modifyPerson', {
             templateUrl: 'modifyPerson.html',
