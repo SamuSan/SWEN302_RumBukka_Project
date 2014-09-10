@@ -15,10 +15,10 @@ rumBukkaApp.factory('userData', function($resource, $q){
 	
 	return {
 		getUsers: function(){
-		      return connection.get();
+	      	return connection.get();
 		},
 		addUser: function(user){
-		  connection.post(user);
+			return  connection.post(user);
 		  
 		}
 
