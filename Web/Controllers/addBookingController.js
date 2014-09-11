@@ -1,12 +1,14 @@
 
-
-rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData, roomData) {
+rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData, roomData, bookingData) {
 
     userData.getUsers().$promise.then(function(users){
       $scope.Profiles = users;
       
       $scope.currentProfile = users[0];
       
+    });
+     bookingData.getBookings().$promise.then(function(bookings){
+      $scope.Bookings = bookings;     
     });
 
     roomData.getRooms().$promise.then(function(rooms){
@@ -32,6 +34,50 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
 
 
 }   
+
+ $scope.selectedRoom = null;
+    $scope.setSelected = function(selectedRoom) {
+       $scope.selectedRoom = selectedRoom;
+       //console.log(selectedRoom);
+       /*< class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>*/
+    }
+
+    $scope.getStyle = function (entry) {
+      var count =0;
+     //Find room name 
+    angular.forEach($scope.Bookings, function(value, key) {
+       if(entry.RoomName == value.Room.RoomName){
+        console.log(Date.parse($scope.startDate.toString()) + '=' + Date.parse(value.StartDate));
+        //get count of booking
+       //console.log(count +" "+ entry.RoomName);
+        //if((value.StartDate<= $scope.startDate && value.EndDate>= $scope.startDate) || (value.StartDate<= $scope.EndDate && value.EndDate>= $scope.startDate) ){
+          if(
+            (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) || 
+            (Date.parse($scope.startDate.toString()) > Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) ||
+            (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) < Date.parse(value.EndDate))) ||
+            (Date.parse($scope.startDate.toString()) > Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) < Date.parse(value.EndDate))) ||
+            value.EndDate == null
+            )
+           {
+          count++;
+          console.log(count +" "+ entry.RoomName);
+        }
+      }
+     });
+    
+var percentage = (count/10)*100;
+     if(percentage>66){
+        return "color: red;"
+     }
+     else if(percentage<66 && percentage>33){
+        return "color: orange;"
+     }
+     else if(percentage<33){
+        return "color: green;"
+     }
+
+}
+
 
 $scope.submit = function(){
 //push adduser
