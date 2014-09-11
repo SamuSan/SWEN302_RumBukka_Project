@@ -28,11 +28,19 @@
             <tr><td>Name</td><td><input type="text" ng-model="room.RoomName" value="{{room.RoomName}}" /></td></tr>
             <tr><td>Organisation</td><td><select type="text" ng-model="room.Organisation" ng-options="entry.OrganisationName for entry in orgs"> </select></td></tr>
             <tr><td>Capacity</td><td><input type="text" ng-model="room.Capacity" value="{{room.Capacity}}" /></td></tr>
+  
             <tr>
           <td>  <button type="submit" class="btn" ng-click="submit()">Submit
             </button>
             <button type="submit" class="btn">Cancel</button></td>
             </tr>
+            
+                      <tr><td>Delete Room</td><td><input type="integer" ng-model="delinput" /></td>
+                                   
+          <td>  <button type="submit" class="btn" ng-click="delete(delinput)">Delete
+            </button></td>
+            </tr>
+
         </table>  
 
 </div></form>

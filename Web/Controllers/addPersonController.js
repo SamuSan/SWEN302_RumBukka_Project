@@ -1,3 +1,4 @@
+
 rumBukkaApp.controller('addPersonController', function ($scope, $route, $routeParams, $location, userData, $window, $rootScope,organisationData) {
 	$scope.user= {};
 	
@@ -36,6 +37,7 @@ rumBukkaApp.controller('addPersonController', function ($scope, $route, $routePa
 		}
 
 	}
+
 
 });
 

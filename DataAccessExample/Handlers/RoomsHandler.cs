@@ -18,12 +18,20 @@ namespace Server.Handlers
 
         public object getSingle(int id)
         {
-            return db.Rooms.FirstOrDefault().RoomName;
+            return db.Rooms.Where(i=>i.Room_Id == id).FirstOrDefault();
         }
 
         public object getList()
         {
-            return db.Rooms.ToList();
+            return db.Rooms.Select(i=> new 
+            { 
+	      i.Room_Id, 
+	      i.RoomName, 
+	      i.BuildingId, 
+	      i.Level, 
+	      //i.Capacity, 
+	      CurrentBookingCount = i.Bookings.Count()  
+	    }).ToList();
         }
 
         public object postNew(string json)
@@ -41,7 +49,12 @@ namespace Server.Handlers
 	  
 	  return room;
         }
-
-
+        
+        public object deleteSingle(int id)
+        {
+        db.Rooms.Remove((Room)getSingle(id));
+        db.SaveChanges();
+        return "deletion";
+        }  
     }
 }

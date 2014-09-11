@@ -77,9 +77,15 @@ namespace Server
                         {
                             if (path.Count > 2)
                             {
-				
+                            Console.WriteLine(method);
+				if(method.Equals("DELETE")){
+				 
+				  response = handler.deleteSingle(int.Parse(path[2]));
+				}else{
 				  response = handler.getSingle(int.Parse(path[2]));
+				}
 				
+				    
 			      }
                             else
                             {
