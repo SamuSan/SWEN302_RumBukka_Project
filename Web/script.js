@@ -7,14 +7,14 @@ rumBukkaApp.config(function ($routeProvider) {
     $routeProvider
 
         // route for the home page
-        .when('/', {
+            .when('/', {
             templateUrl: 'addBooking.html',
         })
-        .when('/addPerson', {
+            .when('/addPerson/:userName', {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
         })
-	 .when('/person', {
+	        .when('/person', {
             templateUrl: 'person.html',
             controller:'personController'
         })
@@ -22,7 +22,7 @@ rumBukkaApp.config(function ($routeProvider) {
             templateUrl: 'modifyBooking.html',
             controller:'modifyBookingController'
         })
-                .when('/addBooking', {
+                .when('/addBooking/:userId', {
             templateUrl: 'addBooking.html',
             controller:'addBookingController'
         })

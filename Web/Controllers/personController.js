@@ -1,13 +1,19 @@
-rumBukkaApp.controller('personController', function ($scope, $filter,ngTableParams) {
+rumBukkaApp.controller('personController', function ($scope, $filter,ngTableParams, userData, $location) {
 
 
-    $scope.users = [{name: "Moroni", age: 50},
-                {name: "Tiancum", age: 43},
-                {name: "Jacob", age: 27},
-                {name: "Nephi", age: 29},
-                {name: "Enos", age: 34}];    
+    $scope.users = userData.getUsers();    
 
- 
+    $scope.redirect = function(type, user){
+    	if (type == 'add') {    		
+    		var name = $scope.input;
+	    	$location.url("addPerson/" + name);
+    	}
+    	else if(type == 'select'){
+	    	$location.url("addBooking/" + user.Student_Id);
+    	};
+
+    }
+ 	
 });
 	
   
