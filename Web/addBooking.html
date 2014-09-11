@@ -7,6 +7,8 @@
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- SPELLS -->
     <!-- load angular via CDN -->
     <script src="angular/angular.js"></script>
@@ -17,7 +19,6 @@
     <script src="Services/UserData.js"></script>
     <script src="angular/angular-resource.min.js"></script>
 </head>
-<!--COMENT-->
 
 <form name ='addPersonForm'>
 <div ng-controller="addBookingController">
@@ -33,16 +34,10 @@
 
             <td></td>
             </tr>
-            <tr>
-                <td>
-                    <label>Search Profile ID: </label></td>
-                <td><input ng-model="srcPID" ng-trim="true" type = "text"/></td>
-            </tr>
-            <tr>
-                <td><label>Student ID: </label></td>
+<!--<td><label>Student ID: </label></td>
                 <td>
                     <select ng-model="currentProfile" ng-options="entry.VUWStudentId for entry in Profiles" ng-click="select()"></select></td>
-            </tr>
+            </tr>-->
             <tr>
                 <td>
                     <label>Start Time </label></td>
@@ -83,20 +78,52 @@
             <tr>
                <td><label ng-model="duration" placeholder=""> Booking Period :  {{duration}}</label></td> 
             </tr>
-            <tr>
+            </table>  
+           </div></form>
+            <!--<tr>
                 <td><label>Room: </label></td>
                 <td>
                     <select ng-model="myRoom" ng-options="entry.RoomName for entry in Rooms"></select></td>
-            </tr>
+            </tr>-->
+<div>
+    <ul>
+        <li class="created" >
+            <b>Room</b>
+        </li>
+        <li class="ip">
+            <b>Organisation</b>
+        </li>
+        <li class="status">
+            <b>Capacity</b>
+        </li>
+    </u> 
+    <ul ng-repeat="entry in Rooms | orderBy:'Organisation.OrganisationName'" ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
+        <li><i class="fa fa-square" style="{{getStyle(entry)}}"></i></li>
+
+        <li  class="created">
+           {{entry.RoomName}}
+        </li> 
+        <li class="ip">
+            {{entry.Organisation.OrganisationName}}
+        </li>
+        <li class="status">
+            {{entry.Capacity}}
+        </li>
+    </ul>
+</div>
+<div>
+ <table>  
             <tr>
           <td>  <button type="submit" class="btn"
                     ng-click="submit()"
                     >Submit
-            </button>
-            <button type="submit" class="btn">Cancel</button></td>
+            </button></td>
+           <td>  <button type="submit" class="btn">Cancel</button></td>
             </tr>
-        </table>  
+        
+         </table>  
+         </div>
 
-</div></form>
+
 
 </html>
