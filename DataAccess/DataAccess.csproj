@@ -57,11 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201407240419356_Initial.cs" />
-    <Compile Include="Migrations\201407240419356_Initial.Designer.cs">
-      <DependentUpon>201407240419356_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Organisation.cs" />
