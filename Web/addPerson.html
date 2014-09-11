@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+
+
     <!-- SPELLS -->
     <!-- load angular via CDN -->
     <script src="angular/angular.js"></script>
@@ -32,6 +34,7 @@
                 <td>
             <input name = "fName" ng-model="user.FirstName" ng-trim="false" type="text" required />
         </td>
+        <td><button class="fa fa-refresh" ng-click="reverse()"></button></td>
         <td>
             <label>Surname</label>
         </td>
@@ -77,7 +80,7 @@
                 ng-click="submit()"
                 >Submit
         </button>
-        <button type="submit" class="btn">Cancel</button></td>
+        <button type="cancel" class="btn btn-danger">Cancel</button></td>
     </tr>
 
 

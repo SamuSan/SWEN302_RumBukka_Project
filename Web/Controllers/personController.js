@@ -4,8 +4,9 @@ rumBukkaApp.controller('personController', function ($scope, $filter,ngTablePara
     $scope.users = userData.getUsers();    
 
     $scope.redirect = function(type, user){
-    	if (type == 'add') {
-	    	$location.url("addPerson");
+    	if (type == 'add') {    		
+    		var name = $scope.input;
+	    	$location.url("addPerson/" + name);
     	}
     	else if(type == 'select'){
 	    	$location.url("addBooking/" + user.Student_Id);
