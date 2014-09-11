@@ -1,6 +1,6 @@
 
 rumBukkaApp.factory('userData', function($resource, $q){
-	var connection = $resource('/api/users', {}, {
+	var connection = $resource('/api/users/:id', {}, {
 		get: {
 			method: 'GET',
 			isArray: true
@@ -9,17 +9,24 @@ rumBukkaApp.factory('userData', function($resource, $q){
 		post: {
 		  method: 'POST'
 		  
+		},
+		remove: {
+		  method: 'DELETE'
+		  
 		}
 
 	});
 	
 	return {
 		getUsers: function(){
-	      	return connection.get();
+		      return connection.get();
 		},
 		addUser: function(user){
-			return  connection.post(user);
+		  connection.post(user);
 		  
+		},
+		deleteUser: function(user){
+		  connection.delete({id:user});
 		}
 
 	};

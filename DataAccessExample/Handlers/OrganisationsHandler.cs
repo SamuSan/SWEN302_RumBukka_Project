@@ -27,5 +27,9 @@ namespace Server.Handlers
         {
 	  return null;
         }
+        public object deleteSingle(int id)
+        {
+        return null;
+        }  
     }
 }

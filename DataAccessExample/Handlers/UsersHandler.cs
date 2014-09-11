@@ -16,7 +16,7 @@ namespace Server.Handlers
 
         public object getSingle(int id)
         {
-            return db.Users.FirstOrDefault();
+            return db.Users.Where(i=>i.Student_Id == id).FirstOrDefault();
         }
 
         public object getList()
@@ -37,5 +37,12 @@ namespace Server.Handlers
 	  
 	  return user;
         }
+        
+        public object deleteSingle(int id)
+        {
+        db.Users.Remove((User)getSingle(id));
+        db.SaveChanges();
+        return "delete";
+        }  
     }
 }

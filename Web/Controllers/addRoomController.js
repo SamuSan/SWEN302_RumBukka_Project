@@ -12,6 +12,9 @@ rumBukkaApp.controller('addRoomController', function ($scope, $resource, $route,
   $scope.submit = function() {
     roomData.addRoom($scope.room);
   }
+    $scope.delete = function(Room_Id) {
+    roomData.deleteRoom(Room_Id);
+  }
 });
 
 

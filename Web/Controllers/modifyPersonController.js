@@ -17,6 +17,9 @@ rumBukkaApp.controller('modifyPersonController', function ($scope, $route, $loca
       
       
     });
+    $scope.delete = function(Student_Id) {
+    userData.deleteUser(Student_Id);
+  }
 
  
 

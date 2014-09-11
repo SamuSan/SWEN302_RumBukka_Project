@@ -15,6 +15,8 @@ namespace Server.Interfaces
         Object getList();
         
         Object postNew(string json);
+        
+        Object deleteSingle(int id);
 
     }
 }
