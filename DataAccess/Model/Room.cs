@@ -24,11 +24,6 @@ namespace DataAccess.Model
         public string RoomName { get; set; }
         public int BuildingId { get; set; }
         public int Level { get; set; }
-<<<<<<< HEAD
-        // public int Capacity { get; set; }
-=======
-         public int Capacity { get; set; }
->>>>>>> f7902eb4f8afaaa15bc2739aa7a3f7974876886d
 	
         public virtual Organisation Organisation { get; set; }
 	
