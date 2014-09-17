@@ -31,10 +31,11 @@
 
 <table>
     <tr>
-        <td><label>Student ID: </label></td>
+        <td><label>User Name: </label></td>
         <td>
-            <select ng-model="currentProfile" ng-options="entry.VUWStudentId for entry in Profiles" ng-click="select()"></select>
+            <input ng-model="input" type="text" ></input>
         </td>
+         <td><button ng-click="redirect('add')">Add</button></td>
     </tr>
 
 
@@ -42,9 +43,10 @@
 
 </table>
     <table ng-table class="table">
-    <tr ng-repeat="user in users">
-        <td data-title="'Name'">{{user.name}}</td>
-        <td data-title="'Age'">{{user.age}}</td>
+    <tr ng-repeat="user in users | filter:input">
+         <td data-title="'Name'">{{user.FirstName}}</td>
+         <td data-title="'Surname'">{{user.LastName}}</td>
+         <td><button ng-click="redirect('select', user)">Select</button></td>
     </tr>
     
 
