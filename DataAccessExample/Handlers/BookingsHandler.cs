@@ -31,7 +31,9 @@ namespace Server.Handlers
         }
         public object deleteSingle(int id)
         {
-        return null;
+        db.Bookings.Remove((Booking)getSingle(id));
+        db.SaveChanges();
+        return "deletion";
         }
 
     }

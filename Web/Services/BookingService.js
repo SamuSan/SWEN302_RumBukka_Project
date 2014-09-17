@@ -1,5 +1,5 @@
 rumBukkaApp.factory('bookingData', function($resource, $q){
-	var connection = $resource('/api/bookings', {}, {
+	var connection = $resource('/api/bookings/:id', {}, {
 		get: {
 			method: 'GET',
 			isArray: true
@@ -7,6 +7,10 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		},
 		post: {
 		  method: 'POST'
+		  
+		},
+		remove: {
+		  method: 'DELETE'
 		  
 		}
 
@@ -21,6 +25,9 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		addBooking: function(booking){
 		  connection.post(booking);
 		  
+		},
+		deleteBooking: function(booking){
+		  connection.delete({id:booking});
 		}
 
 	}

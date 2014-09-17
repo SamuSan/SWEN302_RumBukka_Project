@@ -78,6 +78,11 @@ $scope.selectBking = function(){
 
 }
 
+    $scope.delete = function(Booking_Id) {
+    bookingData.deleteBooking(Booking_Id);
+  }
+
+
 
 
 });
