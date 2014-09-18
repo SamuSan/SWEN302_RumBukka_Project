@@ -55,7 +55,7 @@
 
     <tr><td><label>Organisation</label></td>
     <td>
-    <select ng-change="debug()" ng-model="user.Organisation.Organisation_Id" ng-options="entry.Organisation_Id as entry.OrganisationName for entry in orgs" required> </select></td></tr>
+    <select ng-change="debug()" ng-model="user.Organisation" ng-options="entry as entry.OrganisationName for entry in orgs" required> </select></td></tr>
     
    
     <tr>
@@ -88,17 +88,6 @@
 
 
 </table>
-
-<table>
-    <tr ng-repeat="booking in bookings">
-         <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
-         <td data-title="'Start Date'">{{booking.StartDate}}</td>
-         <td data-title="'End Date'">{{booking.EndDate}}</td>
-         <td><button ng-click="redirect('select', user)">Delete</button></td>
-         <td><button ng-click="redirect('edit', user)">Edit</button></td>
-    </tr>
-</table>
-
 </div>
 </form>
 </body>

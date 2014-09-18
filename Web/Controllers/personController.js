@@ -14,15 +14,18 @@ if($routeParams.confirm != null) {
     $scope.users = userData.getUsers();
 
  	$scope.redirect = function(type, user){
-		 if (type == 'add') {
-		 var name = $scope.input;
-		 $location.url("addPerson/" + name);
-		 }
-		 else if(type == 'select'){
-		 $location.url("addBooking/" + user.Student_Id);
-		 };
+	  if (type == 'add') {
+	    var name = $scope.input;
+	    $location.url(name==null?"addPerson/name/userid":"addPerson/name/" + name + "/userid");
+	  }
+	  else if(type == 'select'){
+	    $location.url("addBooking/" + user.Student_Id);
+	  }
+	  else if(type == 'edit'){
+	    $location.url("addPerson/name/userid/" + user.Student_Id);
+	  }
 
- 		}
+	  }
  	
 });
 	

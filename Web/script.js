@@ -10,7 +10,7 @@ rumBukkaApp.config(function ($routeProvider) {
             .when('/', {
             templateUrl: 'person.html',
         })
-            .when('/addPerson/:userName', {
+            .when('/addPerson/name/:userName?/userid/:userid?', {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
         })

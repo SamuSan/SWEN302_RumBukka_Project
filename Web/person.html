@@ -49,7 +49,8 @@
     <tr ng-repeat="user in users | filter:input">
          <td data-title="'Name'">{{user.FirstName}}</td>
          <td data-title="'Surname'">{{user.LastName}}</td>
-         <td><button ng-click="redirect('select', user)">Select</button></td>
+         <td><button ng-click="redirect('select', user)">Add Booking</button></td>
+         <td><button ng-click="redirect('edit', user)">Edit</button></td>
     </tr>
     
 

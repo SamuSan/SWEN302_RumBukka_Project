@@ -1,4 +1,4 @@
-rumBukkaApp.controller('addPersonController', function ($scope, $route, $routeParams, $location, userData, $window, $rootScope,organisationData, bookingData) {
+rumBukkaApp.controller('addPersonController', function ($scope, $route, $routeParams, $location, userData, $window, $rootScope,organisationData) {
 	
 	$scope.userTypes = ["Hons","Masters","PHD", "Faculty"]
 
@@ -8,7 +8,6 @@ rumBukkaApp.controller('addPersonController', function ($scope, $route, $routePa
 	    
 	    if($routeParams.userid != null)
 	    {	    
-	      bookingData.getBookings
 	      userData.getUser($routeParams.userid).$promise.then(function(user){
 		$scope.user = user;
 		//$scope.user.Organisation = $scope.user.Organisation.OrganisationName;

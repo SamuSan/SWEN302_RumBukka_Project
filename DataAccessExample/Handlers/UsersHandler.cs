@@ -44,5 +44,11 @@ namespace Server.Handlers
         db.SaveChanges();
         return "delete";
         }  
+        
+        public object getFilter(int id)
+        {
+        return null;
+        }
+
     }
 }
