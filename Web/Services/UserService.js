@@ -29,7 +29,7 @@ rumBukkaApp.factory('userData', function($resource, $q) {
 			});
 		},
 		addUser: function(user) {
-			connection.post(user);
+			 return connection.post(user);
 
 		},
 		deleteUser: function(user) {

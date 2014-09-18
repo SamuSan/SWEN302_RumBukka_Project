@@ -4,7 +4,7 @@ rumBukkaApp.config(function($routeProvider) {
     $routeProvider
     // route for the home page
     .when('/', {
-        templateUrl: 'addBooking.html',
+        templateUrl: 'person.html',
     })
         .when('/addPerson/:userName', {
             templateUrl: 'addPerson.html',
