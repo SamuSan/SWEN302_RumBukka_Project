@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using DataAccess.Model;
 using Server.Interfaces;
+using Newtonsoft.Json;
 
 namespace Server.Handlers
 {
@@ -34,6 +35,16 @@ namespace Server.Handlers
         db.Bookings.Remove((Booking)getSingle(id));
         db.SaveChanges();
         return "deletion";
+        }
+        public object update(string json)
+        {
+        Booking update = JsonConvert.DeserializeObject<Booking>(json);
+        Booking current = (Booking)getSingle(update.Booking_Id);
+        
+        current.StartDate = update.StartDate;
+        current.EndDate = update.EndDate;
+        db.SaveChanges();       
+        return "update";
         }
 
     }

@@ -31,5 +31,9 @@ namespace Server.Handlers
         {
         return null;
         }  
+        public object update(string json)
+        {
+        return null;
+        }
     }
 }

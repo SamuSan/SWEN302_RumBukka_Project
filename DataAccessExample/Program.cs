@@ -81,7 +81,8 @@ namespace Server
 				if(method.Equals("DELETE")){
 				 
 				  response = handler.deleteSingle(int.Parse(path[2]));
-				}else{
+				}				
+				else{
 				  response = handler.getSingle(int.Parse(path[2]));
 				}
 				
@@ -89,8 +90,14 @@ namespace Server
 			      }
                             else
                             {
-				if(method.Equals("GET"))
-				  response = handler.getList();
+				if(method.Equals("GET")){
+				  response = handler.getList();}
+				else if(method.Equals("PUT")) {
+				
+				StreamReader reader = new StreamReader(context.Request.InputStream);
+				  response = handler.update(reader.ReadToEnd());
+				
+				}  
                                 else 
 				{
 				

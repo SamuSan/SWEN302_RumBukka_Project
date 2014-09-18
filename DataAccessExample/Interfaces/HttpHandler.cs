@@ -17,6 +17,8 @@ namespace Server.Interfaces
         Object postNew(string json);
         
         Object deleteSingle(int id);
+        
+        Object update(string json);
 
     }
 }

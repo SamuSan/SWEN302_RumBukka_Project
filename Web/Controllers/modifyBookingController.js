@@ -6,6 +6,8 @@ rumBukkaApp.controller('modifyBookingController', function ($scope, $route, $loc
       
       $scope.currentProfile = users[0];
       
+      $scope.bookingUpdate = {};
+      
     });
 
     bookingData.getBookings().$promise.then(function(bookings){
@@ -81,6 +83,10 @@ $scope.selectBking = function(){
     $scope.delete = function(Booking_Id) {
     bookingData.deleteBooking(Booking_Id);
   }
+ $scope.update = function(){
+  bookingData.updateBooking($scope.bookingUpdate);
+   
+}
 
 
 

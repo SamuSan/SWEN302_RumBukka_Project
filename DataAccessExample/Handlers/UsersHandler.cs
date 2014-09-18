@@ -43,6 +43,11 @@ namespace Server.Handlers
         db.Users.Remove((User)getSingle(id));
         db.SaveChanges();
         return "delete";
-        }  
+        } 
+        
+        public object update(string json)
+        {
+        return null;
+        }
     }
 }

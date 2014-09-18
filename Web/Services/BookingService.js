@@ -12,6 +12,9 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		remove: {
 		  method: 'DELETE'
 		  
+		},
+		update: {
+		  method: 'PUT'
 		}
 
 	});
@@ -28,6 +31,9 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		},
 		deleteBooking: function(booking){
 		  connection.delete({id:booking});
+		},
+		updateBooking: function(booking){
+		 connection.update(booking);
 		}
 
 	}

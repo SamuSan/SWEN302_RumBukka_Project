@@ -55,6 +55,13 @@ namespace Server.Handlers
         db.Rooms.Remove((Room)getSingle(id));
         db.SaveChanges();
         return "deletion";
-        }  
+        } 
+        
+        public object update(string json)
+        {
+        
+        
+        return null;
+        }
     }
 }

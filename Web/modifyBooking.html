@@ -38,30 +38,30 @@
                 <td>
                     <label>Bookings for {{currentProfile.FirstName}}: </label></td>
                 <td>
-                    <select ng-model="currentBooking" ng-options="entry.Room.RoomName for entry in Bookings" ></select>
+                    <select ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Start Time </label></td>
+                    <label>Start Time </label></td><td><input type="date" ng-model="bookingUpdate.StartDate" value = {{bookingUpdate.StartDate}} /></td>
                 
             </tr>
             <tr>
                 <td>
-                    <label>End Time </label></td>
+                    <label>End Time </label></td><td><input type="date" ng-model="bookingUpdate.EndDate" value = {{bookingUpdate.EndDate}} /></td>
             </tr>
             <tr>
           <td>  <button type="submit" class="btn"
-                    ng-click="submit()"
+                    ng-click="update(bookingUpdate)"
                     >Submit
             </button>
-            <button type="submit" class="btn">Cancel</button></td>
+            <button type="submit" class="btn">Cancel</button></td> <td>  <button type="submit" class="btn" ng-click="delete(bookingUpdate.Booking_Id)" >Delete
+            </button></td>
             </tr>
             
-            <tr><td>Delete Booking</td><td><input type="integer" ng-model="delinput" /></td>
+            <!--tr><td>Delete Booking</td><td><input type="integer" ng-model="delinput" value = {{bookingUpdate.Booking_Id}}/></td-->
                                    
-          <td>  <button type="submit" class="btn" ng-click="delete(delinput)">Delete
-            </button></td>
+
             </tr>
             
         </table>  
