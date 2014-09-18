@@ -1,0 +1,72 @@
+rumBukkaApp.controller('modifyBookingController', function ($scope, $route,$routeParams, $location, $window, $rootScope, userData, bookingData, roomData) {
+
+    roomData.getRooms().$promise.then(function(rooms){
+        $scope.Rooms = rooms;
+    })
+
+    bookingData.getBooking($routeParams.bookingId).$promise.then(function(booking){
+      
+      $scope.currentBooking = booking;
+      
+      $scope.bookingUpdate = {};
+      
+    });
+
+    $scope.srcPID;    
+     $scope.idSearch = function(){
+    //search by id
+
+
+    }   
+
+    $scope.submit = function(){
+    //push adduser
+        console.log("pro "+$scope.addBook.FirstName);
+
+    }
+
+    $scope.select = function(entry){
+            /*$scope.booking =$scope.Bookings;
+    		console.log($scope.currentProfile.F);
+    		var currentProfile = $scope.currentProfile;
+
+            var addBook =$scope.addBook;
+
+            addBook.FirstName = currentProfile.User.FirstName;
+            addBook.LastName = currentProfile.User.LastName;
+            addBook.VUWStudentId = currentProfile.sid;
+            addBook.Type = currentProfile.stype;
+            addBook.Phone_Phone_Id = currentProfile.ph;
+            addBook.Organisation_Organisation_Id = currentProfile.Org;
+    */
+
+    //bookingData.getBookings()
+
+    }
+
+    $scope.selectBking = function(){
+
+            //var currentBooking = $scope.currentBooking;
+
+            var findBookings =$scope.findBookings;
+
+            findBookings.Booking_Id = $scope.currentBooking.Booking_Id;
+            findBookings.startDate = currentBooking.startDate;
+            findBookings.endDate = currentBooking.endDate;
+            findBookings.Room_Room_Id= currentBooking.Room_Room_Id;
+
+
+    }
+
+    $scope.delete = function(Booking_Id) {
+    bookingData.deleteBooking(Booking_Id);
+  }
+ $scope.update = function(){
+  bookingData.updateBooking($scope.bookingUpdate);
+   
+}
+
+
+
+
+});
