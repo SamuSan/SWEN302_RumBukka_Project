@@ -1,53 +1,43 @@
-
 // script.js
-var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap', 'ngTable']);
-
-
-rumBukkaApp.config(function ($routeProvider) {
+var rumBukkaApp = angular.module('rumBukkaApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngTable']);
+rumBukkaApp.config(function($routeProvider) {
     $routeProvider
-
-        // route for the home page
-            .when('/', {
-            templateUrl: 'addBooking.html',
-        })
-            .when('/addPerson/:userName', {
+    // route for the home page
+    .when('/', {
+        templateUrl: 'addBooking.html',
+    })
+        .when('/addPerson/:userName', {
             templateUrl: 'addPerson.html',
-            controller:'addPersonController'
+            controller: 'addPersonController'
         })
-	        .when('/person', {
+        .when('/person', {
             templateUrl: 'person.html',
-            controller:'personController'
+            controller: 'personController'
         })
-                 .when('/modifyBooking', {
+        .when('/modifyBooking/:userId', {
             templateUrl: 'modifyBooking.html',
-            controller:'modifyBookingController'
+            controller: 'modifyBookingController'
         })
-                .when('/addBooking/:userId', {
+        .when('/addBooking/:userId', {
             templateUrl: 'addBooking.html',
-            controller:'addBookingController'
+            controller: 'addBookingController'
         })
-                .when('/addRoom', {
+        .when('/addRoom', {
             templateUrl: 'addRoom.html',
-            controller:'addRoomController'
+            controller: 'addRoomController'
         })
-		        .when('/roomTimeline', {
+        .when('/roomTimeline', {
             templateUrl: 'roomTimeline.html',
-            controller:'roomTimelineController'
+            controller: 'roomTimelineController'
         })
-		.when('/roomSummary', {
+        .when('/roomSummary', {
             templateUrl: 'roomSummary.html',
-            controller:'roomListController'
+            controller: 'roomListController'
         })
-		.when('/modifyPerson', {
+        .when('/modifyPerson', {
             templateUrl: 'modifyPerson.html',
-            controller:'modifyPersonController'
+            controller: 'modifyPersonController'
         });
-
 });
-
-
 // create the controller and inject Angular's $scope
-rumBukkaApp.controller('mainController', function ($scope) {
-
-    });
-
+rumBukkaApp.controller('mainController', function($scope) {});

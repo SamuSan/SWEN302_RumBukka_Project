@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	    <!-- SCROLLS -->
+    <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
 
@@ -17,54 +17,107 @@
     <script src="Controllers/modifyBookingController.js"></script>
 </head>
 
-<div ng-controller="modifyBookingController">
+    <div ng-controller="modifyBookingController">
         <table>
             <tr>
-            <td class="rbs-td">
-            <h2>Modify Booking</h2>
-            </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Search Profile ID </label></td>
-                <td><input ng-model="srcPID" ng-trim="true" type = "text"/></td>
-            </tr>
-            <tr>
-                <td><label>Profile: </label></td>
-                <td>
-                    <select ng-model="currentProfile" ng-options="entry.FirstName for entry in Profiles" ></select></td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Bookings for {{currentProfile.FirstName}}: </label></td>
-                <td>
-                    <select ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
+                <td class="rbs-td">
+                    <h2>Modify Booking</h2>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Start Time </label></td><td><input type="date" ng-model="bookingUpdate.StartDate" value = {{bookingUpdate.StartDate}} /></td>
-                
+                    <h4>User Name</h4>
+                </td>
+                <td>
+                    <h4>ID     Organisation</h4>
+                </td>
+                <td>
+                    <h4>Phone ID</h4>
+                </td>
+                <td>
+                    <h4>Current Room</h4>
+                </td>
             </tr>
             <tr>
                 <td>
-                    <label>End Time </label></td><td><input type="date" ng-model="bookingUpdate.EndDate" value = {{bookingUpdate.EndDate}} /></td>
+                    <h5>
+                        {{currentProfile.FirstName}} {{currentProfile.LastName}}
+                    </h5>
+                </td>
+                <td>
+                    <h5>{{currentProfile.Student_Id}}     {{currentProfile.Organisation.OrganisationName}}</h5>
+                </td>
+                <td>
+                    <h5>{{currentProfile.Phone.Phone_Id}}</h5>
+                </td>
+                <td>
+                    <!-- <h5>{{currentBooking.Room.RoomName}}</h5> -->
+                </td>
             </tr>
-            <tr>
-          <td>  <button type="submit" class="btn"
-                    ng-click="update(bookingUpdate)"
-                    >Submit
-            </button>
-            <button type="submit" class="btn">Cancel</button></td> <td>  <button type="submit" class="btn" ng-click="delete(bookingUpdate.Booking_Id)" >Delete
-            </button></td>
-            </tr>
-            
-            <!--tr><td>Delete Booking</td><td><input type="integer" ng-model="delinput" value = {{bookingUpdate.Booking_Id}}/></td-->
-                                   
 
-            </tr>
-            
-        </table>  
+            <!--             <tr>
+            <td>
+                <label>Search Profile ID</label>
+            </td>
+            <td>
+                <input ng-model="srcPID" ng-trim="true" type = "text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Profile:</label>
+            </td>
+            <td>
+                <select ng-model="currentProfile" ng-options="entry.FirstName for entry in Profiles" ></select>
+            </td>
+        </tr>
+        <tr>
+            -->
+            <td>
+                <label>Bookings for {{currentProfile.FirstName}}:</label>
+            </td>
+            <td>
+                <select ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Start Time</label>
+            </td>
+            <td>
+                <input type="date" ng-model="bookingUpdate.StartDate" value = {{bookingUpdate.StartDate}} />
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label>End Time</label>
+            </td>
+            <td>
+                <input type="date" ng-model="bookingUpdate.EndDate" value = {{bookingUpdate.EndDate}} />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class="btn"
+                    ng-click="update(bookingUpdate)"
+                    >Submit</button>
+                <button type="submit" class="btn">Cancel</button>
+            </td>
+            <td>
+                <button type="submit" class="btn" ng-click="delete(bookingUpdate.Booking_Id)" >Delete</button>
+            </td>
+        </tr>
+
+        <!--tr>
+        <td>Delete Booking</td>
+        <td>
+            <input type="integer" ng-model="delinput" value = {{bookingUpdate.Booking_Id}}/>
+        </td-->
+
+    </tr>
+
+</table>
 
 </div>
 </html>
