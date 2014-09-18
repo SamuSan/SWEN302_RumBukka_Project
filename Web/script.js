@@ -1,6 +1,6 @@
 
 // script.js
-var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap', 'ngTable']);
+var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap', 'ngTable', 'ngAnimate']);
 
 
 rumBukkaApp.config(function ($routeProvider) {
@@ -8,29 +8,29 @@ rumBukkaApp.config(function ($routeProvider) {
 
         // route for the home page
             .when('/', {
-            templateUrl: 'addBooking.html',
+            templateUrl: 'person.html',
         })
             .when('/addPerson/:userName', {
             templateUrl: 'addPerson.html',
             controller:'addPersonController'
         })
-	        .when('/person', {
+	.when('/person/:confirm?', {
             templateUrl: 'person.html',
             controller:'personController'
         })
-                 .when('/modifyBooking', {
+        .when('/modifyBooking', {
             templateUrl: 'modifyBooking.html',
             controller:'modifyBookingController'
         })
-                .when('/addBooking/:userId', {
+        .when('/addBooking/:userId', {
             templateUrl: 'addBooking.html',
             controller:'addBookingController'
         })
-                .when('/addRoom', {
+        .when('/addRoom', {
             templateUrl: 'addRoom.html',
             controller:'addRoomController'
         })
-		        .when('/roomTimeline', {
+	.when('/roomTimeline', {
             templateUrl: 'roomTimeline.html',
             controller:'roomTimelineController'
         })
@@ -38,9 +38,13 @@ rumBukkaApp.config(function ($routeProvider) {
             templateUrl: 'roomSummary.html',
             controller:'roomListController'
         })
-		.when('/modifyPerson', {
+	.when('/modifyPerson', {
             templateUrl: 'modifyPerson.html',
             controller:'modifyPersonController'
+        })
+	.when('/confirmBooking/:userId', {
+            templateUrl: 'confirmBooking.html',
+            controller:'confirmBookingController'
         });
 
 });

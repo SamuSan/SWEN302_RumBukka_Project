@@ -6,6 +6,10 @@ rumBukkaApp.factory('userData', function($resource, $q){
 			isArray: true
 
 		},
+		getsingle: {
+		    method: 'GET'
+
+		},
 		post: {
 		  method: 'POST'
 		  
@@ -27,6 +31,9 @@ rumBukkaApp.factory('userData', function($resource, $q){
 		},
 		deleteUser: function(user){
 		  connection.delete({id:user});
+		},
+		getUser: function(user) {
+		  return connection.getsingle({id:user});
 		}
 
 	};

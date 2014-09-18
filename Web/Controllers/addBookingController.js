@@ -1,41 +1,21 @@
 
-rumBukkaApp.controller('addBookingController', function ($scope, $resource, $route, $location, $window, $rootScope, userData, roomData, bookingData) {
+rumBukkaApp.controller('addBookingController', function ($routeParams, $scope, $resource, $route, $location, $window, $rootScope, userData, roomData, bookingData) {
 
-    userData.getUsers().$promise.then(function(users){
-      $scope.Profiles = users;
+    userData.getUser($routeParams.userId).$promise.then(function(user){
+      $scope.currentProfile = user;
       
-      $scope.currentProfile = users[0];
+      roomData.getRooms().$promise.then(function(rooms){
+	  
+	$scope.Rooms = rooms;
+      });
       
     });
      bookingData.getBookings().$promise.then(function(bookings){
       $scope.Bookings = bookings;     
     });
 
-    roomData.getRooms().$promise.then(function(rooms){
-	
-      $scope.Rooms = rooms;
-      });
-    
-        $scope.addBook = {
-        "FirstName": "",
-        "LastName": "",
-        "VUWStudentId": "",
-        "Type": "",
-        "Phone_Phone_Id": "",
-        "Organisation_Organisation_Id": "",
 
-        };
-
-	
-	
-    $scope.srcPID;    
- $scope.idSearch = function(){
-//search by id
-
-
-}   
-
- $scope.selectedRoom = null;
+    $scope.selectedRoom = null;
     $scope.setSelected = function(selectedRoom) {
        $scope.selectedRoom = selectedRoom;
        //console.log(selectedRoom);
@@ -43,15 +23,16 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
     }
 
     $scope.getStyle = function (entry) {
-      var count =0;
+      var style;
      //Find room name 
+      /*
     angular.forEach($scope.Bookings, function(value, key) {
        if(entry.RoomName == value.Room.RoomName){
         console.log(Date.parse($scope.startDate.toString()) + '=' + Date.parse(value.StartDate));
         //get count of booking
        //console.log(count +" "+ entry.RoomName);
         //if((value.StartDate<= $scope.startDate && value.EndDate>= $scope.startDate) || (value.StartDate<= $scope.EndDate && value.EndDate>= $scope.startDate) ){
-          if(
+          /*if(
             (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) || 
             (Date.parse($scope.startDate.toString()) > Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) ||
             (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) < Date.parse(value.EndDate))) ||
@@ -59,50 +40,53 @@ rumBukkaApp.controller('addBookingController', function ($scope, $resource, $rou
             value.EndDate == null
             )
            {
-          count++;
-          console.log(count +" "+ entry.RoomName);
-        }
+	    count++;
+	    console.log(count +" "+ entry.RoomName);
+	  }
+	  
       }
      });
-    
-var percentage = (count/10)*100;
-     if(percentage>66){
-        return "color: red;"
-     }
-     else if(percentage<66 && percentage>33){
-        return "color: orange;"
-     }
-     else if(percentage<33){
-        return "color: green;"
-     }
-
-}
+    */
+	var percentage = (entry.CurrentBookingCount/entry.Capacity)*100;
+	if(percentage>66){
+	    style = "full"
+	}
+	else if(percentage<66 && percentage>33){
+	    style = "halffull"
+	}
+	else if(percentage<33){
+	    style = "empty"
+	}
+	
+	if($scope.currentProfile.Organisation.Organisation_Id != entry.Organisation.Organisation_Id){
+	  style += " wrongorg "
+	}
+	return style;
+    }
 
 
 $scope.submit = function(){
 //push adduser
-//console.log("pro "+$scope.addBook.FirstName);
+//console.log("pro "+$scope.addBook.FirstNameStudent);
+  $rootScope.newBooking = {
+    //User_Id: $scope.currentProfile.Student_Id,
+    //selectedRoomRoom_Id: $scope.selectedRoom.Room_Id,
+    StartDate: Date.parse($scope.startDate.toString()),
+    EndDate:Date.parse($scope.endDate.toString()),
+    User: $scope.currentProfile,
+    Room: $scope.selectedRoom
+  };
+  $location.url("confirmBooking/" +  $scope.currentProfile.Student_Id);
 
 }
-$scope.select = function(){
 
-		console.log($scope.currentProfile.fname);
-		var currentProfile = $scope.currentProfile;
+  $scope.cancel = function(){
+     $location.url('/person');
+  }
 
-        var addBook =$scope.addBook;
-
-        addBook.FirstName = currentProfile.fname;
-        addBook.LastName = currentProfile.lname;
-        addBook.VUWStudentId = currentProfile.sid;
-        addBook.Type = currentProfile.stype;
-        addBook.Phone_Phone_Id = currentProfile.ph;
-        addBook.Organisation_Organisation_Id = currentProfile.Org;
-
-
-}
 Date.prototype.addDays = function(days){
-this.setDate(this.getDate() + days);
-return this;
+  this.setDate(this.getDate() + days);
+  return this;
 
 }
 $scope.dateChanged=false;

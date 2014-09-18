@@ -22,24 +22,15 @@
 
 <form name ='addPersonForm'>
 <div ng-controller="addBookingController">
-
-
-	<table>
-
-	</table>
-
+<h1>Add a Booking for {{currentProfile.FirstName}}</h1>
         <table>
-            <tr>
-            <h1>Room Booking</h1>
-
-            <td></td>
-            </tr>
+            
 <!--<td><label>Student ID: </label></td>
                 <td>
                     <select ng-model="currentProfile" ng-options="entry.VUWStudentId for entry in Profiles" ng-click="select()"></select></td>
             </tr>-->
             <tr>
-                <td>
+                <td style="width: 123px;">
                     <label>Start Time </label></td>
                 <td>
             <div>
@@ -76,7 +67,7 @@
             </tr>
 
             <tr>
-               <td><label ng-model="duration" placeholder=""> Booking Period :  {{duration}}</label></td> 
+               <TD><label>Booking Period</label></td><td>{{duration}} day(s)</td> 
             </tr>
             </table>  
            </div></form>
@@ -86,30 +77,34 @@
                     <select ng-model="myRoom" ng-options="entry.RoomName for entry in Rooms"></select></td>
             </tr>-->
 <div>
-    <ul>
-        <li class="created" >
-            <b>Room</b>
-        </li>
-        <li class="ip">
-            <b>Organisation</b>
-        </li>
-        <li class="status">
-            <b>Capacity</b>
-        </li>
-    </u> 
-    <ul ng-repeat="entry in Rooms | orderBy:'Organisation.OrganisationName'" ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
-        <li><i class="fa fa-square" style="{{getStyle(entry)}}"></i></li>
+    <table>
+      <tr>
+	  <td class="created" >
+	      <b>Room</b>
+	  </td>
+	  <td class="ip">
+	      <b>Organisation</b>
+	  </td>
+	  <td class="status">
+	      <b>Capacity</b>
+	  </td>
+      </tr>
+    
+      <tr class="{{getStyle(entry)}} " ng-repeat="entry in Rooms | orderBy:'Organisation.OrganisationName'" ng-click="setSelected(entry)" ng-class="{selected : entry.Room_Id === selectedRoom.Room_Id}">
+   
+        <td><i class="fa fa-square" ></i></td>
 
-        <li  class="created">
+        <td  class="created">
            {{entry.RoomName}}
-        </li> 
-        <li class="ip">
+        </td> 
+        <td class="ip">
             {{entry.Organisation.OrganisationName}}
-        </li>
-        <li class="status">
-            {{entry.Capacity}}
-        </li>
-    </ul>
+        </td>
+        <td class="status">
+            {{entry.CurrentBookingCount}}/{{entry.Capacity}}
+        </td>
+      </tr>
+    </table>
 </div>
 <div>
  <table>  
@@ -118,7 +113,7 @@
                     ng-click="submit()"
                     >Submit
             </button></td>
-           <td>  <button type="submit" class="btn">Cancel</button></td>
+           <td>  <button type="submit" class="btn" ng-click="cancel()">Cancel</button></td>
             </tr>
         
          </table>  

@@ -19,7 +19,7 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		      return connection.get();
 		},
 		addBooking: function(booking){
-		  connection.post(booking);
+		  return connection.post(booking);
 		  
 		}
 

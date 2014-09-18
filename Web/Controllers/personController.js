@@ -1,5 +1,15 @@
-rumBukkaApp.controller('personController', function ($scope, $filter,ngTableParams, userData, $location) {
-
+rumBukkaApp.controller('personController', function ($routeParams, $scope, $filter,ngTableParams, userData, $location) {
+if($routeParams.confirm != null) {
+  $scope.confirm = true;
+  setTimeout(function(){ 
+    //
+    $scope.$apply(function(){
+      $scope.confirm = false; 
+      
+    });
+    //alert('herro');
+  }, 5000);
+}
 
     $scope.users = userData.getUsers();
 
