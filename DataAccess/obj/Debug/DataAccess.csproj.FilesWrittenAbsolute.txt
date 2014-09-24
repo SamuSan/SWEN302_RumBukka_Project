@@ -67,3 +67,13 @@
 /am/rialto/home1/byforddayg/rumbdev/SWEN302_RumBukka_Project/DataAccess/bin/Debug/EntityFramework.SqlServer.dll
 /am/rialto/home1/byforddayg/rumbdev/SWEN302_RumBukka_Project/DataAccess/bin/Debug/MySql.Data.dll
 /am/rialto/home1/byforddayg/rumbdev/SWEN302_RumBukka_Project/DataAccess/bin/Debug/mysql.data.entity.EF6.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/obj/Debug/DataAccess.Migrations.Initial.resources
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/DataAccess.dll.mdb
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/DataAccess.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/obj/Debug/DataAccess.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/obj/Debug/DataAccess.dll.mdb
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/EntityFramework.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/EntityFramework.SqlServer.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/MySql.Data.dll
+/am/phoenix/home1/minnssam/SWEN_PROJECT/SWEN302_RumBukka_Project/DataAccess/bin/Debug/mysql.data.entity.EF6.dll
