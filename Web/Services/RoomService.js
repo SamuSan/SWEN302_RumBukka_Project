@@ -5,6 +5,10 @@ rumBukkaApp.factory('roomData', function($resource, $q){
 			isArray: true
 
 		},
+		getsingle: {
+			method: 'GET',
+
+		},
 		post: {
 		  method: 'POST'
 		  
@@ -18,6 +22,9 @@ rumBukkaApp.factory('roomData', function($resource, $q){
 	return {
 		getRooms: function(){
 		      return connection.get();
+		},
+		getRoom: function(room){
+		      return connection.getsingle({id:room});
 		},
 		addRoom: function(room){
 		  connection.post(room);

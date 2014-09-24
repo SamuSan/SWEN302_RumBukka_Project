@@ -19,6 +19,9 @@ namespace Server.Interfaces
         Object deleteSingle(int id);
         
         Object update(string json);
+        
+        Object getFilter(int id);
+
 
     }
 }

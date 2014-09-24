@@ -47,6 +47,11 @@ namespace Server.Handlers
         return "update";
         }
 
+        public object getFilter(int id)
+        {
+        return db.Bookings.Where(i=>i.User.Student_Id==id).ToList();
+        }
+
     }
 }
 

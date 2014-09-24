@@ -259,6 +259,27 @@ li {
   float: left;
 }
 
+.confirm {
+  background: #ee6;
+  margin-top: -19px;
+  text-align: center;
+  
+}
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
+}
+.cssFade {
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+.cssFade.ng-hide {
+    opacity: 0;
+}
+
+.ng-isolate-scope {background: #fff;}
+
 li.created {
   width: 100px;
   }
@@ -275,3 +296,9 @@ li.status {
 .selected {
   background-color: rgb(86, 160, 211);
 }
+
+/*  room table styles */
+.full .fa-square { color: red; }
+.halffull .fa-square { color: orange; }
+.empty .fa-square { color: green; }
+.wrongorg { text-decoration: line-through; }

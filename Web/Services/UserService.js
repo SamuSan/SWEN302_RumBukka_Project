@@ -32,10 +32,11 @@ rumBukkaApp.factory('userData', function($resource, $q) {
 			 return connection.post(user);
 
 		},
-		deleteUser: function(user) {
-			connection.delete({
-				id: user
-			});
+		deleteUser: function(user){
+		  connection.delete({id:user});
+		},
+		getUser: function(user) {
+		  return connection.getsingle({id:user});
 		}
 
 	};

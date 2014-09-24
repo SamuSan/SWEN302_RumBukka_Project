@@ -29,9 +29,11 @@ namespace Server.Handlers
 	      i.RoomName, 
 	      i.BuildingId, 
 	      i.Level, 
-	      //i.Capacity, 
-	      CurrentBookingCount = i.Bookings.Count()  
-	    }).ToList();
+	      Capacity = 10,
+	      CurrentBookingCount = i.Bookings.Count() ,
+	      i.Organisation
+	      
+	     }).ToList();
         }
 
         public object postNew(string json)
@@ -56,12 +58,14 @@ namespace Server.Handlers
         db.SaveChanges();
         return "deletion";
         } 
-        
         public object update(string json)
         {
-        
-        
         return null;
         }
+        public object getFilter(int id)
+        {
+        return null;
+        }
+
     }
 }

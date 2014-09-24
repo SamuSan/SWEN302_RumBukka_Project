@@ -35,5 +35,9 @@ namespace Server.Handlers
         {
         return null;
         }
+        public object getFilter(int id)
+        {
+        return null;
+        }
     }
 }
