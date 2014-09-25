@@ -15,20 +15,22 @@ namespace DataAccess.Model
     public partial class User
     {
         [Key]
-        public int Student_Id { get; set; }
-        public Nullable<int> VUWStudentId { get; set; }
+        public int User_Id { get; set; }
+        public Nullable<int> VUWId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Nullable<int> Type { get; set; }
-        public Nullable<int> Role { get; set; }
 
         public virtual Organisation Organisation { get; set; }
 
         public virtual Phone Phone { get; set; }
+        
+        public string Email { get; set; }
+        
+        public string Mobile { get; set; }
 
     [JsonIgnore]
-        public virtual Booking Booking { get; set; }
-
+        public virtual ICollection<Booking> Bookings { get; set; }
 
     }
 }
