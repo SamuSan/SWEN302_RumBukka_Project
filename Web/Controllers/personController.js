@@ -16,11 +16,11 @@ rumBukkaApp.controller('personController', function($routeParams, $scope, $filte
 			var name = $scope.input;
 			$location.url(name == null ? "addPerson/name/userid" : "addPerson/name/" + name + "/userid");
 		} else if (type == 'addBooking') {
-			$location.url("addBooking/" + user.Student_Id);
+			$location.url("addBooking/" + user.User_Id);
 		} else if (type == 'modify') {
-			$location.url("modifyBooking/" + user.Student_Id);
+			$location.url("modifyBooking/" + user.User_Id);
 		} else if (type == 'edit') {
-			$location.url("addPerson/name/userid/" + user.Student_Id);
+			$location.url("addPerson/name/userid/" + user.User_Id);
 		}
 	}
 });

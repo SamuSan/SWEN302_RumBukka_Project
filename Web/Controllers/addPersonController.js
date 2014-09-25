@@ -1,29 +1,36 @@
-rumBukkaApp.controller('addPersonController', function ($scope, $route, $routeParams, $location, userData, $window, $rootScope,organisationData, bookingData) {
-	
-	$scope.userTypes = ["Hons","Masters","PHD", "Faculty"]
+rumBukkaApp.controller('addPersonController', function( $scope, $route, $routeParams, $location, userData, $window, $rootScope, organisationData, bookingData) {
 
-	organisationData.getOrganisations().$promise.then(function(orgs){
-	
-	    $scope.orgs = orgs;   
-	    
-	    if($routeParams.userid != null)
-	    {	    
-	      bookingData.getBookings
-	      userData.getUser($routeParams.userid).$promise.then(function(user){
-		$scope.user = user;
-		//$scope.user.Organisation = $scope.user.Organisation.OrganisationName;
-		$scope.user.Type = $scope.userTypes[$scope.user.Type];
-	      })
-	      
-	    }else
-	    {
-	      
-	    $scope.user.FirstName = $scope.getName(0);
-	    $scope.user.LastName = $scope.getName(1);
-	    }
-	
-	
-	});
+		$scope.userTypes = ["Hons", "Masters", "PHD", "Faculty"]
+
+		organisationData.getOrganisations().$promise.then(function(orgs) {
+
+				$scope.orgs = orgs;
+
+				if ($routeParams.userid != null) {
+					console.log("Setting user");
+					bookingData.getBookings
+					userData.getUser($routeParams.userid).$promise.then(function(user) {
+						$scope.user = user;
+						//$scope.user.Organisation = $scope.user.Organisation.OrganisationName;
+						$scope.user.Type = $scope.userTypes[$scope.user.Type];
+					})
+
+				} else if ($routeParams.userName != null) 
+				{
+					$scope.user = {};
+					$scope.user.FirstName = $routeParams.userName;
+				} 
+				else 
+				{
+
+					$scope.user.FirstName = $scope.getName(0);
+					$scope.user.LastName = $scope.getName(1);
+				}
+
+			
+
+
+		});
 
 	$scope.getName = function(index) {
 		var name = $routeParams.userName;
@@ -31,26 +38,26 @@ rumBukkaApp.controller('addPersonController', function ($scope, $route, $routePa
 	}
 
 	//submit function
-	$scope.submit = function(){
-	    $scope.user.Type = $scope.userTypes.indexOf($scope.user.Type)
-	    userData.addUser($scope.user).$promise.then(function(user){
-		console.log(user + " " + user.Student_Id);
-		$location.url("addBooking/"+ user.Student_Id)      	
-	    });
+	$scope.submit = function() {
+		$scope.user.Type = $scope.userTypes.indexOf($scope.user.Type)
+		userData.addUser($scope.user).$promise.then(function(user) {
+			console.log(user + " " + user.User_Id);
+			$location.url("addBooking/" + user.User_Id)
+		});
 	}
-	
-	$scope.debug = function(){
-	    alert($scope.user.Organisation.OrganisationName)
+
+	$scope.debug = function() {
+		alert($scope.user.Organisation.OrganisationName)
 	}
-	
+
 	$scope.reversed = false;
 
-	$scope.reverse = function(){
-	    if(!$scope.reversed && $scope.user.LastName == ''){	
-		$scope.user.LastName = $scope.user.FirstName;
-		$scope.user.FirstName = "";
-		$scope.reversed = true;
-	    }
+	$scope.reverse = function() {
+		if (!$scope.reversed && $scope.user.LastName == '') {
+			$scope.user.LastName = $scope.user.FirstName;
+			$scope.user.FirstName = "";
+			$scope.reversed = true;
+		}
 
 	}
 

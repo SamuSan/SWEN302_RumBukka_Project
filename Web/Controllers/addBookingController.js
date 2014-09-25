@@ -76,7 +76,7 @@ $scope.submit = function(){
     User: $scope.currentProfile,
     Room: $scope.selectedRoom
   };
-  $location.url("confirmBooking/" +  $scope.currentProfile.Student_Id);
+  $location.url("confirmBooking/" +  $scope.currentProfile.User_Id);
 
 }
 

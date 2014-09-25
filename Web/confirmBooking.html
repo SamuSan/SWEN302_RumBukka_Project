@@ -3,44 +3,87 @@
 <html>
 
 <head>
-	    <!-- SCROLLS -->
-    <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <!-- SCROLLS -->
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
 
-    <!-- SPELLS -->
-    <!-- load angular via CDN -->
-    <script src="angular/angular.js"></script>
-    <script src="angular/angular-route.js"></script>
-    <script src="angular/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="script.js"></script>
-    <script src="Controllers/confirmBookingController.js"></script>
-    <script src="Services/UserData.js"></script>
-    <script src="angular/angular-resource.min.js"></script>
+  <!-- SPELLS -->
+  <!-- load angular via CDN -->
+  <script src="angular/angular.js"></script>
+  <script src="angular/angular-route.js"></script>
+  <script src="angular/ui-bootstrap-tpls-0.11.0.js"></script>
+  <script src="script.js"></script>
+  <script src="Controllers/confirmBookingController.js"></script>
+  <script src="Services/UserData.js"></script>
+  <script src="angular/angular-resource.min.js"></script>
 </head>
 
-<div ng-controller="confirmBookingController">
-  <h1>Confirm booking for {{user.FirstName}}</h1>
-</div>
-<table>
-    <tr data-title="'Name'"><td><b>User</b><td></tr>
-   <tr><td>Name:</td><td>{{user.FirstName}} {{user.LastName}}<td></tr>
-   <tr><td>Id:</td><td>{{user.Student_Id}}<td></tr>
-   <tr><td>Organistion:</td><td>{{user.Organisation.OrganisationName}}<td></tr>
-    <tr><td>Phone Number:</td><td>{{user.Phone}}<td></tr>
-     <tr data-title="'Name'"><td><b>Room</b><td></tr>
-   <tr><td>Room:</td><td>{{room.RoomName}}<td></tr>
-   <tr><td>Organistion:</td><td>{{room.Organisation.OrganisationName}}<td></tr>
-     <tr data-title="'Name'"><td><b>Dates</b><td></tr>
-   <tr><td>Start:</td><td>{{startDate}}<td></tr>
-   <tr><td>End:</td><td>{{endDate}}<td></tr>
+  <div ng-controller="confirmBookingController">
+    <h1>Confirm booking for {{user.FirstName}}</h1>
+  </div>
+  <table>
+    <tr data-title="'Name'">
+      <td> <b>User</b>
+        <td></tr>
+        <tr>
+          <td>Name:</td>
+          <td>
+            {{user.FirstName}} {{user.LastName}}
+            <td></tr>
+            <tr>
+              <td>Id:</td>
+              <td>
+                {{user.User_Id}}
+                <td></tr>
+                <tr>
+                  <td>Organistion:</td>
+                  <td>
+                    {{user.Organisation.OrganisationName}}
+                    <td></tr>
+                    <tr>
+                      <td>Phone Number:</td>
+                      <td>
+                        {{user.Phone}}
+                        <td></tr>
+                        <tr data-title="'Name'">
+                          <td> <b>Room</b>
+                            <td></tr>
+                            <tr>
+                              <td>Room:</td>
+                              <td>
+                                {{room.RoomName}}
+                                <td></tr>
+                                <tr>
+                                  <td>Organistion:</td>
+                                  <td>
+                                    {{room.Organisation.OrganisationName}}
+                                    <td></tr>
+                                    <tr data-title="'Name'">
+                                      <td>
+                                        <b>Dates</b>
+                                        <td></tr>
+                                        <tr>
+                                          <td>Start:</td>
+                                          <td>
+                                            {{startDate}}
+                                            <td></tr>
+                                            <tr>
+                                              <td>End:</td>
+                                              <td>
+                                                {{endDate}}
+                                                <td></tr>
 
-<tr>
-          <td>  <button type="submit" class="btn" ng-click="submit()">Confirm</button></td>
-           <td>  <button type="submit" class="btn" ng-click="cancel()">Cancel</button></td>
-            </tr>
+                                                <tr>
+                                                  <td>
+                                                    <button type="submit" class="btn" ng-click="submit()">Confirm</button>
+                                                  </td>
+                                                  <td>
+                                                    <button type="submit" class="btn" ng-click="cancel()">Cancel</button>
+                                                  </td>
+                                                </tr>
 
-</table>
+                                              </table>
 
-</html>
+                                            </html>

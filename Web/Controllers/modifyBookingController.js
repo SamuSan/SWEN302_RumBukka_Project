@@ -12,7 +12,7 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
 
             // $scope.Bookings = bookings;
             var filtered = _.filter(bookings, function(booking) {
-               return  booking.User.Student_Id == $scope.currentProfile.Student_Id;
+               return  booking.User.User_Id == $scope.currentProfile.User_Id;
             });
             console.log(filtered);
             console.log("FILTERING");
