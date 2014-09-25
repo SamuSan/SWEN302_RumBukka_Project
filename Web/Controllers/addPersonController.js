@@ -46,10 +46,6 @@ rumBukkaApp.controller('addPersonController', function( $scope, $route, $routePa
 		});
 	}
 
-	$scope.debug = function() {
-		alert($scope.user.Organisation.OrganisationName)
-	}
-
 	$scope.reversed = false;
 
 	$scope.reverse = function() {
