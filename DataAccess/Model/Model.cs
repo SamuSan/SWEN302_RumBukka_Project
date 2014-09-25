@@ -32,23 +32,18 @@ namespace DataAccess.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<Phone>()
-                .HasMany(x => x.Rooms)
-                .WithMany(x => x.Phones)
-                .Map(x =>
-                {
-                    x.ToTable("room_phone");
-                    x.MapLeftKey("Phone_Id");
-                    x.MapRightKey("Room_Id");
-                });
-
+                    
             modelBuilder.Entity<User>()
-                .HasOptional(x => x.Booking).WithRequired(x => x.User);
+                .HasMany(x => x.Bookings)
+                .WithRequired(x => x.User);
 
             modelBuilder.Entity<Room>()
                 .HasMany(x => x.Bookings)
                 .WithRequired(x => x.Room);
+                
+            modelBuilder.Entity<Room>()
+		.HasMany(x => x.Phones)
+		.WithRequired(x => x.Room);
 
             modelBuilder.Entity<Booking>()
                 .HasRequired(x => x.Room)
