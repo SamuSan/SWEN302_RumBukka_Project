@@ -5,6 +5,7 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
     $scope.bookingUpdate = {};
     userData.getUser($routeParams.userId).$promise.then(function(user) {
         $scope.currentProfile = user;
+        debugger;
 
 
 
