@@ -1,36 +1,32 @@
-rumBukkaApp.controller('addPersonController', function( $scope, $route, $routeParams, $location, userData, $window, $rootScope, organisationData, bookingData) {
+rumBukkaApp.controller('addPersonController', function($scope, $route, $routeParams, $location, userData, $window, $rootScope, organisationData, bookingData) {
 
-		$scope.userTypes = ["Hons", "Masters", "PHD", "Faculty"]
+	$scope.userTypes = ["Hons", "Masters", "PHD", "Faculty"]
 
-		organisationData.getOrganisations().$promise.then(function(orgs) {
+	organisationData.getOrganisations().$promise.then(function(orgs) {
 
-				$scope.orgs = orgs;
+		$scope.orgs = orgs;
 
-				if ($routeParams.userid != null) {
-					console.log("Setting user");
-					bookingData.getBookings
-					userData.getUser($routeParams.userid).$promise.then(function(user) {
-						$scope.user = user;
-						//$scope.user.Organisation = $scope.user.Organisation.OrganisationName;
-						$scope.user.Type = $scope.userTypes[$scope.user.Type];
-					})
+		if ($routeParams.userid != null) {
+			console.log("Setting user");
+			bookingData.getBookings
+			userData.getUser($routeParams.userid).$promise.then(function(user) {
+				$scope.user = user;
+				//$scope.user.O  ganisation = $scope.user.Organisation.OrganisationName;
+				$scope.user.Type = $scope.userTypes[$scope.user.Type];
+			})
 
-				} else if ($routeParams.userName != null) 
-				{
-					$scope.user = {};
-					$scope.user.FirstName = $routeParams.userName;
-				} 
-				else 
-				{
+		} else if ($routeParams.userName != null) {
+			$scope.user = {};
+			$scope.user.FirstName = $routeParams.userName;
+		} else {
 
-					$scope.user.FirstName = $scope.getName(0);
-					$scope.user.LastName = $scope.getName(1);
-				}
-
-			
+			$scope.user.FirstName = $scope.getName(0);
+			$scope.user.LastName = $scope.getName(1);
+		}
 
 
-		});
+
+	});
 
 	$scope.getName = function(index) {
 		var name = $routeParams.userName;
@@ -45,7 +41,9 @@ rumBukkaApp.controller('addPersonController', function( $scope, $route, $routePa
 			$location.url("addBooking/" + user.User_Id)
 		});
 	}
-
+	$scope.cancel = function() {
+		$location.url('/');
+	}
 	$scope.reversed = false;
 
 	$scope.reverse = function() {

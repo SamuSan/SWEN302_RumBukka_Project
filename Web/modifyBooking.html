@@ -99,13 +99,13 @@
         </tr>
         <tr>
             <td>
-                <button type="submit" class="btn"
+                <button type="submit" class="btn btn-success"
                     ng-click="update(bookingUpdate)"
                     >Submit</button>
-                <button type="submit" class="btn">Cancel</button>
+                <button type="submit" class="btn btn-danger" ng-click="cancel()">Cancel</button>
             </td>
             <td>
-                <button type="submit" class="btn" ng-click="delete(bookingUpdate.Booking_Id)" >Delete</button>
+                <button type="submit" class="btn btn-warning" ng-click="delete(bookingUpdate.Booking_Id)" >Delete</button>
             </td>
         </tr>
 

@@ -54,6 +54,9 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
         console.log("pro " + $scope.addBook.FirstName);
 
     }
+        $scope.cancel = function() {
+        $location.url('/');
+    }
     $scope.select = function(entry) {
         /*$scope.booking =$scope.Bookings;
 		console.log($scope.currentProfile.F);

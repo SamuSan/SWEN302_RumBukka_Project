@@ -1,55 +1,52 @@
-
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8"> 
-<!DOCTYPE html>
-<html>
+    <meta charset="utf-8">
+    <!DOCTYPE html>
+    <html>
 
 <head>
-	    <!-- SCROLLS -->
-    <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
-    <!-- SPELLS -->
-    <!-- load angular via CDN -->
-    <script src="angular/angular.js"></script>
-    <script src="angular/angular-route.js"></script>
-    <script src="script.js"></script>
-    <script src="Controllers/roomListController.js"></script>
+        <!-- SCROLLS -->
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+        <!-- SPELLS -->
+        <!-- load angular via CDN -->
+        <script src="angular/angular.js"></script>
+        <script src="angular/angular-route.js"></script>
+        <script src="script.js"></script>
+        <script src="Controllers/roomListController.js"></script>
 </head>
 <body ng-controller="roomListController">
-		<h2>Room Summary</h2>
-		<div>
-    <ul>
-        <li class="created" >
-            <a>Room</a>
-        </li>
-        <li class="ip">
-            <b>Organisation</b>
-        </li>
-        <li class="status">
-            <b>Capacity</b>
-        </li>
-    </u> 
-    <ul ng-repeat="entry in Rooms" ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
-        <li  class="created">
-          {{entry.RoomName}}
-        </li>
-        <li class="ip">
-            {{entry.Organisation.OrganisationName}}
-        </li>
-        <li class="status">
-            {{entry.Capacity}}
-        </li>
-    </ul>
-   </div>
-   
-   <td>  <button type="submit" class="btn"
+        <table>
+            <tr>
+                <h2>Room Summary</h2>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="created" >
+                            <b>Room</b>
+                        </li>
+                        <li class="ip"> <b>Organisation</b>
+                        </li>
+                        <li class="status"> <b>Capacity</b>
+                        </li></u> 
+                    <ul ng-repeat="entry in Rooms"  ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
+                        <li  class="created">{{entry.RoomName}}</li>
+                        <li class="ip">{{entry.Organisation.OrganisationName}}</li>
+                        <li class="status">{{entry.Capacity}}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-success"
                     ng-click="submit()"
-                    >Submit
-            </button>
-            <button type="submit" class="btn">Cancel</button></td>
-	
-	
+                    >Submit</button>
+                    <button type="submit" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+
 </body>
-</html>
+    </html>
