@@ -62,7 +62,7 @@
 
     <tr><td><label>Organisation</label></td>
     <td>
-    <select ng-model="user.Organisation.Organisation_Id" ng-options="entry.Organisation_Id as entry.OrganisationName for entry in orgs" required> </select></td></tr>
+    <select class="btn btn-primary dropdown-toggle" role="menu" ng-model="user.Organisation.Organisation_Id" ng-options="entry.Organisation_Id as entry.OrganisationName for entry in orgs" required> </select></td></tr>
     
    
     <tr>
@@ -71,7 +71,7 @@
             <label>Type</label>
         </td>
         <td>
-            <select name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" />
+            <select class="btn btn-primary dropdown-toggle" name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" />
         </td>
 
     </tr>
