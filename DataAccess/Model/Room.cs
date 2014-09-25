@@ -22,8 +22,6 @@ namespace DataAccess.Model
         [Key]
         public int Room_Id { get; set; }
         public string RoomName { get; set; }
-        public int BuildingId { get; set; }
-        public int Level { get; set; }
 	
         public virtual Organisation Organisation { get; set; }
 	

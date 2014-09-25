@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,5 +23,7 @@ namespace DataAccess.Model
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
+        
+        public bool privateBooking { get; set; } //only one user for this booking
     }
 }
