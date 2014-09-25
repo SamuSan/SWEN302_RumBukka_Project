@@ -77,7 +77,7 @@
                 <label>Bookings for {{currentProfile.FirstName}}:</label>
             </td>
             <td>
-                <select ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
+                <select class="btn btn-primary dropdown-toggle" ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
             </td>
         </tr>
         <tr>
