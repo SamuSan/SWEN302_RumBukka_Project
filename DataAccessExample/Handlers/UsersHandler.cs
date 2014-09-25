@@ -16,7 +16,7 @@ namespace Server.Handlers
 
         public object getSingle(int id)
         {
-            return db.Users.Where(i=>i.Student_Id == id).FirstOrDefault();
+            return db.Users.Where(i=>i.User_Id == id).FirstOrDefault();
         }
 
         public object getList()

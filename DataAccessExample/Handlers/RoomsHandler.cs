@@ -27,8 +27,6 @@ namespace Server.Handlers
             { 
 	      i.Room_Id, 
 	      i.RoomName, 
-	      i.BuildingId, 
-	      i.Level, 
 	      Capacity = 10,
 	      CurrentBookingCount = i.Bookings.Count() ,
 	      i.Organisation

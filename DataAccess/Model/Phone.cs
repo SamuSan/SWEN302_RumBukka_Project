@@ -13,16 +13,12 @@ namespace DataAccess.Model
     [Table("phone")]
     public partial class Phone
     {
-        public Phone()
-        {
-            this.Rooms = new HashSet<Room>();
-        }
+        
         [Key]
         public int Phone_Id { get; set; }
         public string PhoneNumber { get; set; }
 
-    [JsonIgnore]
-        public virtual ICollection<Room> Rooms { get; set; }
+        public Room Room { get; set; }
 
     }
 

@@ -37,6 +37,9 @@ namespace DataAccess.Model
                 .HasMany(x => x.Bookings)
                 .WithRequired(x => x.User);
 
+            modelBuilder.Entity<User>()
+                .HasOptional(x => x.Phone);
+
             modelBuilder.Entity<Room>()
                 .HasMany(x => x.Bookings)
                 .WithRequired(x => x.Room);

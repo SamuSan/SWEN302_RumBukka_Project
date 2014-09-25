@@ -49,7 +49,7 @@ namespace Server.Handlers
 
         public object getFilter(int id)
         {
-        return db.Bookings.Where(i=>i.User.Student_Id==id).ToList();
+        return db.Bookings.Where(i=>i.User.User_Id==id).ToList();
         }
 
     }
