@@ -26,8 +26,11 @@ namespace Server.Handlers
 
 	public object postNew(string json)
         {
-	  
 	  User user = JsonConvert.DeserializeObject<User>(json);
+	  if (db.Users.Where(i=>i.VUWId == user.VUWId).Count() > 0) {     
+	      user.VUWId = -1;
+	      return user; //fail
+	  }
 	
 	  user.Organisation = db.Organisations.Where(i=>i.Organisation_Id == user.Organisation.Organisation_Id).FirstOrDefault();
 	
