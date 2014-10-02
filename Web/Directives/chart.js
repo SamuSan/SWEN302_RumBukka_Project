@@ -19,7 +19,7 @@ rumBukkaApp.directive('appVersion', ['version',
 		var chart = " ";
 
 		
-			chart = new google.visualization.Timeline(elm[0]);
+		chart = new google.visualization.Timeline(elm[0]);
 		
         	
         	chart.draw($scope.chart.data, $scope.chart.options);

@@ -20,6 +20,7 @@ namespace DataAccess.Model
 
         public virtual Room Room { get; set; }
 
+	public int SeatNumber {get;set;}
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }

@@ -3,12 +3,12 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
 
     //  $scope.currentProfile = userData.getUser($routeParams.userId);
     $scope.bookingUpdate = {};
+    
+    if($routeParams.userId != null) {
+    
     userData.getUser($routeParams.userId).$promise.then(function(user) {
         $scope.currentProfile = user;
-        debugger;
-
-
-
+       
         bookingData.getBookings().$promise.then(function(bookings) {
 
             // $scope.Bookings = bookings;
@@ -23,7 +23,25 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
         });
     });
 
+    }
+    else
+    {
+      bookingData.getBooking($routeParams.bookingId).$promise.then(function(booking) {
 
+	userData.getUser(booking.User.User_Id).$promise.then(function(user) {
+	    $scope.currentProfile = user;
+	  
+	
+	});
+	//console.log(filtered);
+	//console.log("FILTERING");
+	$scope.Bookings = booking;
+	$scope.currentBooking = $scope.Bookings[0];
+
+    });
+
+      
+    }
 
     //$scope.currentProfile = $scope.Profiles[0];
     $scope.addBook = {
