@@ -32,6 +32,7 @@ rumBukkaApp.controller('addPersonController', function($scope, $route, $routePar
 	//submit function
 	$scope.submit = function() {
 		//console.log("Organisation_Id: " + $scope.user.Organisation.Organisation_Id);
+		
 		if (typeof $scope.user.Organisation === 'undefined') {
 		  var error = getError(-2);
 		  if(error != null) {
@@ -41,6 +42,13 @@ rumBukkaApp.controller('addPersonController', function($scope, $route, $routePar
 		}
 	  	if (typeof $scope.user.Type === 'undefined') {
 		  var error = getError(-3);
+		  if(error != null) {
+		    alert(error);
+		    return;
+		}
+		}
+		if(typeof $scope.user.VUWId === 'undefined'){
+		  var error = getError(-4);
 		  if(error != null) {
 		    alert(error);
 		    return;

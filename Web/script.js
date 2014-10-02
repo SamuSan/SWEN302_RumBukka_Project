@@ -56,6 +56,7 @@ var getError = function(errorcode) {
     case -1: return "Duplicate Entry"; break;
     case -2: return "Organisation Required"; break;
     case -3: return "Type Required"; break;
+    case -4: return "Invalid ID Input"; break;
     default: return null;
   }
   
