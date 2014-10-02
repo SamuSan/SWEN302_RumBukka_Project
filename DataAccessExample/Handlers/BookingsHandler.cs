@@ -28,7 +28,16 @@ namespace Server.Handlers
 
         public object postNew(string json)
         {
-	  return null;
+	  Booking booking = JsonConvert.DeserializeObject<Booking>(json);
+	  
+	  booking.Room = db.Rooms.Where(i=>i.Room_Id == booking.Room.Room_Id).FirstOrDefault();
+	  
+	  //Booking current = (Booking)getSingle(update.Booking_Id);
+	  db.Bookings.Add(booking);
+	  //current.StartDate = update.StartDate;
+	  //current.EndDate = update.EndDate;
+	  db.SaveChanges();       
+	  return booking;
         }
         public object deleteSingle(int id)
         {

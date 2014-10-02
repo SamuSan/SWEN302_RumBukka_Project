@@ -17,13 +17,9 @@ rumBukkaApp.controller('addPersonController', function($scope, $route, $routePar
 
 		} else if ($routeParams.userName != null) {
 			$scope.user = {};
-			$scope.user.FirstName = $routeParams.userName;
-		} else {
-
 			$scope.user.FirstName = $scope.getName(0);
 			$scope.user.LastName = $scope.getName(1);
 		}
-
 
 
 	});
@@ -35,8 +31,38 @@ rumBukkaApp.controller('addPersonController', function($scope, $route, $routePar
 
 	//submit function
 	$scope.submit = function() {
+		//console.log("Organisation_Id: " + $scope.user.Organisation.Organisation_Id);
+		
+		if (typeof $scope.user.Organisation === 'undefined') {
+		  var error = getError(-2);
+		  if(error != null) {
+		    alert(error);
+		    return;
+		}
+		}
+	  	if (typeof $scope.user.Type === 'undefined') {
+		  var error = getError(-3);
+		  if(error != null) {
+		    alert(error);
+		    return;
+		}
+		}
+		if(typeof $scope.user.VUWId === 'undefined'){
+		  var error = getError(-4);
+		  if(error != null) {
+		    alert(error);
+		    return;
+		}
+		}
+	  
 		$scope.user.Type = $scope.userTypes.indexOf($scope.user.Type)
-		userData.addUser($scope.user).$promise.then(function(user) {
+		userData.addUser($scope.user).$promise.then(function(user) {	  
+		  var error = getError(user.VUWId);
+		  if(error != null) {
+		    alert(error);
+		    return;
+		}
+		  
 			console.log(user + " " + user.User_Id);
 			$location.url("addBooking/" + user.User_Id)
 		});

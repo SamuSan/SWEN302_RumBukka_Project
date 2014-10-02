@@ -42,23 +42,16 @@
             <input name = "sName" ng-model="user.LastName" ng-trim="false" type="text" required/>
         </td>
     </tr>
-<tr>
-    <td>
-<b>ID Number<b>
-    </td>
-<td>
-<input name="id" ng-model="user.User_Id" ng-trim="false" type="text" required>
-</td>
-</tr>
-<!--     <tr>
+
+     <tr>
         <td>
-            <label>Student ID</label>
+            <label>VUW ID</label>
         </td>
         <td>
-            <input name = "SID" ng-model="user.VUWStudentId" ng-trim="false" type="text" />
+            <input name = "SID" ng-model="user.VUWId" ng-trim="false" type="number" required/>
         </td>
 
-    </tr> -->
+    </tr>
 
     <tr><td><label>Organisation</label></td>
     <td>
@@ -71,7 +64,7 @@
             <label>Type</label>
         </td>
         <td>
-            <select class="btn btn-primary dropdown-toggle" name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" />
+            <select name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" required/>
         </td>
 
     </tr>
@@ -83,7 +76,7 @@
             <input name = "Phone" ng-model="user.Phone_Phone_Id" ng-trim="false" type="text" />
         </td>
 
-    </tr>
+    </tr>    
     <tr>
       <td>  <button type="submit" class="btn btn-success"
                 ng-disabled="user.$invalid"

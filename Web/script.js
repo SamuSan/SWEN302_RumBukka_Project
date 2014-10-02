@@ -49,3 +49,16 @@ rumBukkaApp.config(function ($routeProvider) {
 });
 // create the controller and inject Angular's $scope
 rumBukkaApp.controller('mainController', function($scope) {});
+
+var getError = function(errorcode) {
+  console.log("Errorcode: " + errorcode);
+  switch(errorcode){    
+    case -1: return "Duplicate Entry"; break;
+    case -2: return "Organisation Required"; break;
+    case -3: return "Type Required"; break;
+    case -4: return "Invalid ID Input"; break;
+    default: return null;
+  }
+  
+}
+
