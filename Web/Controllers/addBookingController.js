@@ -1,5 +1,5 @@
 
-rumBukkaApp.controller('addBookingController', function ($routeParams, $scope, $resource, $route, $location, $window, $rootScope, userData, roomData, bookingData) {
+rumBukkaApp.controller('addBookingController', function ($routeParams, $scope, $resource, $route, $location, $window, userData, roomData, bookingData) {
 
     userData.getUser($routeParams.userId).$promise.then(function(user){
       $scope.currentProfile = user;
@@ -10,12 +10,14 @@ rumBukkaApp.controller('addBookingController', function ($routeParams, $scope, $
       });
       
     });
-     bookingData.getBookings().$promise.then(function(bookings){
+
+    bookingData.getBookings().$promise.then(function(bookings){
       $scope.Bookings = bookings;     
     });
 
 
     $scope.selectedRoom = null;
+    
     $scope.setSelected = function(selectedRoom) {
        $scope.selectedRoom = selectedRoom;
        //console.log(selectedRoom);
@@ -64,18 +66,20 @@ rumBukkaApp.controller('addBookingController', function ($routeParams, $scope, $
 	return style;
     }
 
-
+//1412208191000
+//1412208205000
 $scope.submit = function(){
-//push adduser
-//console.log("pro "+$scope.addBook.FirstNameStudent);
-  $rootScope.newBooking = {
-    //User_Id: $scope.currentProfile.Student_Id,
-    //selectedRoomRoom_Id: $scope.selectedRoom.Room_Id,
-    StartDate: Date.parse($scope.startDate.toString()),
-    EndDate:Date.parse($scope.endDate.toString()),
-    User: $scope.currentProfile,
-    Room: $scope.selectedRoom
-  };
+  
+  //alert($scope.startDate);
+  //alert();
+  
+  bookingData.newBooking.StartDate = new Date(Date.parse(document.getElementById('DP').value));
+  bookingData.newBooking.EndDate = new Date(Date.parse(document.getElementById('DPE').value));
+  bookingData.newBooking.User = $scope.currentProfile;
+  bookingData.newBooking.Room = $scope.selectedRoom;
+  
+  //console.log("OTHER" + $scope.startDate);
+  //console.log("BEFORE" + $rootScope.newBooking.StartDate);
   $location.url("confirmBooking/" +  $scope.currentProfile.User_Id);
 
 }
@@ -90,26 +94,32 @@ Date.prototype.addDays = function(days){
 
 }
 $scope.dateChanged=false;
+/*
 $scope.$watch('endDate',function(oldVal,newVal){ 
     //Check for future booking
     if(newVal < $scope.startDate){
         $scope.endDate.setDate($scope.startDate.getDate());
     }
     if(oldVal !=newVal){
-                $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
-            $scope.dateChanged=true;
-    }        
-});
+      $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
+      $scope.dateChanged=true;
+    }
+    $scope.$apply();
+},true);
+
+
 $scope.$watch('startDate',function(oldVal,newVal){ 
     //Check for future booking
         if(newVal > $scope.endDate){
-        console.log("Reutrn to the futrue")
+        console.log("Return to the future")
     }
     if(oldVal !=newVal){
-                $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
-            $scope.dateChanged=true;
-    }        
-});
+      $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
+      $scope.dateChanged=true;
+    }
+    console.log("UPDATE" + $scope.startDate);
+},true);
+*/
 //Set the start date
   $scope.today = function() {
     $scope.startDate = new Date();
@@ -164,7 +174,7 @@ $scope.$watch('startDate',function(oldVal,newVal){
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
-
+//$scope.$apply();
 });
 
 

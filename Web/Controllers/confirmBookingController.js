@@ -1,19 +1,25 @@
  
 
-rumBukkaApp.controller('confirmBookingController', function ($routeParams, $scope, $resource, $route, $location, $window, $rootScope, userData, roomData, bookingData) {
+rumBukkaApp.controller('confirmBookingController', function ($routeParams, $scope, $resource, $route, $location, $window, userData, roomData, bookingData) {
 	
-  if($rootScope.newBooking == null)
+ 
+  if(bookingData.newBooking == null)
     $location.url('/addBooking/' + $routeParams.userId);
   
-      $scope.user = $rootScope.newBooking.User;
-      $scope.room = $rootScope.newBooking.Room;
-      var sdate = new Date($rootScope.newBooking.StartDate);
-      $scope.startDate = sdate.toString();
-      var edate = new Date($rootScope.newBooking.EndDate);
-      $scope.endDate = edate.toString();
-
+      $scope.user = bookingData.newBooking.User;
+      $scope.room = bookingData.newBooking.Room;
+      var sdate = new Date(bookingData.newBooking.StartDate);
+      bookingData.newBooking.StartDate = new Date(sdate).toISOString().replace('T', ' ');
+      $scope.nicestartdate = sdate.toString();
+      
+      var edate = new Date(bookingData.newBooking.EndDate);
+      bookingData.newBooking.EndDate = new Date(edate).toISOString().replace('T', ' ');
+      $scope.niceenddate = edate.toString();
+      
+      //alert(bookingData.newBooking.StartDate);
+console.log("AFTER" + bookingData.newBooking.StartDate);
   $scope.submit = function(){
-    bookingData.addBooking($rootScope.newBooking).$promise.then(function(booking){
+    bookingData.addBooking(bookingData.newBooking).$promise.then(function(booking){
       $location.url('/person/confirm');
     });
   }

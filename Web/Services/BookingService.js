@@ -34,7 +34,8 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		},
 		updateBooking: function(booking){
 		 connection.update(booking);
-		}
+		},
+		newBooking: {}
 
 	}
 
