@@ -23,6 +23,10 @@ rumBukkaApp.controller('personController', function($routeParams, $scope, $filte
 			$location.url("addPerson/name/userid/" + user.User_Id);
 		}
 	}
+
+	$scope.select = function(){
+		console.log("CLIKED");
+	}
 });
 
 

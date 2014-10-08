@@ -33,12 +33,12 @@
             </tr>
         </table>
         <table ng-table class="table">
-            <tr ng-repeat="user in users | filter:input">
+            <tr ng-repeat="user in users | filter:input" class="rb-user-select" ng-click="select()">
                 <td data-title="'Name'">{{user.FirstName}}</td>
                 <td data-title="'Surname'">{{user.LastName}}</td>
                 <td>
-                    <button class="btn btn-default" ng-click="redirect('addBooking', user)">Add Booking</button>
-                    <button class="btn btn-default" ng-click="redirect('modify', user)">Modify Booking</button>
+<!--                     <button class="btn btn-default" ng-click="redirect('addBooking', user)">Add Booking</button>
+                    <button class="btn btn-default" ng-click="redirect('modify', user)">Modify Booking</button> -->
                 </td>
                 <!-- <td>
                 <button ng-click="redirect('select', user)">Modify Booking</button>
