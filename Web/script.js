@@ -1,20 +1,20 @@
 // script.js
 
-var rumBukkaApp = angular.module('rumBukkaApp',['ngResource','ngRoute','ui.bootstrap', 'ngTable', 'ngAnimate']);
+var rumBukkaApp = angular.module('rumBukkaApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngTable', 'ngAnimate']);
 
 
-rumBukkaApp.config(function ($routeProvider) {
+rumBukkaApp.config(function($routeProvider) {
     $routeProvider
 
-        // route for the home page
-            .when('/', {
-            templateUrl: 'person.html',
-        })
-            .when('/addPerson/name/:userName?/userid/:userid?', {
+    // route for the home page
+    .when('/', {
+        templateUrl: 'person.html',
+    })
+        .when('/addPerson/name/:userName?/userid/:userid?', {
             templateUrl: 'addPerson.html',
             controller: 'addPersonController'
         })
-	.when('/person/:confirm?', {
+        .when('/person/:confirm?', {
             templateUrl: 'person.html',
             controller: 'personController'
         })
@@ -38,14 +38,34 @@ rumBukkaApp.config(function ($routeProvider) {
             templateUrl: 'roomSummary.html',
             controller: 'roomListController'
         })
-	.when('/modifyPerson', {
+        .when('/modifyPerson', {
             templateUrl: 'modifyPerson.html',
-            controller:'modifyPersonController'
+            controller: 'modifyPersonController'
         })
-	.when('/confirmBooking/:userId', {
+        .when('/confirmBooking/:userId', {
             templateUrl: 'confirmBooking.html',
-            controller:'confirmBookingController'
+            controller: 'confirmBookingController'
         });
 });
 // create the controller and inject Angular's $scope
 rumBukkaApp.controller('mainController', function($scope) {});
+
+var getError = function(errorcode) {
+    console.log("Errorcode: " + errorcode);
+    switch (errorcode) {
+        case -1:
+            return "Duplicate Entry";
+            break;
+        case -2:
+            return "Organisation Required";
+            break;
+        case -3:
+            return "Type Required";
+            break;
+        case -4:
+            return "Invalid ID Input";
+            break;
+        default:
+            return null;
+    }
+}
