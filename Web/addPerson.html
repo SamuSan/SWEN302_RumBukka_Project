@@ -1,14 +1,13 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html ng-app="rumBukkaApp">
-<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
 <head>
     <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
-
 
     <!-- SPELLS -->
     <!-- load angular via CDN -->
@@ -17,89 +16,102 @@
     <script src="script.js"></script>
     <script src="Controllers/addPersonController.js"></script>
 
-
-
 </head>
 <body>
-<!-- MAIN CONTENT AND INJECTED VIEWS -->
-<form name ='addPersonForm'>
-<div ng-controller="addPersonController">
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <form name ='addPersonForm'>
+        <div ng-controller="addPersonController">
 
-<h3>{{title}}</h3>
-<table>
-    <tr>
-        <td>
-            <label>First Name</label>
-        </td>
-                <td>
-            <input name = "fName" ng-model="user.FirstName" ng-trim="false" type="text" required />
-        </td>
-        <td><button class="fa fa-refresh" ng-click="reverse()"></button></td>
-        <td>
-            <label>Surname</label>
-        </td>
-                <td>
-            <input name = "sName" ng-model="user.LastName" ng-trim="false" type="text" required/>
-        </td>
-    </tr>
+            <h3>{{title}}</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label>First Name</label>
+                    </td>
+                    <td>
+                        <input name = "fName" ng-model="user.FirstName" ng-trim="false" type="text" required />
+                    </td>
+                    <td>
+                        <button class="fa fa-refresh" ng-click="reverse()"></button>
+                    </td>
 
-     <tr>
-        <td>
-            <label>VUW ID</label>
-        </td>
-        <td>
-            <input name = "SID" ng-model="user.VUWId" ng-trim="false" type="number" required/>
-        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Surname</label>
+                    </td>
+                    <td>
+                        <input name = "sName" ng-model="user.LastName" ng-trim="false" type="text" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>VUW ID</label>
+                    </td>
+                    <td>
+                        <input name = "SID" ng-model="user.VUWId" ng-trim="false" type="number" required/>
+                    </td>
 
-    </tr>
+                </tr>
 
-    <tr><td><label>Organisation</label></td>
-    <td>
-    <select class="btn btn-primary dropdown-toggle" role="menu" ng-model="user.Organisation.Organisation_Id" ng-options="entry.Organisation_Id as entry.OrganisationName for entry in orgs" required> </select></td></tr>
-    
-   
-    <tr>
-        <td>
-        
-            <label>Type</label>
-        </td>
-        <td>
-            <select class="btn btn-primary dropdown-toggle" name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" required/>
-        </td>
+                <tr>
+                    <td>
+                        <label>Organisation</label>
+                    </td>
+                    <td>
+                        <select class="btn btn-primary dropdown-toggle" role="menu" ng-model="user.Organisation.Organisation_Id" ng-options="entry.Organisation_Id as entry.OrganisationName for entry in orgs" required></select>
+                    </td>
+                </tr>
 
-    </tr>
-    <tr>
-        <td>
-            <label>Phone</label>
-        </td>
-        <td>
-            <input name = "Phone" ng-model="user.Phone_Phone_Id" ng-trim="false" type="text" />
-        </td>
+                <tr>
+                    <td>
 
-    </tr>    
-    <tr>
-      <td>  <button type="submit" class="btn btn-success"
+                        <label>Type</label>
+                    </td>
+                    <td>
+                        <select class="btn btn-primary dropdown-toggle" name = "Type" ng-model="user.Type" ng-trim="false" type="text" ng-options="type for type in userTypes" required/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label>Phone</label>
+                    </td>
+                    <td>
+                        <input name = "Phone" ng-model="user.Phone_Phone_Id" ng-trim="false" type="text" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success"
                 ng-disabled="user.$invalid"
                 ng-click="submit()"
-                >Submit
-        </button>
-        <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button></td>
-    </tr>
+                >Submit</button>
+                    </td>
+                    <td>
+                        <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                    </td>
+                </td>
+            </tr>
 
+        </table>
 
-</table>
+        <table>
+            <tr ng-repeat="booking in bookings">
+                <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
+                <td data-title="'Start Date'">{{booking.StartDate}}</td>
+                <td data-title="'End Date'">{{booking.EndDate}}</td>
+                <td>
+                    <button ng-click="redirect('select', user)">Delete</button>
+                </td>
+                <td>
+                    <button ng-click="redirect('edit', user)">Edit</button>
+                </td>
+            </tr>
+        </table>
 
-<table>
-    <tr ng-repeat="booking in bookings">
-         <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
-         <td data-title="'Start Date'">{{booking.StartDate}}</td>
-         <td data-title="'End Date'">{{booking.EndDate}}</td>
-         <td><button ng-click="redirect('select', user)">Delete</button></td>
-         <td><button ng-click="redirect('edit', user)">Edit</button></td>
-    </tr>
-</table>
-
-</div>
+    </div>
 </form>
 </body>
 </html>

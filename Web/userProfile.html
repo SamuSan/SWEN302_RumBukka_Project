@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="styles/myStyle/rumBukka-theme2.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- SPELLS -->
     <!-- load angular via CDN -->
@@ -22,8 +23,15 @@
     <form name ='userProfileForm'>
         <div ng-controller="userProfileController">
 
-            <h3><b>User Profile</b></h3>
             <table>
+                <tr>
+                    <td>
+                        <h3> <b>User Profile</b>
+                        </h3>
+
+
+                </tr>
+
                 <tr>
                     <td>
                         <label>First Name</label>
@@ -68,64 +76,68 @@
                     </td>
 
                 </tr>
-<!--                 <tr>
-                    <td>
-                        <label>Phone</label>
-                    </td>
-                    <td>
-                        <h3>{{currentProfile.Phone}}</h3>
-                    </td>
+                <!--                 <tr>
+                <td>
+                    <label>Phone</label>
+                </td>
+                <td>
+                    <h3>{{currentProfile.Phone}}</h3>
+                </td>
 
-                </tr> -->
+            </tr>
+            -->
+        </table>
 
-            </table>
+        <button class="btn btn-success" ng-click="editUser()">Edit Profile</button>
+                <button class="btn btn-warning" ng-click="goBack()">Return to User Selection</button>
+        <h3> <b>Existing Bookings</b>
+        </h3>
+        <table>
+            <tr>
+                <td>
+                    <b>Room</b>
+                </td>
+                <td>
+                    <b>Start Date</b>
+                </td>
+            </tr>
+            <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
+                <td>{{booking.Room.RoomName}}</td>
+                <td>{{booking.StartDate}}</td>
+                <td>
 
-            <button class="btn btn-success" ng-click="editUser()">   Edit Profile</button>
-            <h3><b>Existing Bookings</b></h3>
-            <table>
-                <tr>
-                    <td> <b>Room</b>
-                    </td>
-                    <td> <b>Start Date</b>
-                    </td>
-                </tr>
-                <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
-                    <td>{{booking.Room.RoomName}}</td>
-                    <td>{{booking.StartDate}}</td>
-                    <td>
+                    <button class="btn btn-default" ng-click="modifyBooking(booking)">Modify Booking</button>
+                    <button class="btn btn-warning" ng-click="deleteBooking(booking)">Delete</button>
+                </td>
+            </tr>
+        </table>
 
-                        <button class="btn btn-success" ng-click="modifyBooking(booking)">Modify</button>
-                        <button class="btn btn-danger" ng-click="deleteBooking(booking)">Delete</button>
-                    </td>
-                </tr>
-            </table>
+        <button class="btn btn-success" ng-click="addBooking()">Add Booking</button>
 
-            <button class="btn btn-success" ng-click="addBooking()">Add Booking</button>
-
-            <!--                 <tr>
-            <td>
-                <button type="submit" class="btn btn-success"
+        <!--                 <tr>
+        <td>
+            <button type="submit" class="btn btn-success"
                 ng-disabled="user.$invalid"
                 ng-click="submit()"
                 >Submit</button>
-                <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
-            </td>
-        </tr>
-
-    </table>
-    -->
-    <!--             <table>
-    <tr ng-repeat="booking in bookings">
-        <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
-        <td data-title="'Start Date'">{{booking.StartDate}}</td>
-        <td data-title="'End Date'">{{booking.EndDate}}</td>
-        <td>
-            <button ng-click="redirect('select', user)">Delete</button>
-        </td>
-        <td>
-            <button ng-click="redirect('edit', user)">Edit</button>
+            <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
         </td>
     </tr>
+
+</table>
+-->
+<!--             <table>
+<tr ng-repeat="booking in bookings">
+    <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
+    <td data-title="'Start Date'">{{booking.StartDate}}</td>
+    <td data-title="'End Date'">{{booking.EndDate}}</td>
+    <td>
+        <button ng-click="redirect('select', user)">Delete</button>
+    </td>
+    <td>
+        <button ng-click="redirect('edit', user)">Edit</button>
+    </td>
+</tr>
 </table>
 -->
 </div>

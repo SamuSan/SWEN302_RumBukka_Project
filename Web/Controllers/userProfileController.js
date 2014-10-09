@@ -58,7 +58,9 @@ rumBukkaApp.controller('userProfileController', function($scope, $route, $routeP
 	$scope.addBooking = function(){
 		$location.url("/addBooking/" + $scope.currentProfile.User_Id);
 	}
-
+	$scope.goBack = function(){
+		$location.url("/");
+	}
 	// if($routeParams.userId != null) {
 	// // console.log("Getting User");
 	// // userData.getUser($routeParams.userId).$promise.then(function(user) {
