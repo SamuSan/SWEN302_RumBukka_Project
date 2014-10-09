@@ -298,7 +298,11 @@ li.status {
 }
 
 /*  room table styles */
-.full .fa-square { color: red; }
-.halffull .fa-square { color: orange; }
-.empty .fa-square { color: green; }
+.fa-square { 
+  width: 10px;
+height: 10px;
+margin-left: 15px;}
+.full .fa-square { background-color: red; }
+.halffull .fa-square { background-color: orange; }
+.empty .fa-square { background-color: green; }
 .wrongorg { text-decoration: line-through; }

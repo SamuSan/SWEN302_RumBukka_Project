@@ -7,7 +7,8 @@ rumBukkaApp.controller('addBookingController', function($routeParams, $scope, $r
 
       $scope.Rooms = rooms;
     });
-
+$scope.startDatesArray = [1];
+  $scope.endDatesArray=[1];
   });
 
   bookingData.getBookings().$promise.then(function(bookings) {
@@ -15,40 +16,41 @@ rumBukkaApp.controller('addBookingController', function($routeParams, $scope, $r
   });
 
 
+  
+ /* $scope.startDatesArray = [(new Date($scope.startDate))];
+  $scope.endDatesArray=[(new Date($scope.endDate))];*/
+  $scope.setDates = function(room, start, end){
+    //sets desired date to compare
+    $scope.startDatesArray[0] = start;
+    $scope.endDatesArray[0] = end;
+    var i =1;
+    //Fill in the rest of the array for specified room
+     angular.forEach($scope.Bookings, function(value, key) {
+      if (value.Room.Room_Id == room.Room_Id) {
+	$scope.startDatesArray[i] = new Date(value.StartDate);
+	$scope.endDatesArray[i] = new Date(value.EndDate);
+	i++;
+      }
+    });
+     return i;
+  }
+
   $scope.selectedRoom = null;
 
   $scope.setSelected = function(selectedRoom) {
     $scope.selectedRoom = selectedRoom;
-    //console.log(selectedRoom);
-    /*< class = "rb-hLink-container"><a class= "rb-header-link" href = "#roomTimeline"> RoomTimeline</a></div>*/
   }
-
+ $scope.cap =0;
   $scope.getStyle = function(entry) {
     var style;
-    //Find room name 
-    /*
-    angular.forEach($scope.Bookings, function(value, key) {
-       if(entry.RoomName == value.Room.RoomName){
-        console.log(Date.parse($scope.startDate.toString()) + '=' + Date.parse(value.StartDate));
-        //get count of booking
-       //console.log(count +" "+ entry.RoomName);
-        //if((value.StartDate<= $scope.startDate && value.EndDate>= $scope.startDate) || (value.StartDate<= $scope.EndDate && value.EndDate>= $scope.startDate) ){
-          /*if(
-            (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) || 
-            (Date.parse($scope.startDate.toString()) > Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) > Date.parse(value.EndDate))) ||
-            (Date.parse($scope.startDate.toString()) < Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) < Date.parse(value.EndDate))) ||
-            (Date.parse($scope.startDate.toString()) > Date.parse(value.StartDate) && (Date.parse($scope.endDate.toString()) < Date.parse(value.EndDate))) ||
-            value.EndDate == null
-            )
-           {
-	    count++;
-	    console.log(count +" "+ entry.RoomName);
-	  }
-	  
-      }
-     });
-    */
-    var percentage = (entry.CurrentBookingCount / entry.Capacity) * 100;
+  $scope.startDatesArray = [];
+  $scope.endDatesArray = [];
+    // console.log(new Date(Date.parse(document.getElementById('DP').value)));
+  $scope.setDates(entry, new Date(Date.parse(document.getElementById('DP').value)), new Date(Date.parse(document.getElementById('DPE').value)));
+ $scope.cap = countmax($scope.startDatesArray, $scope.endDatesArray)-1;
+ var dates = $scope.startDatesArray[0]; 
+ //console.log(dates.toString());
+    var percentage = ($scope.cap / entry.Capacity) * 100;
     if (percentage > 66) {
       style = "full"
     } else if (percentage < 66 && percentage > 33) {
@@ -94,16 +96,52 @@ rumBukkaApp.controller('addBookingController', function($routeParams, $scope, $r
   }
 
   $scope.cancel = function() {
-    $location.url('/person');
+     $location.url('/profile/' + $scope.currentProfile.User_Id);
   }
 
+  /*Given references to an array of start dates and an array of end dates for
+occupancies in an office, figure out the maximum number of occupants in
+that office over those periods.
+Dates are in milliseconds
+The first entries in each array are the date period we are checking for maximum
+people over.
+Minumum returned is 1 as adds in person you are trying to add.*/
+
+var countmax = function(startDates, endDates){
+  var start = startDates[0];
+  var end= endDates[0];
+  var max=1;
+  for(var count =0; count < startDates.length; count++){
+    var startDate = startDates[count];
+    /*ind start points in the range values*/
+    if(startDate >= start && startDate <= end){
+    var temp=0;
+    /*Count all time periods that bridge the start point*/
+      for(var count2 =0; count2 < startDates.length; count2++){
+    var startDate2 = startDates[count2];
+    var endDate2 = endDates[count2];
+    if(startDate2 <= startDate && endDate2 >= startDate){
+      temp++;
+    }
+      }
+      if(temp > max){
+      /*take maximum count which will be the maximum number of people
+        over the time period.*/
+    max = temp;
+      }
+    }
+  }
+  return max;
+}
+
+  
   Date.prototype.addDays = function(days) {
     this.setDate(this.getDate() + days);
     return this;
 
   }
   $scope.dateChanged = false;
-  /*
+  
 $scope.$watch('endDate',function(oldVal,newVal){ 
     //Check for future booking
     if(newVal < $scope.startDate){
@@ -111,10 +149,14 @@ $scope.$watch('endDate',function(oldVal,newVal){
     }
     if(oldVal !=newVal){
       $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
+      $scope.endDatesArray=[];
+      //for each room update array
+      angular.forEach($scope.Rooms, function(value, key) {
+	$scope.getStyle(value);
+      });
       $scope.dateChanged=true;
     }
-    $scope.$apply();
-},true);
+});
 
 
 $scope.$watch('startDate',function(oldVal,newVal){ 
@@ -124,11 +166,16 @@ $scope.$watch('startDate',function(oldVal,newVal){
     }
     if(oldVal !=newVal){
       $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
+      $scope.startDatesArray = [];
+      //for each room update array
+      angular.forEach($scope.Rooms, function(value, key) {
+	$scope.getStyle(value);
+      });
       $scope.dateChanged=true;
     }
     console.log("UPDATE" + $scope.startDate);
-},true);
-*/
+});
+
   //Set the start date
   $scope.today = function() {
     $scope.startDate = new Date();
@@ -163,6 +210,7 @@ $scope.$watch('startDate',function(oldVal,newVal){
 
     $scope.enOpened = false;
     $scope.opened = true;
+    
   };
 
   $scope.openEnd = function($event) {
