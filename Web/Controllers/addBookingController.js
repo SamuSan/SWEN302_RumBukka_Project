@@ -49,7 +49,7 @@ $scope.startDatesArray = [1];
   $scope.setDates(entry, new Date(Date.parse(document.getElementById('DP').value)), new Date(Date.parse(document.getElementById('DPE').value)));
  $scope.cap = countmax($scope.startDatesArray, $scope.endDatesArray)-1;
  var dates = $scope.startDatesArray[0]; 
- console.log(dates.toString());
+ //console.log(dates.toString());
     var percentage = ($scope.cap / entry.Capacity) * 100;
     if (percentage > 66) {
       style = "full"
@@ -96,7 +96,7 @@ $scope.startDatesArray = [1];
   }
 
   $scope.cancel = function() {
-    $location.url('/person');
+     $location.url('/profile/' + $scope.currentProfile.User_Id);
   }
 
   /*Given references to an array of start dates and an array of end dates for

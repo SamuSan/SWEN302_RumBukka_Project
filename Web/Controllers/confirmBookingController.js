@@ -20,7 +20,7 @@ rumBukkaApp.controller('confirmBookingController', function ($routeParams, $scop
 console.log("AFTER" + bookingData.newBooking.StartDate);
   $scope.submit = function(){
     bookingData.addBooking(bookingData.newBooking).$promise.then(function(booking){
-      $location.url('/person/confirm');
+      $location.url('/profile/' + $scope.user.User_Id);
     });
   }
   $scope.cancel = function(){
