@@ -51,6 +51,10 @@ rumBukkaApp.controller('userProfileController', function($scope, $route, $routeP
 		});
 	}
 
+	$scope.editUser = function(){
+		$location.url("/addPerson/name/userid/" + $scope.currentProfile.User_Id)
+	}
+
 	// if($routeParams.userId != null) {
 	// // console.log("Getting User");
 	// // userData.getUser($routeParams.userId).$promise.then(function(user) {

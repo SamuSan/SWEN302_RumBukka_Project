@@ -50,7 +50,23 @@ namespace Server.Handlers
         
         public object update(string json)
         {
-        return null;
+            User user = JsonConvert.DeserializeObject<User>(json);
+
+            User prox = (User)getSingle(user.User_Id);
+
+            prox.FirstName = user.FirstName;
+            prox.LastName = user.LastName;
+            prox.VUWId = user.VUWId;
+            prox.Type = user.Type;
+            prox.Organisation = db.Organisations.Where(i=>i.Organisation_Id == user.Organisation.Organisation_Id).FirstOrDefault();
+            prox.Phone = db.Phones.Where(i=>i.Phone_Id == user.Phone.Phone_Id).FirstOrDefault();
+            prox.Email = user.Email;
+            prox.Mobile = user.Mobile;
+
+            db.SaveChanges();
+
+            return "update";
+
         }
         public object getFilter(int id)
         {
