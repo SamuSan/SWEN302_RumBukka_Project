@@ -35,7 +35,6 @@
                 <td>
             <div>
             <p>
-            <span>{{startDate}}</span>
                 <div class="col-md-6">
                     <p class="input-group">
                       <input type="text" id="DP" class="form-control" datepicker-popup="{{format}}" ng-model="startDate" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" />
@@ -53,7 +52,6 @@
                     <label>End Time </label></td>
                 <td>
                     <p>
-            <span>{{endDate}}</span>
                         <div class="col-md-6">
                             <p class="input-group">
                               <input type="text" id="DPE" class="form-control" datepicker-popup="{{format}}" ng-model="endDate" is-open="enOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
@@ -91,19 +89,20 @@
 	      <b>Capacity</b>
 	  </td>
       </tr>
-    
+     
       <tr class="{{getStyle(entry)}} " ng-repeat="entry in Rooms | orderBy:'Organisation.OrganisationName'" ng-click="setSelected(entry)" ng-class="{selected : entry.Room_Id === selectedRoom.Room_Id}">
    
-        <td><i class="fa fa-square" ></i></td>
+        <td><div class="fa fa-square"></div></td>
 
         <td  class="created">
            {{entry.RoomName}}
+         
         </td> 
         <td class="ip">
             {{entry.Organisation.OrganisationName}}
         </td>
         <td class="status">
-            {{entry.CurrentBookingCount}}/{{entry.Capacity}}
+            {{cap}}/{{entry.Capacity}}
         </td>
       </tr>
     </table>
