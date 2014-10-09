@@ -294,9 +294,17 @@ li.status {
 }
 
 .selected {
-  background-color: rgb(86, 160, 211);
+  background-color: rgb(195, 223, 255);
 }
-
+.selectable {
+  background-color: rgb(0, 180, 0);
+}
+.nonselectable {
+  background-color: rgb(180, 180, 180);
+}
+.strike{
+  text-decoration: line-through;
+}
 /*  room table styles */
 .full .fa-square { color: red; }
 .halffull .fa-square { color: orange; }
