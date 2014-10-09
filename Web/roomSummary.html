@@ -19,19 +19,21 @@
 <body ng-controller="roomListController">
         <table>
             <tr>
-                <h2>Room Summary</h2>
+                <h2>Room Summary {{alert}}</h2>
             </tr>
             <tr>
                 <td>
                     <ul>
-                        <li class="created" >
-                            <b>Room</b>
+                        <li class="created" > <b>Room</b>
                         </li>
                         <li class="ip"> <b>Organisation</b>
                         </li>
-                        <li class="status"> <b>Capacity</b>
+                        <li class="status">
+                            <b>Capacity</b>
                         </li></u> 
-                    <ul ng-repeat="entry in Rooms"  ng-click="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
+                    <ul ng-repeat="entry in Rooms" ng-click="submit()" ng-mouseover="setSelected(entry.RoomName)" ng-class="{selectable :canSelect(entry.RoomName), selected: entry.RoomName === selectedRoom }">
+                        <!--                     <ul ng-repeat="entry in Rooms" ng-click="submit()" ng-mouseover="setSelected(entry.RoomName)" ng-class="{selected : entry.RoomName === selectedRoom}">
+                        -->
                         <li  class="created">{{entry.RoomName}}</li>
                         <li class="ip">{{entry.Organisation.OrganisationName}}</li>
                         <li class="status">{{entry.Capacity}}</li>
@@ -40,9 +42,6 @@
             </tr>
             <tr>
                 <td>
-                    <button type="submit" class="btn btn-success"
-                    ng-click="submit()"
-                    >Submit</button>
                     <button type="submit" class="btn btn-danger" ng-click="cancel()">Cancel</button>
                 </td>
             </tr>

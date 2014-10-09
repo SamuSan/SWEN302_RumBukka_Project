@@ -34,7 +34,7 @@ rumBukkaApp.config(function($routeProvider) {
             templateUrl: 'addRoom.html',
             controller: 'addRoomController'
         })
-        .when('/roomTimeline', {
+        .when('/roomTimeline/:roomName', {
             templateUrl: 'roomTimeline.html',
             controller: 'roomTimelineController'
         })
