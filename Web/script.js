@@ -52,7 +52,26 @@ rumBukkaApp.config(function($routeProvider) {
         });
 });
 // create the controller and inject Angular's $scope
-rumBukkaApp.controller('mainController', function($scope) {});
+rumBukkaApp.controller('mainController', function($scope, $location) {
+    $scope.select = function() {
+        console.log("CLIKED");
+    }
+
+
+$scope.redirect =  function(loc){
+            console.log(loc);
+            if(loc == "person"){
+                        console.log("person");
+        $location.url('/');
+        }
+        else if(loc == "room"){
+                    console.log("room");
+        $location.url('roomSummary');
+        }
+}
+
+
+});
 
 var getError = function(errorcode) {
     console.log("Errorcode: " + errorcode);

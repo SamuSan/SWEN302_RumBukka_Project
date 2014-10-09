@@ -13,22 +13,22 @@ body {
 
 .rb-navbar {
     position: relative;
-    min-height: 50px;
-    margin-bottom: 20px;
+    /*min-height: 50px;*/
+    /*margin-bottom: 0px;*/
     border: 1px solid transparent;
 
 }
 
 
 .rb-navbar-default {
-    background-color: rgba(153, 204, 255, 0.90);
+    /*background-color: #47a447;*/
     border-color: #e7e7e7;
 
 }
 
 .rb-header-link {
         color: #ffffff;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
     }
 
@@ -44,17 +44,26 @@ body {
 .rb-hLinking-container {
         padding-right: 2px;
         padding-left: 2px;
+
         margin-left: auto;
         float: auto;
         width: inherit;
 
+
 }
 
 .rb-hLinking-container .rb-hLink-container {
-        padding-right: 4px;
-        padding-left: 4px;
+        /*padding-right: 4px;*/
+        /*padding-left: 4px;*/
+        /*height: 100%;*/
+                padding-bottom: 20px;
+                                padding-top: 20px;
         float:left;
-        margin-left: 7%;
+        text-align: center;
+        background-color: #47a447;
+                border-radius: 5px;
+        margin:0% .5%;
+        width: 48%;
 }
 
 
