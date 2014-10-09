@@ -22,7 +22,7 @@
     <form name ='userProfileForm'>
         <div ng-controller="userProfileController">
 
-            <h3>User Profile</h3>
+            <h3><b>User Profile</b></h3>
             <table>
                 <tr>
                     <td>
@@ -68,7 +68,7 @@
                     </td>
 
                 </tr>
-                <tr>
+<!--                 <tr>
                     <td>
                         <label>Phone</label>
                     </td>
@@ -76,56 +76,59 @@
                         <h3>{{currentProfile.Phone}}</h3>
                     </td>
 
+                </tr> -->
+
+            </table>
+
+            <button class="btn btn-success" ng-click="editUser()">   Edit Profile</button>
+            <h3><b>Existing Bookings</b></h3>
+            <table>
+                <tr>
+                    <td> <b>Room</b>
+                    </td>
+                    <td> <b>Start Date</b>
+                    </td>
                 </tr>
+                <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
+                    <td>{{booking.Room.RoomName}}</td>
+                    <td>{{booking.StartDate}}</td>
+                    <td>
 
-
-                </table>
-
-                <button class="btn btn-success" ng-click="editUser()">Edit</button>
-
-                <table>
-                    <tr><td><b>Room</b></td><td><b>Start Date</b></td></tr>
-                    <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
-                        <td>{{booking.Room.RoomName}} </td>
-                        <td>{{booking.StartDate}} </td>
-                        <td>
-                        
                         <button class="btn btn-success" ng-click="modifyBooking(booking)">Modify</button>
                         <button class="btn btn-danger" ng-click="deleteBooking(booking)">Delete</button>
-                        </td>
-                    </tr>
-                </table>
+                    </td>
+                </tr>
+            </table>
 
-                <button class="btn btn-success" ng-click="addBooking()">Add</button>
+            <button class="btn btn-success" ng-click="addBooking()">Add Booking</button>
 
-
-<!--                 <tr>
-                    <td>
-                        <button type="submit" class="btn btn-success"
+            <!--                 <tr>
+            <td>
+                <button type="submit" class="btn btn-success"
                 ng-disabled="user.$invalid"
                 ng-click="submit()"
                 >Submit</button>
-                        <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
-                    </td>
-                </tr>
+                <button type="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            </td>
+        </tr>
 
-            </table> -->
-
-<!--             <table>
-                <tr ng-repeat="booking in bookings">
-                    <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
-                    <td data-title="'Start Date'">{{booking.StartDate}}</td>
-                    <td data-title="'End Date'">{{booking.EndDate}}</td>
-                    <td>
-                        <button ng-click="redirect('select', user)">Delete</button>
-                    </td>
-                    <td>
-                        <button ng-click="redirect('edit', user)">Edit</button>
-                    </td>
-                </tr>
-            </table> -->
-
-        </div>
-    </form>
+    </table>
+    -->
+    <!--             <table>
+    <tr ng-repeat="booking in bookings">
+        <td data-title="'Room Name'">{{booking.Room.RoomName}}</td>
+        <td data-title="'Start Date'">{{booking.StartDate}}</td>
+        <td data-title="'End Date'">{{booking.EndDate}}</td>
+        <td>
+            <button ng-click="redirect('select', user)">Delete</button>
+        </td>
+        <td>
+            <button ng-click="redirect('edit', user)">Edit</button>
+        </td>
+    </tr>
+</table>
+-->
+</div>
+</form>
 </body>
 </html>
