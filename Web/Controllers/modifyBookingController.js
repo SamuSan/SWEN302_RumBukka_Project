@@ -10,12 +10,12 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
     });
 
     $scope.cancel = function() {
-        $location.url('/modifyUser/' + $scope.booking.User.User_Id);
+        $location.url('/profile/' + $scope.booking.User.User_Id);
     }
     
     $scope.update = function() {
-        bookingData.updateBooking($scope.bookingUpdate);
-
+        bookingData.updateBooking($scope.booking);
+        $location.url("/profile/" + $scope.booking.User.User_Id);
     }
 
 

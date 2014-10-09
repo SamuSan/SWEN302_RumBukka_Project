@@ -81,6 +81,8 @@
 
                 </table>
 
+                <button class="btn btn-success" ng-click="editUser()">Edit</button>
+
                 <table>
                     <tr><td><b>Room</b></td><td><b>Start Date</b></td></tr>
                     <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
@@ -93,6 +95,8 @@
                         </td>
                     </tr>
                 </table>
+
+                <button class="btn btn-success" ng-click="addBooking()">Add</button>
 
 
 <!--                 <tr>

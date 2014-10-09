@@ -15,6 +15,9 @@ rumBukkaApp.factory('userData', function($resource, $q) {
 		remove: {
 			method: 'DELETE'
 
+		},
+		update: {
+			method: 'PUT'
 		}
 
 	});
@@ -37,6 +40,9 @@ rumBukkaApp.factory('userData', function($resource, $q) {
 		},
 		getUser: function(user) {
 		  return connection.getSingle({id:user});
+		},
+		updateUser: function(user) {
+			return connection.update(user);
 		}
 
 	};
