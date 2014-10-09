@@ -5,6 +5,10 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 			isArray: true
 
 		},
+		getSingle: {
+			method: 'GET'
+
+		},
 		post: {
 		  method: 'POST'
 		  
@@ -23,14 +27,14 @@ rumBukkaApp.factory('bookingData', function($resource, $q){
 		      return connection.get();
 		},
 		getBooking: function(userid){
-		      return connection.get();
+		      return connection.getSingle({id:userid});
 		},
 		addBooking: function(booking){
 		  return connection.post(booking);
 		  
 		},
 		deleteBooking: function(booking){
-		  connection.delete({id:booking});
+		  return connection.delete({id:booking});
 		},
 		updateBooking: function(booking){
 		 connection.update(booking);

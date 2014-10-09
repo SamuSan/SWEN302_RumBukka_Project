@@ -15,6 +15,8 @@ rumBukkaApp.controller('personController', function($routeParams, $scope, $filte
 		if (type == 'add') {
 			var name = $scope.input;
 			$location.url(name == null ? "addPerson/name/userid" : "addPerson/name/" + name + "/userid");
+		} else if (type == 'profile') {
+			$location.url("profile/"+ user.User_Id);
 		} else if (type == 'addBooking') {
 			$location.url("addBooking/" + user.User_Id);
 		} else if (type == 'modify') {
@@ -24,7 +26,7 @@ rumBukkaApp.controller('personController', function($routeParams, $scope, $filte
 		}
 	}
 
-	$scope.select = function(){
+	$scope.select = function() {
 		console.log("CLIKED");
 	}
 });

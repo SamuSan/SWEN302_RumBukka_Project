@@ -2,120 +2,88 @@ rumBukkaApp.controller('modifyBookingController', function($scope, $route, $rout
 
 
     //  $scope.currentProfile = userData.getUser($routeParams.userId);
-    $scope.bookingUpdate = {};
-    
-    if($routeParams.userId != null) {
-    
-    userData.getUser($routeParams.userId).$promise.then(function(user) {
-        $scope.currentProfile = user;
-       
-        bookingData.getBookings().$promise.then(function(bookings) {
+    $scope.booking = {};
 
-            // $scope.Bookings = bookings;
-            var filtered = _.filter(bookings, function(booking) {
-               return  booking.User.User_Id == $scope.currentProfile.User_Id;
-            });
-            console.log(filtered);
-            console.log("FILTERING");
-            $scope.Bookings = filtered;
-            $scope.currentBooking = $scope.Bookings[0];
-
-        });
+  
+    bookingData.getBooking($routeParams.bookingId).$promise.then(function(booking) {
+        $scope.booking = booking;
     });
 
+    $scope.cancel = function() {
+        $location.url('/modifyUser/' + $scope.booking.User.User_Id);
     }
-    else
-    {
-      bookingData.getBooking($routeParams.bookingId).$promise.then(function(booking) {
-
-	userData.getUser(booking.User.User_Id).$promise.then(function(user) {
-	    $scope.currentProfile = user;
-	  
-	
-	});
-	//console.log(filtered);
-	//console.log("FILTERING");
-	$scope.Bookings = booking;
-	$scope.currentBooking = $scope.Bookings[0];
-
-    });
-
-      
-    }
-
-    //$scope.currentProfile = $scope.Profiles[0];
-    $scope.addBook = {
-        "FirstName": "",
-        "LastName": "",
-        "VUWStudentId": "",
-        "Type": "",
-        "Phone_Phone_Id": "",
-        "Organisation_Organisation_Id": "",
-    };
-
-
-    $scope.findBookings = {
-        "Booking_Id": "",
-        "startDate": "",
-        "endDate": "",
-        "Room_Room_Id": "",
-    };
-
-    $scope.srcPID;
-    $scope.idSearch = function() {
-        //search by id
-
-
-    }
-
-    $scope.submit = function() {
-        //push adduser
-        console.log("pro " + $scope.addBook.FirstName);
-
-    }
-        $scope.cancel = function() {
-        $location.url('/');
-    }
-    $scope.select = function(entry) {
-        /*$scope.booking =$scope.Bookings;
-		console.log($scope.currentProfile.F);
-		var currentProfile = $scope.currentProfile;
-
-        var addBook =$scope.addBook;
-
-        addBook.FirstName = currentProfile.User.FirstName;
-        addBook.LastName = currentProfile.User.LastName;
-        addBook.VUWStudentId = currentProfile.sid;
-        addBook.Type = currentProfile.stype;
-        addBook.Phone_Phone_Id = currentProfile.ph;
-        addBook.Organisation_Organisation_Id = currentProfile.Org;
-*/
-
-        //bookingData.getBookings()
-
-    }
-
-    $scope.selectBking = function() {
-
-        //var currentBooking = $scope.currentBooking;
-
-        var findBookings = $scope.findBookings;
-
-        findBookings.Booking_Id = $scope.currentBooking.Booking_Id;
-        findBookings.startDate = currentBooking.startDate;
-        findBookings.endDate = currentBooking.endDate;
-        findBookings.Room_Room_Id = currentBooking.Room_Room_Id;
-
-
-    }
-
-    $scope.delete = function(Booking_Id) {
-        bookingData.deleteBooking(Booking_Id);
-    }
+    
     $scope.update = function() {
         bookingData.updateBooking($scope.bookingUpdate);
 
     }
+
+
+
+
+
+  //Set the start date
+  $scope.today = function() {
+    $scope.startDate = new Date();
+  };
+  $scope.today();
+  //Auto sets the end date to minimum one day after start date
+  $scope.lastDay = function() {
+    $scope.endDate = new Date();
+    $scope.endDate.setDate(new Date().getDate()+1);
+    $scope.duration = ($scope.endDate.getDate() - $scope.startDate.getDate())
+  };
+  $scope.lastDay();
+
+  $scope.clear = function() {
+    $scope.startDate = null;
+  };
+
+  // Disable weekend selection
+  $scope.disabled = function(date, mode) {
+    return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+  };
+
+  $scope.toggleMin = function() {
+    $scope.minDate = $scope.minDate ? $scope.startDate : new Date();
+  };
+  $scope.toggleMin();
+
+  $scope.openStart = function($event) {
+    console.log("I AM OPENING START")
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.enOpened = false;
+    $scope.opened = true;
+  };
+
+  $scope.openEnd = function($event) {
+    console.log("I AM OPENING END")
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = false;
+    $scope.enOpened = true;
+  };
+
+  $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  $scope.initDate = new Date('2016-15-20');
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[0];
+
+
+
+
+
+
+
+
+
 
 
 

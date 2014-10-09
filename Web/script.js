@@ -14,11 +14,15 @@ rumBukkaApp.config(function($routeProvider) {
             templateUrl: 'addPerson.html',
             controller: 'addPersonController'
         })
+        .when('/profile/:userId', {
+            templateUrl: 'userProfile.html',
+            controller: 'userProfileController'
+        })
         .when('/person/:confirm?', {
             templateUrl: 'person.html',
             controller: 'personController'
         })
-        .when('/modifyBooking/user/:userId?/booking/:bookingId?', {
+        .when('/modifyBooking/:bookingId', {
             templateUrl: 'modifyBooking.html',
             controller: 'modifyBookingController'
         })

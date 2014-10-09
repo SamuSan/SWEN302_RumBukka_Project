@@ -33,7 +33,7 @@
             </tr>
         </table>
         <table ng-table class="table">
-            <tr ng-repeat="user in users | filter:input" class="rb-user-select" ng-click="select()">
+            <tr ng-repeat="user in users | filter:input" class="rb-user-select" ng-click="redirect('profile', user)">
                 <td data-title="'Name'">{{user.FirstName}}</td>
                 <td data-title="'Surname'">{{user.LastName}}</td>
                 <td>

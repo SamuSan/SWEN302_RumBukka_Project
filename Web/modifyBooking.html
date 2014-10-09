@@ -18,6 +18,7 @@
 </head>
 
     <div ng-controller="modifyBookingController">
+
         <table>
             <tr>
                 <td class="rbs-td">
@@ -29,10 +30,10 @@
                     <h4>User Name</h4>
                 </td>
                 <td>
-                    <h4>ID     Organisation</h4>
+                    <h4>Organisation</h4>
                 </td>
                 <td>
-                    <h4>Phone ID</h4>
+                    <h4>Phone</h4>
                 </td>
                 <td>
                     <h4>Current Room</h4>
@@ -41,17 +42,17 @@
             <tr>
                 <td>
                     <h5>
-                        {{currentProfile.FirstName}} {{currentProfile.LastName}}
+                        {{booking.User.FirstName}} {{booking.User.LastName}}
                     </h5>
                 </td>
                 <td>
-                    <h5>{{currentProfile.User_Id}}     {{currentProfile.Organisation.OrganisationName}}</h5>
+                    <h5>{{booking.User.Organisation.OrganisationName}}</h5>
                 </td>
                 <td>
-                    <h5>{{currentProfile.Phone.Phone_Id}}</h5>
+                    <h5>{{booking.User.Phone.}}</h5>
                 </td>
                 <td>
-                    <!-- <h5>{{currentBooking.Room.RoomName}}</h5> -->
+                    <h5>{{booking.Room.RoomName}}</h5>
                 </td>
             </tr>
 
@@ -73,19 +74,23 @@
         </tr>
         <tr>
             -->
-            <td>
+          <!--   <td>
                 <label>Bookings for {{currentProfile.FirstName}}:</label>
             </td>
             <td>
                 <select class="btn btn-primary dropdown-toggle" ng-model="bookingUpdate" ng-options="entry.Room.RoomName +' '+entry.StartDate for entry in Bookings" ></select>
-            </td>
+            </td> -->
         </tr>
         <tr>
             <td>
                 <label>Start Time</label>
             </td>
             <td>
-                <input type="date" ng-model="bookingUpdate.StartDate" value = {{bookingUpdate.StartDate}} />
+                    <input type="text" id="DP" class="form-control" datepicker-popup="{{format}}" ng-model="booking.StartDate" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" style="width: 200px; float:left" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+
             </td>
 
         </tr>
@@ -94,19 +99,23 @@
                 <label>End Time</label>
             </td>
             <td>
-                <input type="date" ng-model="bookingUpdate.EndDate" value = {{bookingUpdate.EndDate}} />
+                           <input type="text" id="DP" class="form-control" datepicker-popup="{{format}}" ng-model="booking.EndDate" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions"  ng-required="true" close-text="Close" style="width: 200px; float:left" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+
             </td>
         </tr>
         <tr>
             <td>
                 <button type="submit" class="btn btn-success"
-                    ng-click="update(bookingUpdate)"
+                    ng-click="update(booking)"
                     >Submit</button>
                 <button type="submit" class="btn btn-danger" ng-click="cancel()">Cancel</button>
             </td>
-            <td>
+  <!--           <td>
                 <button type="submit" class="btn btn-warning" ng-click="delete(bookingUpdate.Booking_Id)" >Delete</button>
-            </td>
+            </td> -->
         </tr>
 
         <!--tr>
