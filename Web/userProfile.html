@@ -101,12 +101,15 @@
                 <td>
                     <b>Start Date</b>
                 </td>
+                <td>
+                    <b>End Date</b>
+                </td>
             </tr>
-            <tr style="float:inherit" ng-repeat="booking in bookings" ng-click="selectBooking(booking)">
+            <tr style="float:inherit" ng-repeat="booking in bookings | filter:{ User.User_Id: currentProfile.User_Id }" ng-click="selectBooking(booking)">
                 <td>{{booking.Room.RoomName}}</td>
                 <td>{{booking.StartDate}}</td>
+                <td>{{booking.EndDate}}</td>
                 <td>
-
                     <button class="btn btn-default" ng-click="modifyBooking(booking)">Modify Booking</button>
                     <button class="btn btn-warning" ng-click="deleteBooking(booking)">Delete</button>
                 </td>

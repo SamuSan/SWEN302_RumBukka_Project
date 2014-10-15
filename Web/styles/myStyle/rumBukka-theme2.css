@@ -318,8 +318,10 @@ li.status {
 .fa-square { 
   width: 10px;
 height: 10px;
-margin-left: 15px;}
-.full .fa-square { background-color: red; }
-.halffull .fa-square { background-color: orange; }
-.empty .fa-square { background-color: green; }
-.wrongorg { text-decoration: line-through; }
+margin-left: 15px;
+  color: inherit;
+}
+.full .fa-square { background-color: red; color: red; }
+.halffull .fa-square { background-color: orange;  color: orange;}
+.empty .fa-square { background-color: green; color: green; }
+.wrongorg { text-decoration: line-through;  }

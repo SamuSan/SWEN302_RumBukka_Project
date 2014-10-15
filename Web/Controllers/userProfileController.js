@@ -4,6 +4,8 @@ rumBukkaApp.controller('userProfileController', function($scope, $route, $routeP
 
 	userData.getUser($routeParams.userId).$promise.then(function(user) {
 		console.log("Have user");
+		$scope.userfilter = {};
+		$scope.userfilter.User = user;
 		$scope.currentProfile = user;
 		getOrg();
 		//getType();

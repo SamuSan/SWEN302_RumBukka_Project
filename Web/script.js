@@ -22,7 +22,7 @@ rumBukkaApp.config(function($routeProvider) {
             templateUrl: 'person.html',
             controller: 'personController'
         })
-        .when('/modifyBooking/:bookingId', {
+        .when('/modifyBooking/:bookingId/:from?', {
             templateUrl: 'modifyBooking.html',
             controller: 'modifyBookingController'
         })

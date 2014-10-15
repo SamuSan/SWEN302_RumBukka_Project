@@ -68,8 +68,12 @@ $scope.startDatesArray = [1];
   //1412208191000
   //1412208205000
   $scope.submit = function() {
+    
+    var error = false;
+    
     if ($scope.selectedRoom == null) {
       alert("Select a room");
+      error = true;
       return;
     }
     bookingData.newBooking.StartDate = new Date(Date.parse(document.getElementById('DP').value));
@@ -78,6 +82,7 @@ $scope.startDatesArray = [1];
     bookingData.newBooking.Room = $scope.selectedRoom;
     if (bookingData.newBooking.StartDate > bookingData.newBooking.EndDate) {
       alert("Start date cannot be after end date");
+      error = true;
       return;
     }
     angular.forEach($scope.Bookings, function(value, key) {
@@ -87,11 +92,13 @@ $scope.startDatesArray = [1];
           (bookingData.newBooking.StartDate < new Date(value.StartDate) && bookingData.newBooking.EndDate > new Date(value.StartDate)) ||
           (bookingData.newBooking.StartDate < new Date(value.EndDate) && bookingData.newBooking.EndDate > new Date(value.EndDate))) { //If date does not overlap current booking for user
           alert("Bookings cannot overlap");
+	  error = true;
           return;
         }
       }
     });
-    $location.url("confirmBooking/" + $scope.currentProfile.User_Id);
+    if(!error)
+      $location.url("confirmBooking/" + $scope.currentProfile.User_Id);
 
   }
 

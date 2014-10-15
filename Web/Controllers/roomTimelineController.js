@@ -2,7 +2,7 @@ rumBukkaApp.controller('roomTimelineController', function($scope, $route, $route
   $scope.selectedRoom = $routeParams.roomName;
   console.log($scope.selectedRoom);
 
-  $scope.message = "Sausages";
+  $scope.message = "";
   $scope.loadChart = function() {
     console.log("load chart");
     $scope.datab = new google.visualization.DataTable();
@@ -39,7 +39,7 @@ rumBukkaApp.controller('roomTimelineController', function($scope, $route, $route
     google.visualization.events.addListener($scope.chart, 'select', function() {
       var selectedItem = $scope.chart.getSelection()[0].bb;
 
-      var url = 'modifyBooking/' + $scope.bookings[selectedItem].Booking_Id;
+      var url = 'modifyBooking/' + $scope.bookings[selectedItem].Booking_Id + '/timeline';
       //alert(url);
       //$location.url(url);
 
