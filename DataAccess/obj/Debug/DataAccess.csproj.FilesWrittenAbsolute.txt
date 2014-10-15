@@ -87,3 +87,4 @@
 /am/rialto/home1/byforddayg/restructure/SWEN302_RumBukka_Project/DataAccess/bin/Debug/EntityFramework.SqlServer.dll
 /am/rialto/home1/byforddayg/restructure/SWEN302_RumBukka_Project/DataAccess/bin/Debug/MySql.Data.dll
 /am/rialto/home1/byforddayg/restructure/SWEN302_RumBukka_Project/DataAccess/bin/Debug/mysql.data.entity.EF6.dll
+/am/rialto/home1/byforddayg/restructure/SWEN302_RumBukka_Project/DataAccess/bin/Debug/DataAccess.dll.config

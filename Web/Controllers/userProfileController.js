@@ -1,42 +1,31 @@
 rumBukkaApp.controller('userProfileController', function($scope, $route, $routeParams, $location, userData, $window, $rootScope, organisationData, bookingData) {
 
 	$scope.userTypes = ["Hons", "Masters", "PHD", "Faculty"];
-
+	
+	$scope.bookings = [];
+	
 	userData.getUser($routeParams.userId).$promise.then(function(user) {
 		console.log("Have user");
 		$scope.userfilter = {};
-		$scope.userfilter.User = user;
+		//$scope.userfilter.User = user;
 		$scope.currentProfile = user;
-		getOrg();
+		//getOrg();
 		//getType();
+		
+		$scope.loadBookings();
 
 	});
-
-	$scope.bookings = [];
 
 	$scope.loadBookings = function(){
 
 		bookingData.getBookings().$promise.then(function(bookings) {
-			$scope.bookings = bookings;
+			for(var i = 0; i < bookings.length; i++)
+			  if(bookings[i].User.User_Id == $scope.currentProfile.User_Id)
+			    $scope.bookings.push(bookings[i]);
 		});	
 
 	}
 
-	$scope.loadBookings();
-
-	function getOrg() {
-		orgs = organisationData.getOrganisations().$promise.then(function(orgs) {
-			console.log(orgs);
-			for (var i = orgs.length - 1; i >= 0; i--) {
-				if (orgs[i].Organisation_Id == $scope.currentProfile.Organisation_Id) {
-					console.log("Foujnd him captain");
-				}
-
-			};
-			$scope.userOrg = "Pants";
-		});
-
-	}
 
 	$scope.modifyBooking = function(booking) {
 		$location.url("/modifyBooking/" + booking.Booking_Id);
